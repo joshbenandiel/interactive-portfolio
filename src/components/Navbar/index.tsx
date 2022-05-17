@@ -1,6 +1,6 @@
 import { NavWrapper } from "./styled"
 
-export const Navbar: React.FC<any> = () => {
+export const Navbar: React.FC = () => {
 
   return (
     <NavWrapper>

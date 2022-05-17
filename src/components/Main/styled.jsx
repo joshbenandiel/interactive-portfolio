@@ -3,20 +3,34 @@ import styled, { keyframes} from 'styled-components'
 
 const buttonFrame = keyframes`
   0% {
-    left: 0;
-    width: 0px;
-  }
-  33% {
-    left: 0;
-    width: 100%;
-  }
-  66% {
-    right: 0;
-    width: 100%;
+    width: 140px;
+    transform: translateX(-100px)
   }
   100% {
-    right: 0;
-    width: 0;
+    width: 140px;
+    transform: translateX(200px)
+  }
+  
+`
+
+const buttonFrameBackwards = keyframes`
+  0% {
+    width: 140px;
+    transform: translateX(200px)
+  }
+  100% {
+    width: 140px;
+    transform: translateX(-150px)
+  }
+  
+`
+
+const textFrame = keyframes`
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0
   }
 `
 
@@ -48,16 +62,70 @@ export const Container = styled.div`
     font-weight: bold;
     color: #fff;
     margin: 0;
+    width: fit-content;
+    position: relative;
+
+    span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 80px;
+      background-color: #fff;
+      animation: ${textFrame} 1s ease forwards;
+    }
   }
 
-  p {
+  .text-wrapper {
     font-family: LibreBaskerville-Regular,Palatino Linotype,Times New Roman,serif;
     font-size: 1.3rem;
     font-style: italic;
     color: #fff;
     margin: 0;
     margin-top: 20px;
+    width: fit-content;
+    position: relative;
+
+    span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 45px;
+      background-color: #fff;
+      animation: ${textFrame} 1s ease forwards;
+    }
   }
+
+  .button-wrapper {
+    width: 170px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 40px;
+    position: relative;
+    cursor: pointer;
+
+    .white-box {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 55px;
+      background-color: #fff;
+      animation: ${textFrame} 1s ease forwards;
+    }
+    .arrow-right {
+      position: absolute;
+      top: 5px;
+      right: 0px;
+      font-size: 2rem;
+      transition: 0.5s;
+      color: #fff;
+      z-index: 3;
+    }
+
+  }
+
+
   button {
     width: 140px;
     height: 50px;
@@ -67,21 +135,31 @@ export const Container = styled.div`
     outline: none;
     font-size: 1.3rem;
     color: #fff;
-    margin-top: 40px;
     cursor: pointer;
     position: relative;
-
-    span:nth-child(1) {
+    overflow: hidden;
+    &::after{
+      content: '';
       position: absolute;
-      top: 5px;
-      right: -28px;
-      font-size: 2rem;
-      transition: 0.5s;
+      top: 0;
+      right: 0;
+      background: linear-gradient(270deg,#235aa6,#101b3b);
+      height: 100%;
+      animation: ${buttonFrameBackwards} 0.65s ease forwards
+    }
+
+    .about-me-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 100%;
+      z-index: 2;
     }
   }
 
-  button:hover span {
-    right: -35px;  
+  button:hover + .arrow-right {
+    right: -8px;
   }
 
   button:hover {
@@ -89,9 +167,10 @@ export const Container = styled.div`
       content: '';
       position: absolute;
       top: 0;
+      left: 0;
       background: linear-gradient(270deg,#235aa6,#101b3b);
       height: 100%;
-      animation: ${buttonFrame} 0.35s ease forwards
+      animation: ${buttonFrame} 0.65s ease forwards
     }
   }
 
@@ -122,7 +201,7 @@ export const Container = styled.div`
 
     &:hover + ${ArrowDown} {
       bottom: 0;
-      transform: rotate(91deg) scale(1.3);
+      transform: rotate(90deg) scale(1.2);
     }
   }
 `

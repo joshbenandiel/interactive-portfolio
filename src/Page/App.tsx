@@ -12,7 +12,7 @@ const themeProvider = {
 
 
 
-const App: React.FC<any> = () => {
+const App: React.FC = () => {
 
   const [loading, setLoading] = useState<boolean>(false)
 
