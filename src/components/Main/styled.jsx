@@ -40,8 +40,8 @@ export const ArrowDown = styled.span`
   font-size: 2rem;
   color: #fff;
   width: auto;
-  transform: rotate(91deg);
-  left: 50.2%;
+  transform: translateX(-50%) rotate(91deg);
+  left: 50%;
   transition: 0.5s;
   cursor: pointer;
 `
@@ -55,7 +55,7 @@ export const Container = styled.div`
   margin: 0 auto;
   justify-content: center;
   padding-left: 5%;
-
+  
 
   h1 {
     font-size: 4.5rem;
@@ -194,14 +194,14 @@ export const Container = styled.div`
 
   .works-section{
     position: absolute;
-    bottom: 50px;
+    bottom: 30px;
     left: 50%;
     color: #fff;
+    transform: translate(-50%,-50%);
     cursor: pointer;
 
     &:hover + ${ArrowDown} {
       bottom: 0;
-      transform: rotate(90deg) scale(1.2);
     }
   }
 `
