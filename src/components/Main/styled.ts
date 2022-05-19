@@ -36,7 +36,7 @@ const textFrame = keyframes`
 
 export const ArrowDown = styled.span`
   position: absolute;
-  bottom: -20px;
+  bottom: -10px;
   font-size: 2rem;
   color: #fff;
   width: auto;
@@ -47,15 +47,15 @@ export const ArrowDown = styled.span`
 `
 
 export const Container = styled.div`
-  background-color: #1C1D25;
   display: flex;
   flex-direction: column;
-  height: 95vh;
+  height: 90vh;
   width: 60%;
   margin: 0 auto;
   justify-content: center;
   padding-left: 5%;
-  
+  position: relative;
+  z-index: 2;
 
   h1 {
     font-size: 4.5rem;
@@ -64,15 +64,6 @@ export const Container = styled.div`
     margin: 0;
     width: fit-content;
     position: relative;
-
-    span {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 80px;
-      background-color: #fff;
-      animation: ${textFrame} 1s ease forwards;
-    }
   }
 
   .text-wrapper {
@@ -178,7 +169,7 @@ export const Container = styled.div`
   ul {
     position: absolute;
     top: 30%;
-    right: 30px;
+    right: -300px;
 
     li {
       list-style: none;
@@ -194,14 +185,14 @@ export const Container = styled.div`
 
   .works-section{
     position: absolute;
-    bottom: 30px;
+    bottom: 35px;
     left: 50%;
     color: #fff;
     transform: translate(-50%,-50%);
     cursor: pointer;
 
     &:hover + ${ArrowDown} {
-      bottom: 0;
+      bottom: 10px;
     }
   }
 `

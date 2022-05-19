@@ -1,3 +1,4 @@
+import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 
@@ -193,7 +194,11 @@ const numberAnimation = keyframes`
 `
 
 /////// CARD CONTAINER /////////////
-export const CardContainer = styled.div`
+interface IProps {
+  move: string;
+}
+
+export const CardContainer = styled.div<IProps>`
   width: 90%;
   height: 480px;
   background-color: #1c1d25;

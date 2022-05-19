@@ -3,6 +3,7 @@ import { ArrowDown, Container } from './styled'
 import { BsGithub, BsInstagram, BsTwitter} from 'react-icons/bs'
 import { FaLinkedinIn, FaFacebookF } from 'react-icons/fa'
 import TextScramble, { ScrambleTexts } from '@twistezo/react-text-scramble'
+import logo from './images/backgroundlogo.png'
 
 
 export const Main: React.FC = () => {
@@ -20,7 +21,7 @@ export const Main: React.FC = () => {
   ]
   return (
     <Container>
-      <h1>Joshua Jacinto<span/></h1>
+      <h1>Joshua Jacinto</h1>
       <span className='text-wrapper'>
         <TextScramble 
           paused={pause}

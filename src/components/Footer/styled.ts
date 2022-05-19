@@ -1,6 +1,5 @@
 import styled, {keyframes} from 'styled-components'
 
-
 const textLine = keyframes`
   0% {
     width: 0%
@@ -18,32 +17,36 @@ const textLineBackwards = keyframes`
   }
 `
 
-export const NavWrapper = styled.nav`
-  color: #B0B2C3;
-  width: 1080px;
-  margin: 0 auto;
+export const Container = styled.div`
+  height: auto;
+  width: 100%;
+  background-color: #1C1D25;
+  padding: 80px 0px 100px 0px;
   display: flex;
-  justify-content: space-between;
-    div {
-      cursor: pointer;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #F3F3F3;
+  gap: 20px;
+  div {
+    cursor: pointer;
+    img {
+      height: 70px;
     }
-    ul {
-      display: flex;
+  }
+  ul {
+    display: flex;
+    gap: 60px;
+    li {
+      list-style: none;
       cursor: pointer;
+      font-family: League Spartan,Helvetica,Arial,sans-serif;
       font-size: 1rem;
       font-weight: bold;
-      gap: 50px;
+      position: relative;
     }
-      li {
-        list-style: none;
-        position: relative;
-      }
 
-      li:hover {
-        color: #fff;
-      }
-
-      li span {
+    li span {
         position: absolute;
         height: 3px;
         width: 0;
@@ -62,4 +65,11 @@ export const NavWrapper = styled.nav`
         animation: ${textLine} 0.35s ease forwards;
         background-color: #EF6348;
       }
+  }
+  p {
+    margin: 0;
+  }
+  p span {
+    cursor: pointer;
+  }
 `

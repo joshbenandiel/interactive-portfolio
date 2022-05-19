@@ -106,8 +106,3 @@ export const PreLoader = styled.div`
 export const logoLoader = styled.div`
   
 `
-
-
-export const Container = styled.div`
-  background-color: #1C1D25;
-`;

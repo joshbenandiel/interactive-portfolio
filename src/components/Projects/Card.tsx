@@ -1,8 +1,6 @@
 import { CardContainer } from "./styled"
-import landingPage from './images/landing-page.png'
 import { Button } from './Button'
 import React, { useEffect, useRef, useState } from "react"
-import { useIntersection } from '../../hooks/useIntersection'
 
 interface IProps {
   img: string,
@@ -10,9 +8,10 @@ interface IProps {
   paragraph: string,
   number: string,
   move: string,
+  uniq: any
 }
 
-export const Card: React.FC<IProps> = ({img,header,paragraph,number, move}) => {
+export const Card: React.FC<IProps> = ({img,header,paragraph,number, move, uniq}) => {
 
   const [isVisible, setIsVisible] = useState<boolean>(false)
   const [render, setRender] = useState<boolean>(false)
@@ -31,15 +30,10 @@ export const Card: React.FC<IProps> = ({img,header,paragraph,number, move}) => {
     observer.observe(ref.current)
   },[])
 
-
-  if(parseInt(number) % 2 == 0){
-    console.log('EVEN SI AKO!', number)
-  }
-
  
 
   return (
-    <CardContainer move={move} ref={ref}>
+    <CardContainer move={move} ref={ref} key={uniq}>
       <div className={`card-blue-mask${isVisible ? `-visible` : ``}`}/>
       <img src={img} alt='landing-page'/>
       <div className='card-mask'/>
