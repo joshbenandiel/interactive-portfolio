@@ -8,10 +8,10 @@ interface IProps {
   paragraph: string,
   number: string,
   move: string,
-  uniq: any
+  id: number,
 }
 
-export const Card: React.FC<IProps> = ({img,header,paragraph,number, move, uniq}) => {
+export const Card: React.FC<IProps> = ({img,header,paragraph,number, move, id}) => {
 
   const [isVisible, setIsVisible] = useState<boolean>(false)
   const [render, setRender] = useState<boolean>(false)
@@ -33,7 +33,7 @@ export const Card: React.FC<IProps> = ({img,header,paragraph,number, move, uniq}
  
 
   return (
-    <CardContainer move={move} ref={ref} key={uniq}>
+    <CardContainer key={id} move={move} ref={ref}>
       <div className={`card-blue-mask${isVisible ? `-visible` : ``}`}/>
       <img src={img} alt='landing-page'/>
       <div className='card-mask'/>

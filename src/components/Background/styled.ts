@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 
-export const Background = styled.div`
+export const BackgroundContainer = styled.div`
   height: 100vh;
   width: 100%;
   background-color: #1C1D25;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 
   .layer-1 {
     position: absolute;
@@ -55,5 +55,12 @@ export const Background = styled.div`
     z-index: 1;
   }
 
-
+  .navbar-hide {
+    transition: 0.5s ease 0.5s;
+    opacity: 1;
+  }
+  .navbar-hide-false {
+    transition: 0.5s;
+    opacity: 0;
+  }
 `

@@ -18,19 +18,25 @@ const textLineBackwards = keyframes`
   }
 `
 
-export const NavWrapper = styled.nav`
+export const NavWrapper = styled.nav<{move: string}>`
+  position: fixed;
+  top: 0;
+  left: 23%;
+  z-index: 100;
   color: #B0B2C3;
   width: 1080px;
   height: 10vh;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  position: relative;
+  transform: ${props => props.move};
+  transition: 0.35s ease;
+
     div {
       cursor: pointer;
       img {
         position: absolute;
-        top: 5px;
+        top: 15px;
         left: -50px;
         height: 70px;
       }

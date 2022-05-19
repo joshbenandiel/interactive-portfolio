@@ -5,12 +5,13 @@ import { Main } from "../components/Main";
 import { Card } from '../components/Projects/Card'
 import { Projects } from "../components/Projects";
 import { index as Footer } from "../components/Footer";
-import { index as Background } from "../components/Background";
+import { Background } from "../components/Background";
 import facebook from '../components/Projects/images/facebook.png'
 import ecommerce from '../components/Projects/images/ecommerce.png'
 import emart from '../components/Projects/images/emart.png'
 import netflix from '../components/Projects/images/netflix.png'
 import landing from '../components/Projects/images/landing-page.png'
+import { Contact } from "../components/Contact/index";
 
 
 const themeProvider = {
@@ -23,6 +24,10 @@ const themeProvider = {
 const App: React.FC = () => {
 
   const [loading, setLoading] = useState<boolean>(false)
+  const [openContact, setOpenContact] = useState<boolean>(false)
+
+
+
 
   useEffect(() => {
     setLoading(true)
@@ -32,9 +37,19 @@ const App: React.FC = () => {
     
   },[])
 
+
+  window.addEventListener('click', () => {
+    console.log(window.scrollY)
+  })
+  
+
+  const worksRef = useRef<any>()
+  const techRef = useRef<any>()
+
+
   return (
     <>
-    {/* {loading ? (
+    {loading ? (
       <PreLoader>
         <div>
           <ul>
@@ -45,25 +60,41 @@ const App: React.FC = () => {
         </div>
       </PreLoader>
     )
-    : ( */}
+    : (
+    <>
     <Background>
-      <Navbar/>
-      <Main/>
-      <Projects>
+      {openContact && <Contact 
+        openContact={openContact}
+        setOpenContact={setOpenContact}/>}
+      <div className={`navbar-hide${openContact ? '-false' : ' '}`}>
+        <Navbar 
+          worksRef={worksRef} 
+          techRef={techRef} 
+          setOpenContact={setOpenContact}/>
+      </div>
+      <Main 
+        openContact={openContact} 
+        setOpenContact={setOpenContact}/>
+      </Background>
+      <Projects 
+        worksRef={worksRef}
+        techRef={techRef}>
         {cardData.map((card) => (
           <Card 
-             uniq={card.id}
-             img={card.img}
-             header={card.header}
-             paragraph={card.paragraph}
-             number={card.number}
-             move={card.move}
-           />
+            key={card.id}
+            id={card.id}
+            img={card.img}
+            header={card.header}
+            paragraph={card.paragraph}
+            number={card.number}
+            move={card.move}
+          />
         ))}
       </Projects>
       <Footer/>
-    </Background>
-    {/* )} */}
+      </>
+    
+    )} 
     </>
   );
 }

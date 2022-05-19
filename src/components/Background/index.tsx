@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { Background } from "./styled"
+import { FC, useEffect, useState } from "react";
+import { BackgroundContainer } from "./styled"
 import backgroundlogo from '../Main/images/backgroundlogo.png'
 import one from './images/1.png'
 import two from './images/2.png'
@@ -18,23 +18,34 @@ import twelve from './images/12.png'
 interface IProps {
   children: React.ReactNode;
 }
-export const index: FC<IProps> = ({children}) => {
 
-const getShapes = document.querySelectorAll('.shapes')
-document.addEventListener('mousemove', (e) => {
-  const parallax = (e: any) => {
-    getShapes.forEach((layer: any) => {
-      const speed = layer.getAttribute('data-speed')
-      const x = (window.innerWidth - e.pageX*speed)/100
-      const y = (window.innerWidth - e.pageY*speed)/100
-      layer.style.transform = `translateX(${x}px) translateY(${y}px)`
-    })
-  }
-  parallax(e)
-});
+
+
+export const Background: FC<IProps> = ({children}) => {
+
+  
+  const [render, setRender] = useState(false)
+  useEffect(() => {
+    setRender(true)
+  }, [])
+  
+  const getShapes = document.querySelectorAll('.shapes')
+  document.addEventListener('mousemove', (e) => {
+    const parallax = (e: any) => {
+      getShapes.forEach((layer: any) => {
+        const speed = layer.getAttribute('data-speed')
+        const x = (window.innerWidth - e.pageX*speed)/100
+        const y = (window.innerWidth - e.pageY*speed)/100
+        layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+      })
+    }
+    parallax(e)
+  });
+
+
 
   return (
-    <Background>
+    <BackgroundContainer>
       <>
       <img className='background-logo'src={backgroundlogo} alt="background" />
       <div className='layer-1'>
@@ -59,7 +70,7 @@ document.addEventListener('mousemove', (e) => {
       </div>
       {children}
       </>
-    </Background>
+    </BackgroundContainer>
   )
 }
 

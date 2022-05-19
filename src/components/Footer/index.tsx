@@ -1,10 +1,20 @@
 import { Container } from "./styled"
 import logo from '../Navbar/images/logo.png'
 
+
+
 export const index = () => {
+
+  const executeScroll = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    
+  }
   return (
     <Container>
-      <div onClick={() => window.location.reload()}>
+      <div onClick={executeScroll}>
         <img src={logo} alt="logo" />
       </div>
       <ul>

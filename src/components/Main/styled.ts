@@ -1,7 +1,7 @@
 import styled, { keyframes} from 'styled-components'
 
 
-const buttonFrame = keyframes`
+export const buttonFrame = keyframes`
   0% {
     width: 140px;
     transform: translateX(-100px)
@@ -13,7 +13,7 @@ const buttonFrame = keyframes`
   
 `
 
-const buttonFrameBackwards = keyframes`
+export const buttonFrameBackwards = keyframes`
   0% {
     width: 140px;
     transform: translateX(200px)
@@ -28,6 +28,15 @@ const buttonFrameBackwards = keyframes`
 const textFrame = keyframes`
   from {
     width: 100%;
+  }
+  to {
+    width: 0
+  }
+`
+
+const textFrameFrontEnd = keyframes`
+  from {
+    width: 20%;
   }
   to {
     width: 0
@@ -49,7 +58,7 @@ export const ArrowDown = styled.span`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 100vh;
   width: 60%;
   margin: 0 auto;
   justify-content: center;
@@ -57,13 +66,27 @@ export const Container = styled.div`
   position: relative;
   z-index: 2;
 
-  h1 {
-    font-size: 4.5rem;
-    font-weight: bold;
-    color: #fff;
-    margin: 0;
+  .name-wrapper {
     width: fit-content;
     position: relative;
+
+    h1 {
+      font-size: 4.5rem;
+      font-weight: bold;
+      color: #fff;
+      margin: 0;
+      width: fit-content;
+      position: relative;
+    }
+
+    .white-name {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 80px;
+      background-color: #fff;
+      animation: ${textFrame} 1.5s ease forwards;
+    }
   }
 
   .text-wrapper {
@@ -73,16 +96,21 @@ export const Container = styled.div`
     color: #fff;
     margin: 0;
     margin-top: 20px;
-    width: fit-content;
     position: relative;
 
-    span {
+    .text-label {
+      width: fit-content !important; 
+    }
+   
+
+    .white-text-wrapper {
       position: absolute;
       top: 0;
-      right: 0;
+      left: 0;
       height: 45px;
+      width: 0%;
       background-color: #fff;
-      animation: ${textFrame} 1s ease forwards;
+      animation: ${textFrameFrontEnd} 1.5s ease forwards;
     }
   }
 
@@ -102,7 +130,7 @@ export const Container = styled.div`
       right: 0;
       height: 55px;
       background-color: #fff;
-      animation: ${textFrame} 1s ease forwards;
+      animation: ${textFrame} 1.5s ease forwards;
     }
     .arrow-right {
       position: absolute;
@@ -165,11 +193,11 @@ export const Container = styled.div`
     }
   }
 
-
   ul {
     position: absolute;
     top: 30%;
     right: -300px;
+    transition: 0.5s;
 
     li {
       list-style: none;
@@ -195,4 +223,16 @@ export const Container = styled.div`
       bottom: 10px;
     }
   }
+
+  .contact-hide {
+    transition: 0.5s ease 0.5s;
+    opacity: 1;
+  }
+
+  .contact-hide-false {
+    transition: 0.5s ease;
+    opacity: 0;
+  }
+
+  
 `

@@ -103,6 +103,3 @@ export const PreLoader = styled.div`
 
 `;
 
-export const logoLoader = styled.div`
-  
-`
