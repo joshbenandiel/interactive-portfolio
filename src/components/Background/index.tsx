@@ -1,18 +1,18 @@
 import { FC, useEffect, useState } from "react";
 import { BackgroundContainer } from "./styled"
 import backgroundlogo from '../Main/images/backgroundlogo.png'
-import one from './images/1.png'
-import two from './images/2.png'
-import three from './images/3.png'
-import four from './images/4.png'
-import five from './images/5.png'
-import six from './images/6.png'
-import seven from './images/7.png'
-import eight from './images/8.png'
-import nine from './images/9.png'
-import ten from './images/10.png'
-import eleven from './images/11.png'
-import twelve from './images/12.png'
+import one from './images/1-min.png'
+import two from './images/2-min.png'
+import three from './images/3-min.png'
+import four from './images/4-min.png'
+import five from './images/5-min.png'
+import six from './images/6-min.png'
+import seven from './images/7-min.png'
+import eight from './images/8-min.png'
+import nine from './images/9-min.png'
+import ten from './images/10-min.png'
+import eleven from './images/11-min.png'
+import twelve from './images/12-min.png'
 
 
 interface IProps {
