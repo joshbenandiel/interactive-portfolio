@@ -36,7 +36,7 @@ export const Card: React.FC<IProps> = ({img,header,paragraph,number, move, id, l
   return (
     <CardContainer key={id} move={move} ref={ref}>
       <div className={`card-blue-mask${isVisible ? `-visible` : ``}`}/>
-      <img src={img} alt='landing-page'/>
+      <img src={img} alt='landing-page' loading="lazy"/>
       <div className='card-mask'/>
       <span className={`card-text-wrapper${parseInt(number) % 2 === 0 ? `-right`: ``}`}>
         <h1>{header}</h1>
