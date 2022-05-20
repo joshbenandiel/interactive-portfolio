@@ -18,12 +18,12 @@ const textLineBackwards = keyframes`
   }
 `
 
-export const NavWrapper = styled.nav<{move: string}>`
+export const NavWrapper = styled.nav<{move: string, textColor: string, textColorHover: string}>`
   position: fixed;
   top: 0;
   left: 23%;
   z-index: 100;
-  color: #B0B2C3;
+  color: ${props => props.textColor};
   width: 1080px;
   height: 10vh;
   margin: 0 auto;
@@ -39,6 +39,7 @@ export const NavWrapper = styled.nav<{move: string}>`
         top: 15px;
         left: -50px;
         height: 70px;
+        transition: 1s ease;
       }
     }
     ul {
@@ -58,7 +59,7 @@ export const NavWrapper = styled.nav<{move: string}>`
       }
 
       li:hover {
-        color: #fff;
+        color: ${props => props.textColorHover};
       }
 
       li span {

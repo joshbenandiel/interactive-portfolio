@@ -19,13 +19,27 @@ const themeProvider = {
   light: '#EBEBEB'
 }
 
+const textColor = {
+  light: '#4C4F65',
+  dark: '#B0B2C3',
+}
+const textColorMain = {
+  light: '#4C4F65',
+  dark: '#fff',
+}
+
+const textColorHover = {
+  light: '#242526',
+  dark: '#fff'
+}
+
 
 
 const App: React.FC = () => {
 
   const [loading, setLoading] = useState<boolean>(false)
   const [openContact, setOpenContact] = useState<boolean>(false)
-
+  const [changeTheme, setChangeTheme] = useState<boolean>(false)
 
 
 
@@ -37,10 +51,6 @@ const App: React.FC = () => {
     
   },[])
 
-
-  window.addEventListener('click', () => {
-    console.log(window.scrollY)
-  })
   
 
   const worksRef = useRef<any>()
@@ -62,17 +72,25 @@ const App: React.FC = () => {
     )
     : (
     <>
-    <Background>
+    <Background theme={changeTheme ? themeProvider.light :  themeProvider.dark}>
       {openContact && <Contact 
         openContact={openContact}
         setOpenContact={setOpenContact}/>}
       <div className={`navbar-hide${openContact ? '-false' : ' '}`}>
         <Navbar 
+          textColor={changeTheme ? textColor.light :  textColor.dark}
+          textColorHover = {changeTheme ? textColorHover.light : textColorHover.dark}
+          changeTheme={changeTheme}
+          setChangeTheme={setChangeTheme}
           worksRef={worksRef} 
           techRef={techRef} 
           setOpenContact={setOpenContact}/>
       </div>
       <Main 
+        textColorMain={changeTheme ? textColorMain.light : textColorMain.dark}
+        textColor={changeTheme ? textColor.light :  textColor.dark}
+        textColorHover = {changeTheme ? textColorHover.light : textColorHover.dark}
+        worksRef={worksRef}
         openContact={openContact} 
         setOpenContact={setOpenContact}/>
       </Background>
@@ -83,6 +101,7 @@ const App: React.FC = () => {
           <Card 
             key={card.id}
             id={card.id}
+            link={card.link}
             img={card.img}
             header={card.header}
             paragraph={card.paragraph}
@@ -101,11 +120,11 @@ const App: React.FC = () => {
 
 
 const cardData = [
-  {id: 1, img: landing, header: 'Landing Page', paragraph:'Personal Portfolio', number:'01', move: '30px'},
-  {id: 2,img: netflix, header: 'Netflix API', paragraph:'Sign In, Sign Up with API Calls', number:'02', move: '-30px'},
-  {id: 3,img: facebook, header: 'Facebook Clone', paragraph:'Clone Facebook UI', number:'03', move: '30px'},
-  {id: 4,img: emart, header: 'Ecommerce API', paragraph:'With API Calls', number:'04', move: '-30px'},
-  {id: 5,img: ecommerce, header: 'Ecommerce', paragraph:'Without API Calls', number:'05', move: '30px'}
+  {id: 1, img: landing, header: 'Landing Page', paragraph:'Personal Portfolio', number:'01', move: '30px', link: 'https://joshbenandiel.netlify.app/'},
+  {id: 2,img: netflix, header: 'Netflix API', paragraph:'Sign In, Sign Up with API Calls', number:'02', move: '-30px', link: 'https://netflixapi.netlify.app/'},
+  {id: 3,img: facebook, header: 'Facebook Clone', paragraph:'Clone Facebook UI', number:'03', move: '30px', link: 'https://facebookv2.netlify.app/'},
+  {id: 4,img: emart, header: 'Ecommerce API', paragraph:'With API Calls', number:'04', move: '-30px', link: 'https://ecommerceapi.netlify.app/'},
+  {id: 5,img: ecommerce, header: 'Ecommerce', paragraph:'Without API Calls', number:'05', move: '30px', link: 'https://applestoreecom.netlify.app/'}
 ]
 
 export default App;

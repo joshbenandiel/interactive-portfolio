@@ -36,13 +36,39 @@ export const Projects:FC<ProjectsProps> = ({children, techRef, worksRef}) => {
               <div className='pink-mask'/>
               <div className='technologies-title'>
                 Technologies
-                <div className='technologies-label'>HTML,CSS,Javascript</div>
+                <div className='technologies-label'>HTML,CSS</div>
               </div>
               <div className='technologies-number'/>
               <div className='number-label'>01</div>
               <div className='images-wrapper-technologies'>
                 <img src={html} alt="html" />
                 <img src={css} alt="html" />
+              </div>
+            </div>
+            <div className='technologies-box'>
+              <div className='pink-mask'/>
+              <div className='technologies-title'>
+                Technologies
+                <div className='technologies-label'>MaterialUI,StyledComponents,Bootstrap</div>
+              </div>
+              <div className='technologies-number'/>
+              <div className='number-label'>02</div>
+              <div className='images-wrapper-technologies'>
+                <img className='three-images' src={material} alt="html" />
+                <img className='three-images' src={styled} alt="html" />
+                <img className='three-images' src={bootstrap} alt='html'></img>
+              </div>
+            </div>
+            <div className='technologies-box'>
+             <div className='pink-mask'/>
+              <div className='technologies-title'>
+                Technologies
+                <div className='technologies-label'>Typescript, Javascript</div>
+              </div>
+              <div className='technologies-number'/>
+              <div className='number-label'>03</div>
+              <div className='images-wrapper-technologies'>
+                <img src={typescript} alt="html" />
                 <img src={javascript} alt="html" />
               </div>
             </div>
@@ -50,38 +76,13 @@ export const Projects:FC<ProjectsProps> = ({children, techRef, worksRef}) => {
               <div className='pink-mask'/>
               <div className='technologies-title'>
                 Technologies
-                <div className='technologies-label'>Material UI, Styled Components</div>
-              </div>
-              <div className='technologies-number'/>
-              <div className='number-label'>02</div>
-              <div className='images-wrapper-technologies'>
-                <img src={material} alt="html" />
-                <img src={styled} alt="html" />
-              </div>
-            </div>
-            <div className='technologies-box'>
-             <div className='pink-mask'/>
-              <div className='technologies-title'>
-                Technologies
-                <div className='technologies-label'>Typescript, Redux</div>
-              </div>
-              <div className='technologies-number'/>
-              <div className='number-label'>03</div>
-              <div className='images-wrapper-technologies'>
-                <img src={typescript} alt="html" />
-                <img src={redux} alt="html" />
-              </div>
-            </div>
-            <div className='technologies-box'>
-              <div className='pink-mask'/>
-              <div className='technologies-title'>
-                Technologies
-                <div className='technologies-label'>React JS</div>
+                <div className='technologies-label'>ReactJS, Redux</div>
               </div>
               <div className='technologies-number'/>
               <div className='number-label'>04</div>
               <div className='images-wrapper-technologies'>
                 <img src={react} alt="html" />
+                <img src={redux} alt="html" />
               </div>
             </div>
           </div>

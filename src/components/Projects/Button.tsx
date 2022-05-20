@@ -1,12 +1,19 @@
+import { FC } from "react"
 import { ButtonContainer } from "./styled"
 
-export const Button = () => {
+interface IProps {
+  link: string
+}
+
+export const Button: FC<IProps> = ({link}) => {
   return (
     <ButtonContainer>
-      <button>
-        <span className='button-text'>Visit Page</span>
-      </button>
-      <span className='arrow-right'>&#10230;</span>
+      <a href={link} target='_blank' rel="noreferrer">
+        <button>
+          <span className='button-text'>Visit Page</span>
+        </button>
+        <span className='arrow-right'>&#10230;</span>
+      </a>
     </ButtonContainer>
   )
 }

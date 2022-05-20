@@ -1,4 +1,3 @@
-import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 
@@ -100,9 +99,14 @@ export const Container = styled.div`
           top: 30%;
           left: 0;
           display: flex;
-          gap: 20px;
           width: 100%;
-          justify-content:center;
+          justify-content: center;
+          gap: 20px;
+          
+          .three-images {
+            transform: translateY(20px);
+            height: 110px;
+          }
 
           img {
             height: 150px;
@@ -381,16 +385,16 @@ export const CardContainer = styled.div<IProps>`
   }
   .card-number-wrapper {
     position: absolute;
-    top: -50px;
-    right: 0px;
+    top: -40px;
+    right: -35px;
     opacity: 0;
     transition: 0.5s;
 
   }
   .card-number-wrapper-left {
     position: absolute;
-    top: -50px;
-    left: 0px;
+    top: -40px;
+    left: -35px;
     opacity: 0;
     transition: 0.5s;
 

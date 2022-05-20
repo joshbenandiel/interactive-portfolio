@@ -55,7 +55,7 @@ export const ArrowDown = styled.span`
   cursor: pointer;
 `
 
-export const Container = styled.div`
+export const Container = styled.div<{textColor: string, textColorHover: string, textColorMain: string}>`
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -73,7 +73,7 @@ export const Container = styled.div`
     h1 {
       font-size: 4.5rem;
       font-weight: bold;
-      color: #fff;
+      color: ${props => props.textColorMain};
       margin: 0;
       width: fit-content;
       position: relative;
@@ -93,7 +93,7 @@ export const Container = styled.div`
     font-family: LibreBaskerville-Regular,Palatino Linotype,Times New Roman,serif;
     font-size: 1.3rem;
     font-style: italic;
-    color: #fff;
+    color:  ${props => props.textColorMain};
     margin: 0;
     margin-top: 20px;
     position: relative;
@@ -205,8 +205,11 @@ export const Container = styled.div`
       color: #B0B2C3;
       cursor: pointer;
 
-      &:hover {
-        filter: brightness(1.4)
+      a {
+        color: ${props => props.textColor};
+      }
+      &:hover a {
+        color: ${props => props.textColorHover}
       }
     }
   }

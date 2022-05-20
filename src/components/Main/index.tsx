@@ -7,8 +7,19 @@ import TextScramble, { ScrambleTexts } from '@twistezo/react-text-scramble'
 interface IProps {
   openContact: boolean
   setOpenContact: (data: boolean) => void
+  worksRef: React.MutableRefObject<any>
+  textColor: string
+  textColorHover: string
+  textColorMain: string
 }
-export const Main: React.FC<IProps> = ({openContact, setOpenContact}) => {
+export const Main: React.FC<IProps> = ({
+  openContact, 
+  setOpenContact, 
+  worksRef, 
+  textColor, 
+  textColorHover,
+  textColorMain
+}) => {
 
   const [pause, setPause] = useState<boolean>(true)
 
@@ -21,8 +32,17 @@ export const Main: React.FC<IProps> = ({openContact, setOpenContact}) => {
   const texts: ScrambleTexts = [
     'Front End Developer'
   ]
+
+
+  const gotoWorkSection = () => {
+    worksRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "start"
+    });
+  }
   return (
-    <Container>
+    <Container textColor={textColor} textColorHover={textColorHover} textColorMain={textColorMain}>
       <div className={`contact-hide${openContact ? `-false`: ''}`}>
         <div className='name-wrapper'>
           <h1>Joshua Jacinto</h1>
@@ -43,14 +63,16 @@ export const Main: React.FC<IProps> = ({openContact, setOpenContact}) => {
           <span className='white-box'></span>
         </div>
         <ul>
-          <li><FaFacebookF/></li>
-          <li><FaLinkedinIn/></li>
-          <li><BsGithub/></li>
-          <li><BsInstagram/></li>
-          <li><BsTwitter/></li>
+          <li><a href="https://www.facebook.com/joshbenandiel/" target="_blank" rel="noreferrer"><FaFacebookF/></a></li>
+          <li><a href="https://www.linkedin.com/in/joshua-jacinto-b357541b2/" target='_blank' rel="noreferrer"><FaLinkedinIn/></a></li>
+          <li><a href="https://github.com/joshbenandiel" target='_blank' rel="noreferrer"><BsGithub/></a></li>
+          <li><a href="https://www.instagram.com/joshbenandiel/" target='_blank' rel="noreferrer"><BsInstagram/></a></li>
+          <li><a href="https://twitter.com/joshbenandiel" target='_blank' rel="noreferrer"><BsTwitter/></a></li>
         </ul>
-        <div className='works-section'>Works</div>
-        <ArrowDown className='arrow-down'>&#10230;</ArrowDown>
+        <div onClick={gotoWorkSection}>
+          <div className='works-section'>Works</div>
+          <ArrowDown className='arrow-down'>&#10230;</ArrowDown>
+        </div>
       </div>
     </Container>
   )

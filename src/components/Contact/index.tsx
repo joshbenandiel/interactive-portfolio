@@ -17,7 +17,7 @@ export const Contact: React.FC<IProps> = ({setOpenContact, openContact}) => {
       setTranslate('translateY(0px)')
       setContactPosition('translateY(0px)')
     }
-  },[])
+  },[openContact])
 
   return (
     <Container>

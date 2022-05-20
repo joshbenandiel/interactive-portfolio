@@ -17,17 +17,19 @@ import twelve from './images/12.png'
 
 interface IProps {
   children: React.ReactNode;
+  theme: string
 }
 
 
 
-export const Background: FC<IProps> = ({children}) => {
+export const Background: FC<IProps> = ({children, theme}) => {
 
   
-  const [render, setRender] = useState(false)
+  const [render, setRender] = useState<boolean>(false)
+
   useEffect(() => {
-    setRender(true)
-  }, [])
+    setRender(prev => !prev)
+  }, [render])
   
   const getShapes = document.querySelectorAll('.shapes')
   document.addEventListener('mousemove', (e) => {
@@ -45,28 +47,28 @@ export const Background: FC<IProps> = ({children}) => {
 
 
   return (
-    <BackgroundContainer>
+    <BackgroundContainer theme={theme}>
       <>
       <img className='background-logo'src={backgroundlogo} alt="background" />
       <div className='layer-1'>
-        <img className='shapes' src={twelve} data-speed={-11}/>
-        <img className='shapes' src={ten} data-speed={10}/>
-        <img className='shapes' src={eleven} data-speed={8}/>
+        <img className='shapes' src={twelve} data-speed={-11} alt='shapes'/>
+        <img className='shapes' src={ten} data-speed={10} alt='shapes'/>
+        <img className='shapes' src={eleven} data-speed={8} alt='shapes'/>
       </div>
       <div className='layer-2'>
-        <img className='shapes' src={six} data-speed={-3}/>
-        <img className='shapes' src={five} data-speed={6}/>
-        <img className='shapes' src={two} data-speed={4}/>
+        <img className='shapes' src={six} data-speed={-3} alt='shapes'/>
+        <img className='shapes' src={five} data-speed={6} alt='shapes'/>
+        <img className='shapes' src={two} data-speed={4} alt='shapes'/>
       </div>
       <div className='layer-3'>
-        <img className='shapes' src={nine} data-speed={-7}/>
-        <img className='shapes' src={seven} data-speed={-4}/>
-        <img className='shapes' src={eight} data-speed={9}/>
+        <img className='shapes' src={nine} data-speed={-7} alt='shapes'/>
+        <img className='shapes' src={seven} data-speed={-4} alt='shapes'/>
+        <img className='shapes' src={eight} data-speed={9} alt='shapes'/>
       </div>
       <div className='layer-4'>
-        <img className='shapes' src={four} data-speed={-8}/> 
-        <img className='shapes' src={one} data-speed={-5}/>
-        <img className='shapes' src={three} data-speed={2}/>
+        <img className='shapes' src={four} data-speed={-8} alt='shapes'/> 
+        <img className='shapes' src={one} data-speed={-5} alt='shapes'/>
+        <img className='shapes' src={three} data-speed={2} alt='shapes'/>
       </div>
       {children}
       </>

@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const BackgroundContainer = styled.div`
   height: 100vh;
   width: 100%;
-  background-color: #1C1D25;
+  background-color: ${props => props.theme};
   position: relative;
   overflow: hidden;
 

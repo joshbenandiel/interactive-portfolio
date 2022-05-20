@@ -44,6 +44,11 @@ export const Container = styled.div`
       font-size: 1rem;
       font-weight: bold;
       position: relative;
+
+      a {
+        color: #F3F3F3;
+        text-decoration: none
+      }
     }
 
     li span {

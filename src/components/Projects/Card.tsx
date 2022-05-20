@@ -9,26 +9,27 @@ interface IProps {
   number: string,
   move: string,
   id: number,
+  link: string
 }
 
-export const Card: React.FC<IProps> = ({img,header,paragraph,number, move, id}) => {
+export const Card: React.FC<IProps> = ({img,header,paragraph,number, move, id, link}) => {
 
   const [isVisible, setIsVisible] = useState<boolean>(false)
   const [render, setRender] = useState<boolean>(false)
 
   const ref = useRef(null)
-  const observer = new IntersectionObserver(
-    ([entries]) => {
-      if(entries.isIntersecting){
-        setIsVisible(true);
-      }
-    },{rootMargin: "-200px",}
-  );
-
+  
   useEffect(() => {
-    setRender(true)
+    setRender(prev => !prev)
+    const observer = new IntersectionObserver(
+      ([entries]) => {
+        if(entries.isIntersecting){
+          setIsVisible(true);
+        }
+      },{rootMargin: "-200px",}
+    );
     observer.observe(ref.current)
-  },[])
+  }, [render])
 
  
 
@@ -37,12 +38,12 @@ export const Card: React.FC<IProps> = ({img,header,paragraph,number, move, id}) 
       <div className={`card-blue-mask${isVisible ? `-visible` : ``}`}/>
       <img src={img} alt='landing-page'/>
       <div className='card-mask'/>
-      <span className={`card-text-wrapper${parseInt(number) % 2 == 0 ? `-right`: ``}`}>
+      <span className={`card-text-wrapper${parseInt(number) % 2 === 0 ? `-right`: ``}`}>
         <h1>{header}</h1>
         <h5>{paragraph}</h5>
-        <Button/>
+        <Button link={link}/>
       </span>
-      <div className={`card-number-wrapper${parseInt(number) % 2 == 0 ? `-left`: ``}`}>
+      <div className={`card-number-wrapper${parseInt(number) % 2 === 0 ? `-left`: ``}`}>
       <h1 data-text={number} className='card-number'>{number}</h1>
       </div>
     </CardContainer>
