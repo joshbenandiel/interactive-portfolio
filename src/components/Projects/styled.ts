@@ -106,10 +106,12 @@ export const Container = styled.div`
           .three-images {
             transform: translateY(20px);
             height: 110px;
+            width: auto;
           }
 
           img {
             height: 150px;
+            width: auto;
             transition: 0.5s ease;
 
             &:hover {

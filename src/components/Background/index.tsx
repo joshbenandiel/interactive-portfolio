@@ -49,7 +49,7 @@ export const Background: FC<IProps> = ({children, theme}) => {
   return (
     <BackgroundContainer theme={theme}>
       <>
-      <img className='background-logo'src={backgroundlogo} alt="background" loading="lazy"/>
+      <img className='background-logo'src={backgroundlogo} alt="background"/>
       {/* <div className='layer-1'>
         <img className='shapes' src={twelve} data-speed={-11} alt='shapes'/>
         <img className='shapes' src={ten} data-speed={10} alt='shapes'/>
