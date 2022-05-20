@@ -21,7 +21,7 @@ export const cardMaskBackwards = keyframes`
 const buttonFrame = keyframes`
   0% {
     width: 140px;
-    transform: translateX(-100px)
+    transform: translate(-100px)
   }
   100% {
     width: 140px;
