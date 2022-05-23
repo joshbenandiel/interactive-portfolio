@@ -118,8 +118,7 @@ export const Container = styled.div`
         }
 
         &:hover .number-label {
-          
-          top: 80%;
+          transform: rotate(90deg) translateX(-15px)
         }
 
         .pink-mask {
@@ -127,13 +126,14 @@ export const Container = styled.div`
           left: 0;
           height: 418px;
           z-index: 0;
-          width: 0%;
+          width: 100%;
           background-color: #fce0db;
-          transition: 0.35s ease
+          transition: 0.35s ease;
+          transform: translateX(-500px)
         }
 
         &:hover .pink-mask {
-          width: 100%;
+          transform: translateY(0)
         }
 
         .technologies-title {
@@ -153,19 +153,7 @@ export const Container = styled.div`
             font-size: 1.5em;
             font-family: LibreBaskerville-Regular,Palatino Linotype,Times New Roman,serif;
           }
-
-          
-
-          /* .technologies-number::after {
-            top: 5px;
-            content: '01';
-            text-align: right;
-            font-size: 8px;
-            font-weight: 700;
-            padding-right: 40px;
-          } */
-
-          
+         
         }
 
         .technologies-title:before {
