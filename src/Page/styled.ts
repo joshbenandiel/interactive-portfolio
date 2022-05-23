@@ -34,7 +34,12 @@ const linearLoad = keyframes`
   }
 `;
 
-
+export const ContainerWrapper = styled.div`
+  @media (max-width: 380px){
+    width: 380px;
+    overflow: hidden;
+  }
+`
 export const PreLoader = styled.div`
   height: 100vh;
   width: 0%;

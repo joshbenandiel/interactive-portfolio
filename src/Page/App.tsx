@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PreLoader } from "./styled"
+import { ContainerWrapper, PreLoader } from "./styled"
 import { Navbar } from "../components/Navbar";
 import { Main } from "../components/Main";
 import { Card } from '../components/Projects/Card'
@@ -57,7 +57,7 @@ const App: React.FC = () => {
 
 
   return (
-    <>
+    <ContainerWrapper>
     {loading ? (
       <PreLoader>
         <div>
@@ -71,50 +71,50 @@ const App: React.FC = () => {
     )
     : (
     <>
-    <Background 
-      setOpenContact={setOpenContact}
-      setOpenNav={setOpenNav}
-      openNav={openNav} 
-      theme={changeTheme ? themeProvider.light :  themeProvider.dark}>
-      {openContact && <Contact 
-        openContact={openContact}
-        setOpenContact={setOpenContact}/>}
-      <div className={`navbar-hide${openContact ? '-false' : ' '}`}>
-        <Navbar 
-          openNav={openNav}
-          setOpenNav={setOpenNav}
+      <Background 
+        setOpenContact={setOpenContact}
+        setOpenNav={setOpenNav}
+        openNav={openNav} 
+        theme={changeTheme ? themeProvider.light :  themeProvider.dark}>
+        {openContact && <Contact 
+          openContact={openContact}
+          setOpenContact={setOpenContact}/>}
+        <div className={`navbar-hide${openContact ? '-false' : ' '}`}>
+          <Navbar 
+            openNav={openNav}
+            setOpenNav={setOpenNav}
+            textColor={changeTheme ? textColor.light :  textColor.dark}
+            textColorHover = {changeTheme ? textColorHover.light : textColorHover.dark}
+            changeTheme={changeTheme}
+            setChangeTheme={setChangeTheme}
+            setOpenContact={setOpenContact}/>
+        </div>
+        <Main 
+          textColorMain={changeTheme ? textColorMain.light : textColorMain.dark}
           textColor={changeTheme ? textColor.light :  textColor.dark}
           textColorHover = {changeTheme ? textColorHover.light : textColorHover.dark}
-          changeTheme={changeTheme}
-          setChangeTheme={setChangeTheme}
+          openContact={openContact} 
           setOpenContact={setOpenContact}/>
-      </div>
-      <Main 
-        textColorMain={changeTheme ? textColorMain.light : textColorMain.dark}
-        textColor={changeTheme ? textColor.light :  textColor.dark}
-        textColorHover = {changeTheme ? textColorHover.light : textColorHover.dark}
-        openContact={openContact} 
-        setOpenContact={setOpenContact}/>
-      </Background>
-      <Projects>
-        {cardData.map((card) => (
-          <Card 
-            key={card.id}
-            id={card.id}
-            link={card.link}
-            img={card.img}
-            header={card.header}
-            paragraph={card.paragraph}
-            number={card.number}
-            move={card.move}
-          />
-        ))}
-      </Projects>
-      <Footer/>
+        </Background>
+        <Projects>
+          {cardData.map((card) => (
+            <Card 
+              key={card.id}
+              id={card.id}
+              link={card.link}
+              img={card.img}
+              header={card.header}
+              paragraph={card.paragraph}
+              number={card.number}
+              move={card.move}
+            />
+          ))}
+        </Projects>
+        <Footer/>
       </>
     
     )} 
-    </>
+    </ContainerWrapper>
   );
 }
 

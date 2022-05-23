@@ -25,15 +25,15 @@ export const Card: React.FC<IProps> = ({
   const [render, setRender] = useState<boolean>(false)
   const ref = useRef(null)
  
+  const observer = new IntersectionObserver(
+    ([entries]) => {
+      if(entries.isIntersecting){
+        setIsVisible(true);
+      }
+    },{rootMargin: "-200px",}
+  );
   useEffect(() => {
     setRender(prev => !prev)
-    const observer = new IntersectionObserver(
-      ([entries]) => {
-        if(entries.isIntersecting){
-          setIsVisible(true);
-        }
-      },{rootMargin: "-200px",}
-    );
     observer.observe(ref.current)
   }, [render])
 
