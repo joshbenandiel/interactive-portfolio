@@ -26,6 +26,7 @@ export const BackgroundContainer = styled.div`
 
     img {
       height: 250px;
+      transition: 0.5s ease;
     }
   }
 
@@ -35,6 +36,7 @@ export const BackgroundContainer = styled.div`
     right: -200px;
     img {
       height: 250px;
+      transition: 0.5s ease;
     }
   }
   .layer-4 {
@@ -44,6 +46,7 @@ export const BackgroundContainer = styled.div`
     
     img {
       height: 250px;
+      transition: 0.5s ease;
     }
   }
 
