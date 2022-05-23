@@ -24,6 +24,7 @@ export const Card: React.FC<IProps> = ({
   const [isVisible, setIsVisible] = useState<boolean>(false)
   const [render, setRender] = useState<boolean>(false)
 
+  console.log(isVisible)
   const ref = useRef(null)
  
   useEffect(() => {
@@ -32,30 +33,35 @@ export const Card: React.FC<IProps> = ({
       ([entries]) => {
         if(entries.isIntersecting){
           setIsVisible(true);
-          console.log(isVisible)
         }
       },{rootMargin: "-200px",}
     );
     observer.observe(ref.current)
-  }, [render, isVisible])
+  }, [render])
+
+
+  const translate = {
+    show: '0px',
+    hide: '1000px'
+  }
 
  
 
   return (
     <CardContainer key={id} move={move} ref={ref}>
-      <BlueMask className={'card-blue-mask'}>
+      <BlueMask location={isVisible ? translate.hide : translate.show} className={'card-blue-mask'}>
           <div>
 
           </div>
       </BlueMask>
       <img src={img} alt='landing-page' loading="lazy"/>
-      {/* <div className='card-mask'/>
-        <span className={`card-text-wrapper${parseInt(number) % 2 === 0 ? `-right`: ``}`}>
+      {/* <div className='card-mask'/> */}
+        {/* <span className={`card-text-wrapper${parseInt(number) % 2 === 0 ? `-right`: ``}`}>
           <h1>{header}</h1>
           <h5>{paragraph}</h5>
           <Button link={link}/>
         </span>
-        <div className={`card-number-wrapper${parseInt(number) % 2 === 0 ? `-left`: ``}`}>
+      <div className={`card-number-wrapper${parseInt(number) % 2 === 0 ? `-left`: ``}`}>
         <h1 data-text={number} className='card-number'>{number}</h1>
       </div> */}
     </CardContainer>

@@ -355,7 +355,7 @@ interface IProps {
   move: string;
 }
 
-export const BlueMask = styled.div`
+export const BlueMask = styled.div<{location: string}>`
     position: absolute;
     top: 0;
     right: 0;
@@ -367,11 +367,8 @@ export const BlueMask = styled.div`
     div {
       background: linear-gradient(270deg,#235aa6,#101b3b);
       height: 480px;
+      transform: translateX(${props => props.location});
       transition: 0.5s
-    }
-
-    &:hover div {
-      transform: translateX(1000px)
     }
 `
 
