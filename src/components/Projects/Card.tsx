@@ -52,9 +52,7 @@ export const Card: React.FC<IProps> = ({
       </BlueMask>
       <img src={img} alt='landing-page' loading="lazy"/>
       <CardMask>
-        <div className='blue-mask-hover'>
-
-        </div>
+        <div className='blue-mask-hover'/>
       </CardMask>
       <span className={`card-text-wrapper${parseInt(number) % 2 === 0 ? `-right`: ``}`}>
         <h1>{header}</h1>

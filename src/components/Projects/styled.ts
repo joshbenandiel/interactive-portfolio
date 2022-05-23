@@ -397,7 +397,7 @@ export const CardContainer = styled.div<IProps>`
 
   &:hover .card-number {
     color: #B0B2C3;
-    transition: 0.5s;
+    transition: 0.2s;
   }
 
   &:hover .card-number-wrapper  {
@@ -419,7 +419,7 @@ export const CardContainer = styled.div<IProps>`
     font-family: League Spartan,Helvetica,Arial,sans-serif;
     font-weight: 900;
     color: transparent;
-    transition: 0.5s;
+    transition: 0.2s;
     z-index: 3;
     margin: 0;
     overflow: hidden;
