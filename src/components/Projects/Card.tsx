@@ -23,8 +23,6 @@ export const Card: React.FC<IProps> = ({
 
   const [isVisible, setIsVisible] = useState<boolean>(false)
   const [render, setRender] = useState<boolean>(false)
-
-  console.log(isVisible)
   const ref = useRef(null)
  
   useEffect(() => {
