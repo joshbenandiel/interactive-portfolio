@@ -15,6 +15,7 @@ export const BackgroundContainer = styled.div`
      
     .shapes {
       height: 50px;
+      transform: translate3d(60px,0,0);
     }
   }
   .layer-2 {
