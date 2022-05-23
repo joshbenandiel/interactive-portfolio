@@ -365,6 +365,7 @@ export const CardContainer = styled.div<IProps>`
   box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%);
   display: block;
   transform: translateX(${props => props.move});
+
   .card-blue-mask {
     position: absolute;
     top: 0;

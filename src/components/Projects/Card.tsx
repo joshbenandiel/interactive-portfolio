@@ -1,6 +1,6 @@
 import { CardContainer } from "./styled"
 // import { Button } from './Button'
-import React, { useEffect, useRef, useState } from "react"
+import React, {useRef} from "react"
 
 interface IProps {
   img: string,
@@ -21,28 +21,28 @@ export const Card: React.FC<IProps> = ({
   move, 
   id}) => {
 
-  const [isVisible, setIsVisible] = useState<boolean>(false)
-  const [render, setRender] = useState<boolean>(false)
+  // const [isVisible, setIsVisible] = useState<boolean>(false)
+  // const [render, setRender] = useState<boolean>(false)
 
   const ref = useRef(null)
  
-  useEffect(() => {
-    setRender(prev => !prev)
-    const observer = new IntersectionObserver(
-      ([entries]) => {
-        if(entries.isIntersecting){
-          setIsVisible(true);
-        }
-      },{rootMargin: "-200px",}
-    );
-    observer.observe(ref.current)
-  }, [render])
+  // useEffect(() => {
+  //   setRender(prev => !prev)
+  //   const observer = new IntersectionObserver(
+  //     ([entries]) => {
+  //       if(entries.isIntersecting){
+  //         setIsVisible(true);
+  //       }
+  //     },{rootMargin: "-200px",}
+  //   );
+  //   observer.observe(ref.current)
+  // }, [render])
 
  
 
   return (
     <CardContainer key={id} move={move} ref={ref}>
-      <div className={`card-blue-mask${isVisible ? `-visible` : ``}`}/>
+      {/* <div className={`card-blue-mask${isVisible ? `-visible` : ``}`}/> */}
       <img src={img} alt='landing-page' loading="lazy"/>
       {/* <div className='card-mask'/>
         <span className={`card-text-wrapper${parseInt(number) % 2 === 0 ? `-right`: ``}`}>
