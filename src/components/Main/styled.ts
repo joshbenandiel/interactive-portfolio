@@ -141,7 +141,6 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
       color: #fff;
       z-index: 3;
     }
-
   }
 
 
@@ -157,6 +156,7 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
     cursor: pointer;
     position: relative;
     overflow: hidden;
+
     &::after{
       content: '';
       position: absolute;
@@ -164,7 +164,15 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
       right: 0;
       background: linear-gradient(270deg,#235aa6,#101b3b);
       height: 100%;
-      animation: ${buttonFrameBackwards} 0.65s ease forwards
+      transition: 0.5s ease;
+      width: 100%;
+      transform: translateX(-150px);
+
+
+    }
+
+    &:hover:after {
+      transform: translateX(150px);
     }
 
     .about-me-text {
@@ -175,23 +183,14 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
       width: 100%;
       z-index: 2;
     }
-  }
-
-  button:hover + .arrow-right {
-    right: -8px;
-  }
-
-  button:hover {
-    &::after{
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: linear-gradient(270deg,#235aa6,#101b3b);
-      height: 100%;
-      animation: ${buttonFrame} 0.65s ease forwards
+    &:hover + .arrow-right {
+     right: -8px;
     }
   }
+
+  
+
+
 
   ul {
     position: absolute;

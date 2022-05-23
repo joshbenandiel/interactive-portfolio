@@ -1,46 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 
 
-export const cardMask = keyframes`
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-`
-export const cardMaskBackwards = keyframes`
-  from {
-    width: 100%;
-  }
-  to {
-    width: 0;
-  }
-`
-
-const buttonFrame = keyframes`
-  0% {
-    width: 140px;
-    transform: translate(-100px)
-  }
-  100% {
-    width: 140px;
-    transform: translateX(200px)
-  }
-  
-`
-
-const buttonFrameBackwards = keyframes`
-  0% {
-    width: 140px;
-    transform: translateX(100px)
-  }
-  100% {
-    width: 140px;
-    transform: translateX(-160px)
-  }
-`
-
 
 
 
@@ -280,8 +240,8 @@ export const ButtonContainer = styled.div`
   
   .arrow-right {
     position: absolute;
-    top: 13px;
-    left: 145px;
+    top: 4px;
+    left: 136px;
     font-size: 2rem;
     transition: 0.5s;
     color: #fff;
@@ -289,7 +249,7 @@ export const ButtonContainer = styled.div`
   }
 
   button {
-    width: 160px;
+    width: 150px;
     height: 45px;
     background-color: #f06449;
     background: linear-gradient(270deg,#f06449,#ef3636);
@@ -299,14 +259,7 @@ export const ButtonContainer = styled.div`
     color: #fff;
     cursor: pointer;
     position: relative;
-    margin-top: 10px;
     overflow: hidden;
-
-
-    &:hover + .arrow-right {
-     left: 160px;
-    }
-
 
     &::after{
       content: '';
@@ -315,27 +268,23 @@ export const ButtonContainer = styled.div`
       right: 0;
       background: linear-gradient(270deg,#235aa6,#101b3b);
       height: 100%;
-      animation: ${buttonFrameBackwards} 0.65s ease forwards
+      transition: 0.5s ease;
+      width: 100%;
+      transform: translateX(-150px);
+
+
     }
 
-    &:hover {
-      &::after{
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: linear-gradient(270deg,#235aa6,#101b3b);
-      height: 100%;
-      animation: ${buttonFrame} 0.65s ease forwards
-      }
+    &:hover:after {
+      transform: translateX(150px);
     }
 
     .button-text {
-      position: absolute;
-      top: 10px;
-      left: 0px;
       width: 100%;
       z-index: 2;
+    }
+    &:hover + .arrow-right {
+     left: 150px;
     }
   }
 `
@@ -359,7 +308,7 @@ export const BlueMask = styled.div<{location: string}>`
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 10;
+    z-index: 2;
     transition: 0.5s;
     width: 100%;
     overflow: hidden;
@@ -376,7 +325,7 @@ export const CardMask = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 2;
   overflow: hidden;
   width: 100%;
 
@@ -388,6 +337,7 @@ export const CardMask = styled.div`
     transform: translateX(-1000px);
   }
 `
+
 
 export const CardContainer = styled.div<IProps>`
   width: 90%;

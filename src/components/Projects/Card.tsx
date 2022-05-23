@@ -1,5 +1,5 @@
 import { CardContainer, BlueMask, CardMask } from "./styled"
-// import { Button } from './Button'
+import { Button } from './Button'
 import React, {useEffect, useRef, useState} from "react"
 
 interface IProps {
@@ -14,10 +14,10 @@ interface IProps {
 
 export const Card: React.FC<IProps> = ({
   img,
-  // header,
-  // paragraph,
-  // number, 
-  // link,
+  header,
+  paragraph,
+  number, 
+  link,
   move, 
   id}) => {
 
@@ -58,12 +58,12 @@ export const Card: React.FC<IProps> = ({
 
         </div>
       </CardMask>
-        {/* <span className={`card-text-wrapper${parseInt(number) % 2 === 0 ? `-right`: ``}`}>
-          <h1>{header}</h1>
-          <h5>{paragraph}</h5>
-          <Button link={link}/>
-        </span>
-      <div className={`card-number-wrapper${parseInt(number) % 2 === 0 ? `-left`: ``}`}>
+      <span className={`card-text-wrapper${parseInt(number) % 2 === 0 ? `-right`: ``}`}>
+        <h1>{header}</h1>
+        <h5>{paragraph}</h5>
+        <Button link={link}/>
+      </span>
+      {/* <div className={`card-number-wrapper${parseInt(number) % 2 === 0 ? `-left`: ``}`}>
         <h1 data-text={number} className='card-number'>{number}</h1>
       </div> */}
     </CardContainer>
