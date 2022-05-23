@@ -33,27 +33,15 @@ export const Background: FC<IProps> = ({children, theme}) => {
   
 
   const getShapes = document.querySelectorAll('.shapes')
-  
-  
-  let parallax = (e) => {
+  document.addEventListener('mousemove', (e) => {
     getShapes.forEach((layer: any) => {
-      // const speed = layer.getAttribute('data-speed')
-      let rect = layer.getBoundingClientRect();
-      let midX = rect.left + rect.width / 2;
-      let midY = rect.top + rect.height / 2; 
-      
-      
-      let dx = e.clientX - midX;
-      let dy = e.clientY - midY;
-
-      let mult = -0.5;
-      let perspective = `${dx * mult/10}px, ${dy * mult/10}px`;
-      console.log(perspective)
-      layer.style.transform = `translate(${perspective})`;
+      const speed = layer.getAttribute('data-speed')
+      const x = (window.innerWidth - e.pageX*speed)/100
+      const y = (window.innerWidth - e.pageY*speed)/100
+      // layer.style.transform = `translate(${x}px)`
     })
-  }
-  
-  document.addEventListener('mousemove', parallax)
+  });
+
 
 
   
