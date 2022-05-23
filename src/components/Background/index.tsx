@@ -32,17 +32,22 @@ export const Background: FC<IProps> = ({children, theme}) => {
   }, [render])
   
 
-  const getShapes = document.querySelector('.shapes-one') as HTMLElement
+ 
 
-  document.addEventListener('mousemove', (e: any) => {
-      const speed: any = getShapes.getAttribute('data-speed')
-      const x = (window.innerWidth - e.pageX*speed)/100
-      // const y = (window.innerWidth - e.pageY)/100
-      getShapes.style.transform = `translate(${x}px)`
-    
-  });
+  
+  const parallax = (e: any) => {
+    const getShapes: any = document.querySelectorAll('.shapes')
 
+    console.log(getShapes)
+    getShapes.forEach((move: any) => {
+      const moving_value = move.getAttribute('data-speed')
+      var x = (e.clientX * moving_value) / 200
 
+      move.style.transform = `translateX(${x}px)`
+    })
+  }
+  
+  document.addEventListener('mousemove', parallax)
 
   
   return (
@@ -50,7 +55,7 @@ export const Background: FC<IProps> = ({children, theme}) => {
       <>
       <img className='background-logo'src={backgroundlogo} alt="background"/>
       <div className='layer-1'>
-        <img className='shapes-one' src={twelve} data-speed={-11} alt='shapes'/>
+        <img className='shapes' src={twelve} data-speed={-11} alt='shapes'/>
         <img className='shapes' src={ten} data-speed={10} alt='shapes'/>
         <img className='shapes' src={eleven} data-speed={-6} alt='shapes'/>
       </div>
