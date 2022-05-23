@@ -49,9 +49,9 @@ export const Projects:FC<ProjectsProps> = ({children}) => {
         <span></span>
       </Wrapper>
       <div className='technologies-wrapper'>
+          <Element name='technologies'/>
           <h3>Technologies Used</h3>
           <h1>Client Side</h1>
-            <Element name='technologies'/>
             <div ref={ref} className='technologies-container'>
               <OrangeMask movement={isVisible ? 'translateY(-420px)' : 'translateY(0px)'}/>
               <LightBlueMask movement={isVisible ? 'translateY(-420px)' : 'translateY(0px)'}/>

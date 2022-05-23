@@ -44,13 +44,13 @@ export const Navbar: React.FC<Iprops> = ({
       </div>
       <ul>
         <li>
-          <Link duration={500} smooth={true} to='personal'>
+          <Link to='personal'>
           Personal Projects
           <span/>
           </Link>
         </li>
         <li>
-          <Link duration={500} smooth={true} to='technologies'>
+          <Link to='technologies'>
           Technologies Used
           <span/>
           </Link>
