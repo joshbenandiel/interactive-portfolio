@@ -7,7 +7,6 @@ export const BackgroundContainer = styled.div`
   background-color: ${props => props.theme};
   position: relative;
   overflow: hidden;
-  transition: all 0.5s ease-in;
 
   .layer-1 {
     position: absolute;
@@ -16,7 +15,7 @@ export const BackgroundContainer = styled.div`
      
     .shapes {
       height: 250px;
-      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden
     }
   }
   .layer-2 {
@@ -26,7 +25,6 @@ export const BackgroundContainer = styled.div`
 
     img {
       height: 250px;
-      transform: translate3d(0, 0, 0);
     }
   }
 
@@ -37,7 +35,7 @@ export const BackgroundContainer = styled.div`
 
     img {
       height: 250px;
-      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden
     }
   }
   .layer-4 {
@@ -47,7 +45,6 @@ export const BackgroundContainer = styled.div`
    
     img {
       height: 250px;
-      transform: translate3d(0, 0, 0);
     }
   }
 
