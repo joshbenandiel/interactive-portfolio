@@ -10,6 +10,7 @@ export const BackgroundContainer = styled.div`
   position: relative;
   overflow: hidden;
 
+
   .layer-1 {
     position: absolute;
     top: 0;

@@ -12,11 +12,24 @@ export const Container = styled.div`
   transform: translate(-50%,-50%);
   z-index: 5;
   box-shadow: 0 20px 80px 0 rgb(0 0 0 / 55%);
+
+  @media (max-width: 380px){
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+  }
 `
 export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   z-index: 10;
+
+  @media (max-width: 380px){
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-row: 1fr 1fr;
+    z-index: 101;
+  }
 `
 
 interface AboutProps {
@@ -37,6 +50,10 @@ export const About = styled.div<AboutProps>`
   flex-direction: column;
   transform: ${props => props.position};
   transition: 0.5s ease;
+  
+  @media (max-width: 380px){
+    order: 2
+  }
 
 
 
@@ -54,6 +71,10 @@ export const About = styled.div<AboutProps>`
   section {
     padding: 80px;
     transform: translateY(-80px);
+    
+    @media (max-width: 380px) {
+      padding: 40px;
+    }
 
     h1 {
       font-weight:bold;
@@ -81,6 +102,11 @@ export const About = styled.div<AboutProps>`
     justify-content: center;
     gap: 5%;
     transform: translateY(-150px);
+
+    @media (max-width: 380px) {
+      transform: translateY(-120px);
+      gap: 3%;
+    }
 
     .icon1:hover {
       color: #5ED3F3;
@@ -132,6 +158,9 @@ export const ContactMe = styled.div<{contactPosition: string}>`
   align-items: center;
   transform: ${props => props.contactPosition};
   transition: 0.5s ease;
+  @media (max-width: 380px){
+    order: 1
+  }
     
 
 
@@ -267,6 +296,10 @@ export const ContactMe = styled.div<{contactPosition: string}>`
         font-family: LibreBaskerville-Regular,Palatino Linotype,Times New Roman,serif;
         position: relative;
         overflow: hidden;
+        
+        @media (max-width: 380px) {
+          width: 75%;
+        }
 
         span {
           position: absolute;
@@ -299,6 +332,11 @@ export const ContactMe = styled.div<{contactPosition: string}>`
       height: 40px;
       width: 40px;
       cursor: pointer;
+
+      @media (max-width: 380px){
+        right: -40px;
+        top: 0px;
+      }
 
       .first-line {
         position: absolute;

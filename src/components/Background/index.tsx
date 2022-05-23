@@ -26,11 +26,12 @@ interface IProps {
   theme: string
   openNav: boolean
   setOpenNav: (data: boolean) => void
+  setOpenContact: (data: boolean) => void
 }
 
 
 
-export const Background: FC<IProps> = ({children, theme, openNav, setOpenNav}) => {
+export const Background: FC<IProps> = ({children, theme, openNav, setOpenNav, setOpenContact}) => {
 
   
   const [render, setRender] = useState<boolean>(false)
@@ -85,7 +86,10 @@ export const Background: FC<IProps> = ({children, theme, openNav, setOpenNav}) =
               <Link to='technologies'>
                 <li onClick={() => setOpenNav(false)}>Technologies Used</li>
               </Link>
-              <li onClick={() => setOpenNav(false)}>Contact</li>
+              <li onClick={() => {
+                setOpenNav(false)
+                setOpenContact(true)
+              }}>Contact</li>
             </ul>
             <NavOpenFooter>
               <ul className='ul'>

@@ -72,6 +72,7 @@ const App: React.FC = () => {
     : (
     <>
     <Background 
+      setOpenContact={setOpenContact}
       setOpenNav={setOpenNav}
       openNav={openNav} 
       theme={changeTheme ? themeProvider.light :  themeProvider.dark}>
