@@ -9,10 +9,6 @@ export const BackgroundContainer = styled.div`
   overflow: hidden;
 
   .layer-1 {
-    position: absolute;
-    top: 50px;
-    left: 0;
-     
     .shapes {
       height: 250px;
       backface-visibility: hidden
