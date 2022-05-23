@@ -7,6 +7,7 @@ export const BackgroundContainer = styled.div`
   background-color: ${props => props.theme};
   position: relative;
   overflow: hidden;
+  transition: all 0.5s ease-in;
 
   .layer-1 {
     position: absolute;
