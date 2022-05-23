@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 
+
+
 export const BackgroundContainer = styled.div`
   height: 100vh;
   width: 100%;
@@ -9,9 +11,11 @@ export const BackgroundContainer = styled.div`
   overflow: hidden;
 
   .layer-1 {
-    .shapes {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    img {
       height: 250px;
-      backface-visibility: hidden
     }
   }
   .layer-2 {
@@ -24,21 +28,19 @@ export const BackgroundContainer = styled.div`
     }
   }
 
-  .layer-3 {
+  .layer-3 {  
     position: absolute;
     top: 300px;
     right: -200px;
-
     img {
       height: 250px;
-      backface-visibility: hidden
     }
   }
   .layer-4 {
     position: absolute;
     bottom: 100px;
     right: 0;
-   
+    
     img {
       height: 250px;
     }
