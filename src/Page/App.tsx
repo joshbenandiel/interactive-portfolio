@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { PreLoader } from "./styled"
 import { Navbar } from "../components/Navbar";
 import { Main } from "../components/Main";
-import { Card } from '../components/Projects/Card'
-import { Projects } from "../components/Projects";
+// import { Card } from '../components/Projects/Card'
+// import { Projects } from "../components/Projects";
 import { index as Footer } from "../components/Footer";
 import { Background } from "../components/Background";
 // import facebook from '../components/Projects/images/facebook.png'
@@ -94,7 +94,7 @@ const App: React.FC = () => {
         openContact={openContact} 
         setOpenContact={setOpenContact}/>
       </Background>
-      <Projects 
+      {/* <Projects 
         worksRef={worksRef}
         techRef={techRef}>
         {cardData.map((card) => (
@@ -109,7 +109,7 @@ const App: React.FC = () => {
             move={card.move}
           />
         ))}
-      </Projects>
+      </Projects> */}
       <Footer/>
       </>
     
@@ -119,12 +119,12 @@ const App: React.FC = () => {
 }
 
 
-const cardData = [
-  {id: 1, img: landing, header: 'Landing Page', paragraph:'Personal Portfolio', number:'01', move: '30px', link: 'https://joshbenandiel.netlify.app/'},
-  // {id: 2,img: netflix, header: 'Netflix API', paragraph:'Sign In, Sign Up with API Calls', number:'02', move: '-30px', link: 'https://netflixapi.netlify.app/'},
-  // {id: 3,img: facebook, header: 'Facebook Clone', paragraph:'Clone Facebook UI', number:'03', move: '30px', link: 'https://facebookv2.netlify.app/'},
-  // {id: 4,img: emart, header: 'Ecommerce API', paragraph:'With API Calls', number:'04', move: '-30px', link: 'https://ecommerceapi.netlify.app/'},
-  // {id: 5,img: ecommerce, header: 'Ecommerce', paragraph:'Without API Calls', number:'05', move: '30px', link: 'https://applestoreecom.netlify.app/'}
-]
+// const cardData = [
+//   {id: 1, img: landing, header: 'Landing Page', paragraph:'Personal Portfolio', number:'01', move: '30px', link: 'https://joshbenandiel.netlify.app/'},
+//   // {id: 2,img: netflix, header: 'Netflix API', paragraph:'Sign In, Sign Up with API Calls', number:'02', move: '-30px', link: 'https://netflixapi.netlify.app/'},
+//   // {id: 3,img: facebook, header: 'Facebook Clone', paragraph:'Clone Facebook UI', number:'03', move: '30px', link: 'https://facebookv2.netlify.app/'},
+//   // {id: 4,img: emart, header: 'Ecommerce API', paragraph:'With API Calls', number:'04', move: '-30px', link: 'https://ecommerceapi.netlify.app/'},
+//   // {id: 5,img: ecommerce, header: 'Ecommerce', paragraph:'Without API Calls', number:'05', move: '30px', link: 'https://applestoreecom.netlify.app/'}
+// ]
 
 export default App;
