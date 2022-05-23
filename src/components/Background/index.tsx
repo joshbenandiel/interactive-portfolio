@@ -13,6 +13,7 @@ import nine from './images/9-min.png'
 import ten from './images/10-min.png'
 import eleven from './images/11-min.png'
 import twelve from './images/12-min.png'
+import { useMouseMove } from 'react-use-mouse-move';
 
 
 interface IProps {
@@ -33,17 +34,23 @@ export const Background: FC<IProps> = ({children, theme}) => {
   }, [render])
   
 
-  const getShapes = document.querySelectorAll('.shapes')
-
-  const parallax = (e: any) => {
+  
+  
+  const pos1 = useMouseMove(1)
+  useEffect(() => {
+    const getShapes = document.querySelectorAll('.shapes')
     getShapes.forEach((layer: any) => {
       const speed = layer.getAttribute('data-speed')
-      const x = (window.innerWidth - e.pageX*speed)/100
-      const y = (window.innerWidth - e.pageY*speed)/100
+      const x = (window.innerWidth - pos1.x*speed)/100
+      const y = (window.innerWidth - pos1.y*speed)/100
       layer.style.transform = `translateX(${x}px) translateY(${y}px)`
     })
-  }
-  document.addEventListener('click', parallax)
+  },[pos1])
+
+  // const parallax = (e: any) => {
+  //   
+  // }
+  // document.addEventListener('click', parallax)
   
 
 
