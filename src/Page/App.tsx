@@ -10,7 +10,7 @@ import { Background } from "../components/Background";
 // import ecommerce from '../components/Projects/images/ecommerce.png'
 // import emart from '../components/Projects/images/emart.png'
 // import netflix from '../components/Projects/images/netflix.png'
-import landing from '../components/Projects/images/landing-page.png'
+// import landing from '../components/Projects/images/landing-page.png'
 import { Contact } from "../components/Contact/index";
 
 

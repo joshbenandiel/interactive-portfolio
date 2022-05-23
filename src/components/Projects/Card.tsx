@@ -12,7 +12,14 @@ interface IProps {
   link: string
 }
 
-export const Card: React.FC<IProps> = ({img,header,paragraph,number, move, id, link}) => {
+export const Card: React.FC<IProps> = ({
+  img,
+  // header,
+  // paragraph,
+  // number, 
+  // link,
+  move, 
+  id}) => {
 
   const [isVisible, setIsVisible] = useState<boolean>(false)
   const [render, setRender] = useState<boolean>(false)
@@ -37,15 +44,15 @@ export const Card: React.FC<IProps> = ({img,header,paragraph,number, move, id, l
     <CardContainer key={id} move={move} ref={ref}>
       <div className={`card-blue-mask${isVisible ? `-visible` : ``}`}/>
       <img src={img} alt='landing-page' loading="lazy"/>
-      <div className='card-mask'/>
-      <span className={`card-text-wrapper${parseInt(number) % 2 === 0 ? `-right`: ``}`}>
-        <h1>{header}</h1>
-        <h5>{paragraph}</h5>
-        <Button link={link}/>
-      </span>
-      <div className={`card-number-wrapper${parseInt(number) % 2 === 0 ? `-left`: ``}`}>
-      <h1 data-text={number} className='card-number'>{number}</h1>
-      </div>
+      {/* <div className='card-mask'/>
+        <span className={`card-text-wrapper${parseInt(number) % 2 === 0 ? `-right`: ``}`}>
+          <h1>{header}</h1>
+          <h5>{paragraph}</h5>
+          <Button link={link}/>
+        </span>
+        <div className={`card-number-wrapper${parseInt(number) % 2 === 0 ? `-left`: ``}`}>
+        <h1 data-text={number} className='card-number'>{number}</h1>
+      </div> */}
     </CardContainer>
   )
 }
