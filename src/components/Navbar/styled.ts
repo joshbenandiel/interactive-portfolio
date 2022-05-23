@@ -1,22 +1,8 @@
-import styled, {keyframes} from 'styled-components'
+import styled from 'styled-components'
 
 
-const textLine = keyframes`
-  0% {
-    width: 0%
-  }
-  100% {
-    width: 100%;
-  }
-`
-const textLineBackwards = keyframes`
-  0% {
-    width: 100%
-  }
-  100% {
-    width: 0%;
-  }
-`
+
+
 
 export const NavWrapper = styled.nav<{move: string, textColor: string, textColorHover: string}>`
   position: fixed;
@@ -56,6 +42,7 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
         align-items: center;
         margin: 0;
         padding: 0;
+        overflow: hidden;
       }
 
       li:hover {
@@ -65,20 +52,20 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
       li span {
         position: absolute;
         height: 3px;
-        width: 0;
+        width: 100%;
         border-radius: 5px;
         bottom: 17px;
         right: 1px;
         opacity: 1;
-        animation: ${textLineBackwards} 0.35s ease forwards;
-        background-color: rgb(31,65,113);
+        background-color: #EF6348;
+        transform: translateX(-146px);
+        transition: 0.5s ease;
 
       }
 
       li:hover span {
-        left: 1px;
-        bottom: 17px;
-        animation: ${textLine} 0.35s ease forwards;
-        background-color: #EF6348;
+        transform: translateX(0);
+        /* background-color: rgb(31,65,113); */
+        color: #fff
       }
 `

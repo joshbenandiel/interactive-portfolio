@@ -274,7 +274,7 @@ export const ButtonContainer = styled.div`
       width: 100%;
     }
     &:hover + .arrow-right {
-     left: 150px;
+     transform: translateX(11px)
     }
   }
 `

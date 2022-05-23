@@ -135,7 +135,7 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
     .arrow-right {
       position: absolute;
       top: 5px;
-      right: 0px;
+      right: 5px;
       font-size: 2rem;
       transition: 0.5s;
       color: #fff;
@@ -184,7 +184,7 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
       z-index: 2;
     }
     &:hover + .arrow-right {
-     right: -8px;
+     transform: translateX(11px)
     }
   }
 
@@ -222,7 +222,7 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
     cursor: pointer;
 
     &:hover + ${ArrowDown} {
-      bottom: 10px;
+      bottom: 5px;
     }
   }
 

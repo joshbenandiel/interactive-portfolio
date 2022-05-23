@@ -1,14 +1,14 @@
 import { FC } from 'react'
 import { Container, Line, Wrapper } from './styled'
-// import bootstrap from './images/bootstrap.png'
+import bootstrap from './images/bootstrap.png'
 import css from './images/css.png'
 import html from './images/html.png'
-// import javascript from './images/javascript.png'
-// import material from './images/material.png'
-// import react from './images/react.png'
-// import redux from './images/redux.png'
-// import styled from './images/styled.png'
-// import typescript from './images/typescript.png'
+import javascript from './images/javascript.png'
+import material from './images/material.png'
+import react from './images/react.png'
+import redux from './images/redux.png'
+import styled from './images/styled.png'
+import typescript from './images/typescript.png'
 
 interface ProjectsProps {
   children: React.ReactNode
@@ -45,7 +45,7 @@ export const Projects:FC<ProjectsProps> = ({children, techRef, worksRef}) => {
                 <img src={css} alt="html" />
               </div>
             </div>
-            {/* <div className='technologies-box'>
+            <div className='technologies-box'>
               <div className='pink-mask'/>
             <div className='technologies-title'>
                 Technologies
@@ -84,7 +84,7 @@ export const Projects:FC<ProjectsProps> = ({children, techRef, worksRef}) => {
                 <img src={react} alt="html" />
                 <img src={redux} alt="html" />
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
     </Container>
