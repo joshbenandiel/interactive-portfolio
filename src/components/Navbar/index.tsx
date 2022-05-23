@@ -4,12 +4,11 @@ import logoDark from './images/logodark.png'
 import { useEffect, useState } from "react";
 import { useScrollYPosition } from "react-use-scroll-position";
 import { WiMoonAltFirstQuarter } from 'react-icons/wi'
+import { Link } from 'react-scroll'
 
 
 interface Iprops {
   setOpenContact: (data: boolean) => void;
-  worksRef: React.MutableRefObject<undefined> | any
-  techRef: React.MutableRefObject<undefined> | any
   setChangeTheme: (number: boolean) => void
   changeTheme: boolean
   textColor: string
@@ -17,8 +16,6 @@ interface Iprops {
 }
 export const Navbar: React.FC<Iprops> = ({
     setOpenContact, 
-    worksRef, 
-    techRef, 
     setChangeTheme, 
     changeTheme, 
     textColor,
@@ -38,20 +35,7 @@ export const Navbar: React.FC<Iprops> = ({
   },[scroll])
 
 
-  const gotoWorkSection = () => {
-    worksRef.current.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "start"
-    });
-  }
-  const gotoTechSection = () => {
-    techRef.current.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "start"
-    });
-  }
+ 
 
   return (
     <NavWrapper move={move} textColor={textColor} textColorHover={textColorHover}>
@@ -59,8 +43,19 @@ export const Navbar: React.FC<Iprops> = ({
         <img src={changeTheme ? logoDark : logo} alt="logo" />
       </div>
       <ul>
-        <li onClick={gotoWorkSection}>Personal Projects<span/></li>
-        <li onClick={gotoTechSection}>Technologies Used<span/></li>
+        <li>
+          <Link smooth={true} to='personal'>
+          Personal Projects
+          <span/>
+          </Link>
+        </li>
+        <li>
+          <Link smooth={true} to='technologies'>
+          Technologies Used
+          <span/>
+          </Link>
+        </li>
+        
         <li
           onClick={() => setOpenContact(true)} 
           >Contact<span/>

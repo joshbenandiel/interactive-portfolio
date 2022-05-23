@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { PreLoader } from "./styled"
 import { Navbar } from "../components/Navbar";
 import { Main } from "../components/Main";
@@ -53,8 +53,6 @@ const App: React.FC = () => {
 
   
 
-  const worksRef = useRef<any>()
-  const techRef = useRef<any>()
 
 
   return (
@@ -82,21 +80,16 @@ const App: React.FC = () => {
           textColorHover = {changeTheme ? textColorHover.light : textColorHover.dark}
           changeTheme={changeTheme}
           setChangeTheme={setChangeTheme}
-          worksRef={worksRef} 
-          techRef={techRef} 
           setOpenContact={setOpenContact}/>
       </div>
       <Main 
         textColorMain={changeTheme ? textColorMain.light : textColorMain.dark}
         textColor={changeTheme ? textColor.light :  textColor.dark}
         textColorHover = {changeTheme ? textColorHover.light : textColorHover.dark}
-        worksRef={worksRef}
         openContact={openContact} 
         setOpenContact={setOpenContact}/>
       </Background>
-      <Projects 
-        worksRef={worksRef}
-        techRef={techRef}>
+      <Projects>
         {cardData.map((card) => (
           <Card 
             key={card.id}

@@ -9,17 +9,17 @@ import react from './images/react.png'
 import redux from './images/redux.png'
 import styled from './images/styled.png'
 import typescript from './images/typescript.png'
+import { Element } from 'react-scroll'
 
 interface ProjectsProps {
   children: React.ReactNode
-  techRef: React.MutableRefObject<undefined>
-  worksRef: React.MutableRefObject<undefined>
 }
 
-export const Projects:FC<ProjectsProps> = ({children, techRef, worksRef}) => {
+export const Projects:FC<ProjectsProps> = ({children}) => {
   return (
     <Container>
-      <Wrapper ref={worksRef}>
+      <Wrapper>
+        <Element name='personal'/>
         <h3>Personal Projects</h3>
         <h1>Latest Works</h1>
         <Line>
@@ -29,10 +29,11 @@ export const Projects:FC<ProjectsProps> = ({children, techRef, worksRef}) => {
         <span></span>
       </Wrapper>
       <div className='technologies-wrapper'>
+          <Element name='technologies'/>
           <h3>Technologies Used</h3>
           <h1>Client Side</h1>
           <div className='technologies-container'>
-            <div ref={techRef} className='technologies-box'>
+            <div className='technologies-box'>
               <div className='pink-mask'/>
               <div className='technologies-title'>
                 Technologies

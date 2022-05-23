@@ -3,11 +3,11 @@ import { ArrowDown, Container } from './styled'
 import { BsGithub, BsInstagram, BsTwitter} from 'react-icons/bs'
 import { FaLinkedinIn, FaFacebookF } from 'react-icons/fa'
 import TextScramble, { ScrambleTexts } from '@twistezo/react-text-scramble'
+import { Link } from 'react-scroll'
 
 interface IProps {
   openContact: boolean
   setOpenContact: (data: boolean) => void
-  worksRef: React.MutableRefObject<any>
   textColor: string
   textColorHover: string
   textColorMain: string
@@ -15,7 +15,6 @@ interface IProps {
 export const Main: React.FC<IProps> = ({
   openContact, 
   setOpenContact, 
-  worksRef, 
   textColor, 
   textColorHover,
   textColorMain
@@ -34,13 +33,7 @@ export const Main: React.FC<IProps> = ({
   ]
 
 
-  const gotoWorkSection = () => {
-    worksRef.current.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "start"
-    });
-  }
+
   return (
     <Container textColor={textColor} textColorHover={textColorHover} textColorMain={textColorMain}>
       <div className={`contact-hide${openContact ? `-false`: ''}`}>
@@ -69,8 +62,12 @@ export const Main: React.FC<IProps> = ({
           <li><a href="https://www.instagram.com/joshbenandiel/" target='_blank' rel="noreferrer"><BsInstagram/></a></li>
           <li><a href="https://twitter.com/joshbenandiel" target='_blank' rel="noreferrer"><BsTwitter/></a></li>
         </ul>
-        <div onClick={gotoWorkSection}>
-          <div className='works-section'>Works</div>
+        <div>
+          <div className='works-section'>
+            <Link smooth={true} to='personal'>
+              Works
+            </Link>
+          </div>
           <ArrowDown className='arrow-down'>&#10230;</ArrowDown>
         </div>
       </div>
