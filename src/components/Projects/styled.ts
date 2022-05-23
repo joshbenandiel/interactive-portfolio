@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 
 
@@ -280,22 +280,14 @@ export const ButtonContainer = styled.div`
     }
 
     .button-text {
+      position: absolute;
+      top: 10px;
+      left: 0px;
       width: 100%;
-      z-index: 2;
     }
     &:hover + .arrow-right {
      left: 150px;
     }
-  }
-`
-
-const numberAnimation = keyframes`
-  from {
-    height: 0%;
-  }
-  to {
-    color: #fff;
-    height: 110%;
   }
 `
 
@@ -308,7 +300,7 @@ export const BlueMask = styled.div<{location: string}>`
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 2;
+    z-index: 5;
     transition: 0.5s;
     width: 100%;
     overflow: hidden;
@@ -353,18 +345,18 @@ export const CardContainer = styled.div<IProps>`
 
   .card-number-wrapper {
     position: absolute;
-    top: -40px;
+    top: -60px;
     right: -35px;
-    opacity: 0;
     transition: 0.5s;
+    z-index: 10;
 
   }
   .card-number-wrapper-left {
     position: absolute;
-    top: -40px;
+    top: -60px;
     left: -35px;
-    opacity: 0;
     transition: 0.5s;
+    z-index: 10;
 
   }
 
@@ -372,14 +364,21 @@ export const CardContainer = styled.div<IProps>`
     transform: translateX(0);
   }
 
-  &:hover .card-number-wrapper {
-    opacity: 1;
-    top: -80px;
+  &:hover .card-number {
+    color: #fff;
+    transition: 0.5s;
   }
 
-  &:hover .card-number-wrapper-left {
-    opacity: 1;
-    top: -80px;
+  &:hover .card-number-wrapper  {
+    color: #fff;
+    transition: 0.5s;
+    transform: translateY(-20px)
+  }
+
+  &:hover .card-number-wrapper-left  {
+    color: #fff;
+    transition: 0.5s;
+    transform: translateY(-20px)
   }
 
   .card-number {
@@ -390,7 +389,7 @@ export const CardContainer = styled.div<IProps>`
     font-size: 12em;
     font-family: League Spartan,Helvetica,Arial,sans-serif;
     font-weight: 900;
-    color: #B0B2C3;
+    color: transparent;
     transition: 0.5s;
     z-index: 3;
     margin: 0;
@@ -406,10 +405,6 @@ export const CardContainer = styled.div<IProps>`
     z-index: 4;
   }
 
-  &:hover .card-number::before {
-    animation: ${numberAnimation} 0.5s ease forwards 0.6s;
-  }
-
 
   img {
     width: 100%;
@@ -420,7 +415,8 @@ export const CardContainer = styled.div<IProps>`
 
 
   &:hover span {
-    transform: scale(1.05)
+    transform: scale(1.05);
+    z-index: 10;
   }
 
   .card-text-wrapper {

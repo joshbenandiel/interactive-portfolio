@@ -63,9 +63,9 @@ export const Card: React.FC<IProps> = ({
         <h5>{paragraph}</h5>
         <Button link={link}/>
       </span>
-      {/* <div className={`card-number-wrapper${parseInt(number) % 2 === 0 ? `-left`: ``}`}>
+      <div className={`card-number-wrapper${parseInt(number) % 2 === 0 ? `-left`: ``}`}>
         <h1 data-text={number} className='card-number'>{number}</h1>
-      </div> */}
+      </div>
     </CardContainer>
   )
 }
