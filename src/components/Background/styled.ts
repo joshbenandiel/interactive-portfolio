@@ -17,7 +17,6 @@ export const BackgroundContainer = styled.div`
     .shapes {
       height: 250px;
       transform: translate3d(0, 0, 0);
-      transition: all 0.1s ease-in;
     }
   }
   .layer-2 {
@@ -28,7 +27,6 @@ export const BackgroundContainer = styled.div`
     img {
       height: 250px;
       transform: translate3d(0, 0, 0);
-      transition: all 0.1s ease-in;
     }
   }
 
@@ -40,7 +38,6 @@ export const BackgroundContainer = styled.div`
     img {
       height: 250px;
       transform: translate3d(0, 0, 0);
-      transition: all 0.1s ease-in;
     }
   }
   .layer-4 {
@@ -51,7 +48,6 @@ export const BackgroundContainer = styled.div`
     img {
       height: 250px;
       transform: translate3d(0, 0, 0);
-      transition: all 0.1s ease-in;
     }
   }
 

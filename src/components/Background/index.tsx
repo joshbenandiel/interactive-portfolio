@@ -32,7 +32,7 @@ export const Background: FC<IProps> = ({children, theme}) => {
   }, [render])
   
   const getShapes = document.querySelectorAll('.shapes')
-
+  
   document.addEventListener('mousemove', (e) => {
     getShapes.forEach((layer: any) => {
       const speed = layer.getAttribute('data-speed')
@@ -41,9 +41,7 @@ export const Background: FC<IProps> = ({children, theme}) => {
       layer.style.transform = `translate3D(${x}px,0,0) translate3D(0,${y}px,0)`
     })
   });
-
-
-
+  
   return (
     <BackgroundContainer theme={theme}>
       <>
