@@ -203,9 +203,11 @@ export const ContactMe = styled.div<{contactPosition: string}>`
           height: 2px;
           background: linear-gradient(270deg,#235aa6,#101b3b);
           z-index: 2;
-          width: 0;
+          width: 100%;
           transition: 0.5s ease;
-          transition-delay: 0.1s
+          transition-delay: 0.1s;
+          transform: translateX(-400px);
+
         }
 
         .second-input-color {
@@ -216,15 +218,16 @@ export const ContactMe = styled.div<{contactPosition: string}>`
           background-color: #f06449;
           background: linear-gradient(270deg,#f06449,#ef3636);
           z-index: 1;
-          width: 0;
+          width: 100%;
           transition: 0.5s ease;
+          transform: translateX(-400px);
         }
 
         &:hover .input-color {
-          width: 100%;
+          transform: translateX(0);
         }
         &:hover .second-input-color {
-          width: 100%;
+          transform: translateX(0);
         }
       }
 
