@@ -50,12 +50,14 @@ export const Card: React.FC<IProps> = ({
   return (
     <CardContainer key={id} move={move} ref={ref}>
       <BlueMask location={isVisible ? translate.hide : translate.show} className={'card-blue-mask'}>
-          <div>
-
-          </div>
+          <div/>
       </BlueMask>
       <img src={img} alt='landing-page' loading="lazy"/>
-      <CardMask/>
+      <CardMask>
+        <div className='blue-mask-hover'>
+
+        </div>
+      </CardMask>
         {/* <span className={`card-text-wrapper${parseInt(number) % 2 === 0 ? `-right`: ``}`}>
           <h1>{header}</h1>
           <h5>{paragraph}</h5>
