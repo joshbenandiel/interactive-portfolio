@@ -1,14 +1,6 @@
-import styled, {keyframes} from 'styled-components'
+import styled from 'styled-components'
 
 
-const zoom = keyframes`
-from {
-  transform: scale(0)
-}
-to {
-  transform:  scale(1.2)
-}
-`
 
 export const OrangeMask = styled.div<{movement: string}>`
   height: 100%;
@@ -95,7 +87,11 @@ export const Container = styled.div`
 
 
         &:hover img {
-          animation: ${zoom} 0.5s ease;
+          transform: scale(1.1)
+        }
+
+        &:hover .images-wrapper-technologies .three-images {
+          transform: scale(1.1)
         }
         
         .images-wrapper-technologies {
@@ -106,11 +102,15 @@ export const Container = styled.div`
           width: 100%;
           justify-content: center;
           gap: 20px;
+
           
           .three-images {
             transform: translateY(20px);
             height: 110px;
             width: auto;
+            &:hover {
+              transform: scale(1.2)
+            }
           }
 
           img {
