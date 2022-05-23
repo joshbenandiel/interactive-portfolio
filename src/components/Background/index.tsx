@@ -31,18 +31,18 @@ export const Background: FC<IProps> = ({children, theme}) => {
     setRender(prev => !prev)
   }, [render])
   
-  // const getShapes = document.querySelectorAll('.shapes')
-  // document.addEventListener('mousemove', (e) => {
-  //   const parallax = (e: any) => {
-  //     getShapes.forEach((layer: any) => {
-  //       const speed = layer.getAttribute('data-speed')
-  //       const x = (window.innerWidth - e.pageX*speed)/100
-  //       const y = (window.innerWidth - e.pageY*speed)/100
-  //       layer.style.transform = `translateX(${x}px) translateY(${y}px)`
-  //     })
-  //   }
-  //   parallax(e)
-  // });
+  const getShapes = document.querySelectorAll('.shapes')
+  document.addEventListener('mousemove', (e) => {
+    const parallax = (e: any) => {
+      getShapes.forEach((layer: any) => {
+        const speed = layer.getAttribute('data-speed')
+        const x = (window.innerWidth - e.pageX*speed)/100
+        const y = (window.innerWidth - e.pageY*speed)/100
+        layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+      })
+    }
+    parallax(e)
+  });
 
 
 
