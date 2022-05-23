@@ -45,27 +45,47 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
         overflow: hidden;
       }
 
+
+
       li:hover {
         color: ${props => props.textColorHover};
       }
 
-      li span {
+  
+
+      li span:before {
+        content: "";
         position: absolute;
-        height: 3px;
+        bottom: 16px;
+        right: 0;
+        left: auto;
         width: 100%;
-        border-radius: 5px;
-        bottom: 17px;
-        right: 1px;
-        opacity: 1;
-        background-color: #EF6348;
-        transform: translateX(-146px);
-        transition: 0.5s ease;
-
+        transform: translateX(150px);
+        height: 3px;
+        z-index: 2;
+        background-color: #235aa6;
+        transition: all .25s cubic-bezier(.694,.048,.335,1) .17s;
       }
 
-      li:hover span {
-        transform: translateX(0);
-        /* background-color: rgb(31,65,113); */
-        color: #fff
+      li span:after {
+        content: "";
+        position: absolute;
+        bottom: 16px;
+        left: 0;
+        width: 100%;
+        transform: translateX(-150px);
+        height: 3px;
+        z-index: 2;
+        background-color: #f25757;
+        transition: all .25s cubic-bezier(.694,.048,.335,1);
       }
+
+      li:hover span:after {
+        transform: translateX(0px)
+      }
+      li:hover span:before {
+        transform: translateX(0px)
+      }
+
+    
 `

@@ -353,7 +353,7 @@ export const CardContainer = styled.div<IProps>`
 
   &:hover .card-number {
     color: #B0B2C3;
-    transition: 0.6s;
+    transition: 0.5s;
   }
 
   &:hover .card-number-wrapper  {
@@ -370,7 +370,7 @@ export const CardContainer = styled.div<IProps>`
     position: relative;
     vertical-align: top;
     width: 265px;
-    height: 198px;
+    height: 215px;
     font-size: 12em;
     font-family: League Spartan,Helvetica,Arial,sans-serif;
     font-weight: 900;
@@ -378,6 +378,7 @@ export const CardContainer = styled.div<IProps>`
     transition: 0.5s;
     z-index: 3;
     margin: 0;
+    overflow: hidden;
   }
 
   .card-number::before {
@@ -389,12 +390,13 @@ export const CardContainer = styled.div<IProps>`
     overflow: hidden;
     z-index: 4;
     height: 0%;
-    transition-delay: 0.5s;
+    transition-delay: 0.3s;
+    color: #fff;
   }
 
   &:hover .card-number::before{
-    color: #fff;
-    height: 110%;
+
+    height: 100%;
   }
 
 
