@@ -355,6 +355,26 @@ interface IProps {
   move: string;
 }
 
+export const BlueMask = styled.div`
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    transition: 0.5s;
+    width: 100%;
+    overflow: hidden;
+
+    div {
+      background: linear-gradient(270deg,#235aa6,#101b3b);
+      height: 480px;
+      transition: 0.5s
+    }
+
+    &:hover div {
+      transform: translateX(1000px)
+    }
+`
+
 export const CardContainer = styled.div<IProps>`
   width: 90%;
   height: 480px;
@@ -366,26 +386,7 @@ export const CardContainer = styled.div<IProps>`
   display: block;
   transform: translateX(${props => props.move});
 
-  .card-blue-mask {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: linear-gradient(270deg,#235aa6,#101b3b);
-    height: 480px;
-    width: 100%;
-    z-index: 5;
-    transition: 0.5s;
-  }
-  .card-blue-mask-visible {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: linear-gradient(270deg,#235aa6,#101b3b);
-    height: 480px;
-    width: 0%;
-    transition: 0.5s;
-    z-index: 5;
-  }
+
   .card-number-wrapper {
     position: absolute;
     top: -40px;
