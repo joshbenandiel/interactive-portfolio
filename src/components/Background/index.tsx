@@ -27,27 +27,25 @@ export const Background: FC<IProps> = ({children, theme}) => {
   
   const [render, setRender] = useState<boolean>(false)
 
+
   useEffect(() => {
     setRender(prev => !prev)
   }, [render])
   
 
- 
+  const getShapes = document.querySelectorAll('.shapes')
 
-  
   const parallax = (e: any) => {
-    const getShapes: any = document.querySelectorAll('.shapes')
-
-    console.log(getShapes)
-    getShapes.forEach((move: any) => {
-      const moving_value = move.getAttribute('data-speed')
-      var x = (e.clientX * moving_value) / 200
-
-      move.style.transform = `translateX(${x}px)`
+    getShapes.forEach((layer: any) => {
+      const speed = layer.getAttribute('data-speed')
+      const x = (window.innerWidth - e.pageX*speed)/100
+      const y = (window.innerWidth - e.pageY*speed)/100
+      layer.style.transform = `translateX(${x}px) translateY(${y}px)`
     })
   }
+  document.addEventListener('click', parallax)
   
-  document.addEventListener('mousemove', parallax)
+
 
   
   return (

@@ -16,6 +16,7 @@ export const BackgroundContainer = styled.div`
     left: 50px;
     img {
       height: 250px;
+      transition: 0.5s ease;
     }
   }
   .layer-2 {
