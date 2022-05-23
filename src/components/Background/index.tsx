@@ -36,8 +36,8 @@ export const Background: FC<IProps> = ({children, theme}) => {
   document.addEventListener('mousemove', (e) => {
     getShapes.forEach((layer: any) => {
       const speed = layer.getAttribute('data-speed')
-      const x = (window.innerWidth - e.pageX*speed)/100
-      const y = (window.innerWidth - e.pageY*speed)/100
+      const x = (window.innerWidth - e.offsetX*speed)/100
+      const y = (window.innerWidth - e.offsetY*speed)/100
       layer.style.transform = `translate3D(${x}px,0,0) translate3D(0,${y}px,0)`
     })
   });
