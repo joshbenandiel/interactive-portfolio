@@ -99,6 +99,13 @@ export const Container = styled.div`
         box-shadow: 0 20px 60px 0 rgb(0 0 0 / 15%);
         cursor: pointer;
 
+        .technologies-number-phone {
+          display: none
+        }
+
+        .technologies-number-phone-left {
+          display: none
+        }
 
 
         @media (max-width: 380px){
@@ -111,6 +118,7 @@ export const Container = styled.div`
             font-size: 15em;
             font-weight: bold;
             color: #fce0db;
+            display: block;
           }
           .technologies-number-phone-left {
             position: absolute;
@@ -119,6 +127,7 @@ export const Container = styled.div`
             font-size: 15em;
             font-weight: bold;
             color: #f9ebe9;
+            display: block;
           }
         }
 
