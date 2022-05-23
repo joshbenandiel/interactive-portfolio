@@ -76,7 +76,7 @@ export const Contact: React.FC<IProps> = ({setOpenContact, openContact}) => {
                 <div className='second-input-color-area'></div>
               </div>
 
-              <button>Send Message</button>
+              <button><span>Send Message</span></button>
             </form>
             <div 
               onClick={() => setOpenContact(false)}

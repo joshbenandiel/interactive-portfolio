@@ -1,31 +1,7 @@
-import styled, {keyframes} from 'styled-components'
+import styled from 'styled-components'
 
 
 
-
-export const buttonFrame = keyframes`
-  0% {
-    width: 140px;
-    transform: translateX(-100px)
-  }
-  100% {
-    width: 140px;
-    transform: translateX(200px)
-  }
-  
-`
-
-export const buttonFrameBackwards = keyframes`
-  0% {
-    width: 140px;
-    transform: translateX(200px)
-  }
-  100% {
-    width: 140px;
-    transform: translateX(-200px)
-  }
-  
-`
 
 export const Container = styled.div`
   height: 90vh;
@@ -185,6 +161,7 @@ export const ContactMe = styled.div<{contactPosition: string}>`
       .input-wrapper {
         position: relative;
         overflow: hidden;
+
         .input-color-area {
           position: absolute;
           bottom: 5px;
@@ -192,9 +169,10 @@ export const ContactMe = styled.div<{contactPosition: string}>`
           height: 2px;
           background: linear-gradient(270deg,#235aa6,#101b3b);
           z-index: 2;
-          width: 0%;
+          width: 100%;
           transition: 0.5s ease;
-          transition-delay: 0.1s
+          transition-delay: 0.1s;
+          transform: translateX(-410px);
         }
 
         .second-input-color-area {
@@ -205,15 +183,16 @@ export const ContactMe = styled.div<{contactPosition: string}>`
           background-color: #f06449;
           background: linear-gradient(270deg,#f06449,#ef3636);
           z-index: 1;
-          width: 0%;
+          width: 100%;
           transition: 0.5s ease;
+          transform: translateX(-410px);
         }
 
         &:hover .input-color-area {
-          width: 100%;
+           transform: translateX(0px);
         }
         &:hover .second-input-color-area {
-          width: 100%;
+           transform: translateX(0px);
         }
 
 
@@ -286,6 +265,13 @@ export const ContactMe = styled.div<{contactPosition: string}>`
         position: relative;
         overflow: hidden;
 
+        span {
+          position: absolute;
+          top: 5px;
+          left: 30px;
+          z-index: 10;
+        }
+
         &::after{
           content: '';
           position: absolute;
@@ -293,19 +279,12 @@ export const ContactMe = styled.div<{contactPosition: string}>`
           right: 0;
           height: 100%;
           background: linear-gradient(270deg,#235aa6,#101b3b);
-          animation: ${buttonFrameBackwards} 0.4s ease forwards
+          width: 100%;
+          transform: translateX(-200px);
+          transition: 0.5s ease;
         }
-
-        &:hover {
-          &::after{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: linear-gradient(270deg,#235aa6,#101b3b);
-            height: 100%;
-            animation: ${buttonFrame} 0.4s ease forwards
-          }
+        &:hover::after {
+          transform: translateX(200px)
         }
       }
     }

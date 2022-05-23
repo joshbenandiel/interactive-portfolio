@@ -81,7 +81,8 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
       }
 
       li:hover span:after {
-        transform: translateX(0px)
+        transform: translateX(0px);
+       
       }
       li:hover span:before {
         transform: translateX(0px)
