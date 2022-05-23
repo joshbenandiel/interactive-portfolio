@@ -40,6 +40,7 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false)
   const [openContact, setOpenContact] = useState<boolean>(false)
   const [changeTheme, setChangeTheme] = useState<boolean>(false)
+  const [openNav, setOpenNav] = useState<boolean>(false)
 
 
 
@@ -70,12 +71,17 @@ const App: React.FC = () => {
     )
     : (
     <>
-    <Background theme={changeTheme ? themeProvider.light :  themeProvider.dark}>
+    <Background 
+      setOpenNav={setOpenNav}
+      openNav={openNav} 
+      theme={changeTheme ? themeProvider.light :  themeProvider.dark}>
       {openContact && <Contact 
         openContact={openContact}
         setOpenContact={setOpenContact}/>}
       <div className={`navbar-hide${openContact ? '-false' : ' '}`}>
         <Navbar 
+          openNav={openNav}
+          setOpenNav={setOpenNav}
           textColor={changeTheme ? textColor.light :  textColor.dark}
           textColorHover = {changeTheme ? textColorHover.light : textColorHover.dark}
           changeTheme={changeTheme}

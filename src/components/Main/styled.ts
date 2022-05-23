@@ -1,29 +1,6 @@
 import styled, { keyframes} from 'styled-components'
 
 
-export const buttonFrame = keyframes`
-  0% {
-    width: 140px;
-    transform: translateX(-100px)
-  }
-  100% {
-    width: 140px;
-    transform: translateX(200px)
-  }
-  
-`
-
-export const buttonFrameBackwards = keyframes`
-  0% {
-    width: 140px;
-    transform: translateX(200px)
-  }
-  100% {
-    width: 140px;
-    transform: translateX(-150px)
-  }
-  
-`
 
 const textFrame = keyframes`
   from {
@@ -66,6 +43,10 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
   position: relative;
   z-index: 2;
 
+  @media (max-width: 380px){
+    width: 80%;
+  }
+
   .name-wrapper {
     width: fit-content;
     position: relative;
@@ -77,6 +58,11 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
       margin: 0;
       width: fit-content;
       position: relative;
+
+      @media (max-width: 380px){
+        font-size: 2.5rem;
+        width: 100%
+      }
     }
 
     .white-name {

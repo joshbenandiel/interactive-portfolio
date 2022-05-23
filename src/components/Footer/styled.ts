@@ -28,15 +28,27 @@ export const Container = styled.div`
   align-items: center;
   color: #F3F3F3;
   gap: 20px;
+
+ 
+ 
   div {
     cursor: pointer;
     img {
       height: 70px;
+
+      @media (max-width: 380px){
+        transform: translateX(-5px)
+      }
     }
   }
   ul {
     display: flex;
     gap: 60px;
+
+    @media (max-width: 380px){
+      gap: 10px;
+      transform: translateX(-20px)
+    }
     li {
       list-style: none;
       cursor: pointer;

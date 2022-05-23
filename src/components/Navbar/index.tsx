@@ -1,4 +1,4 @@
-import { NavWrapper } from "./styled"
+import { Hamburger, NavWrapper } from "./styled"
 import logo from './images/logo.png'
 import logoDark from './images/logodark.png'
 import { useEffect, useState } from "react";
@@ -13,13 +13,17 @@ interface Iprops {
   changeTheme: boolean
   textColor: string
   textColorHover: string
+  setOpenNav: (data: boolean) => void
+  openNav: boolean
 }
 export const Navbar: React.FC<Iprops> = ({
     setOpenContact, 
     setChangeTheme, 
     changeTheme, 
     textColor,
-    textColorHover
+    textColorHover,
+    setOpenNav,
+    openNav
 }) => {
 
 
@@ -38,10 +42,15 @@ export const Navbar: React.FC<Iprops> = ({
  
 
   return (
-    <NavWrapper move={move} textColor={textColor} textColorHover={textColorHover}>
+    <NavWrapper toggle={openNav ? 'none' : 'flex'} move={move} textColor={textColor} textColorHover={textColorHover}>
       <div onClick={() => window.location.reload()}>
         <img src={changeTheme ? logoDark : logo} alt="logo" />
       </div>
+      <Hamburger toggle={openNav ? 'none' : 'flex'}onClick={() =>  setOpenNav(true)}>
+          <span/>
+          <span/>
+          <span/>
+      </Hamburger>
       <ul>
         <li>
           <Link to='personal'>

@@ -1,10 +1,146 @@
 import styled from 'styled-components'
 
 
+export const Hamburger = styled.button<{toggle: string}>`
+
+  position: absolute;
+  top: 13px;
+  right: 100px;
+  height: 50px;
+  width: 60px;
+  background-color: transparent;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  visibility: hidden;
+
+  span:nth-child(1) {
+    height: 4px;
+    width: 100%;
+    background-color: #BDBEC5;
+    display: block;
+    border-radius: 12px;
+  }
+  span:nth-child(2) {
+    height: 4px;
+    width: 75%;
+    background-color: #BDBEC5;
+    display: block;
+    border-radius: 12px;
+  }
+  span:nth-child(3) {
+    height: 4px;
+    width: 50%;
+    background-color: #BDBEC5;
+    display: block;
+    border-radius: 12px;
+  }
+  @media (max-width: 380px){
+    visibility: visible;
+  }
+
+`
 
 
+export const NavOpen = styled.div<{open: any, scale: string, movement: string,opacity: string}>`
+    position: relative;
 
-export const NavWrapper = styled.nav<{move: string, textColor: string, textColorHover: string}>`
+    .orange-mask-nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      z-index: 100;
+      background-color: #f06449;
+      background: linear-gradient(270deg,#f06449,#ef3636);
+      transform: translateX(${props => props.open});
+      transition: 0.5s ease;
+    }
+
+ 
+    .blue-mask-nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      z-index: 101;
+      background: linear-gradient(270deg,#235aa6,#101b3b);
+      transform: translateX(${props => props.open});
+      transition: 0.8s ease; 
+
+      button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 200;
+        background-color: transparent;
+        border: none;
+        outline: none;  
+
+
+        .close-button-nav {
+          pointer-events: none;
+          transition: 0.5s ease 0.2s;
+          transform: scale(${props => props.scale});
+        }
+      }
+      .ul-nav {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        gap: 30px;
+        opacity: ${props => props.opacity};
+        transition: 0.5s ease;
+
+        li {
+          color: #fff;
+          font-weight: bold;
+          list-style: none;
+          font-size: 1.6875em;
+          font-family: League Spartan,Helvetica,Arial,sans-serif;
+          padding-left: 50px;
+          transform: translateY(${props => props.movement});
+          transition: 0.5s;
+        }
+      }
+    }
+`
+export const NavOpenFooter = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  display: flex;
+  
+
+
+  ul {
+    display: flex;
+    list-style: none;
+    font-size: 30px;
+    gap: 20px;
+    
+    li a{
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+`
+
+export const NavWrapper = styled.nav<{move: string, textColor: string, textColorHover: string, toggle: string}>`
   position: fixed;
   top: 0;
   left: 23%;
@@ -17,6 +153,11 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
   justify-content: space-between;
   transform: ${props => props.move};
   transition: 0.35s ease;
+  display: ${props => props.toggle};
+
+  @media (max-width: 375px){
+    width: 375px;
+  }
 
     div {
       cursor: pointer;
@@ -26,6 +167,11 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
         left: -50px;
         height: 70px;
         transition: 1s ease;
+
+        @media (max-width: 380px){
+          height: 50px;
+          left: -70px;
+        }
       }
     }
     ul {
@@ -34,6 +180,10 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
       font-size: 1rem;
       font-weight: bold;
       gap: 50px;
+
+      @media (max-width: 375px){
+        display: none;
+      }
     }
       li {
         list-style: none;

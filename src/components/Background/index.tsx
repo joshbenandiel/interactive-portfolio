@@ -14,20 +14,26 @@ import ten from './images/10-min.png'
 import eleven from './images/11-min.png'
 import twelve from './images/12-min.png'
 import { useMouseMove } from 'react-use-mouse-move';
+import { NavOpen, NavOpenFooter } from "../Navbar/styled";
+import {AiOutlineClose} from 'react-icons/ai'
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
+import { Link , animateScroll as scroll} from 'react-scroll'
 
 
 interface IProps {
-  children: React.ReactNode;
+  children: React.ReactNode
   theme: string
+  openNav: boolean
+  setOpenNav: (data: boolean) => void
 }
 
 
 
-export const Background: FC<IProps> = ({children, theme}) => {
+export const Background: FC<IProps> = ({children, theme, openNav, setOpenNav}) => {
 
   
   const [render, setRender] = useState<boolean>(false)
-
 
   useEffect(() => {
     setRender(prev => !prev)
@@ -58,6 +64,42 @@ export const Background: FC<IProps> = ({children, theme}) => {
   return (
     <BackgroundContainer theme={theme}>
       <>
+      {openNav && (
+        <NavOpen 
+          movement={openNav ? '-40px' : '10px'}
+          opacity={openNav ? '1' : '0'}
+          scale={openNav ? '1.2' : '0'} 
+          open={openNav ? '0px' : '-400px'}>
+          <div className='blue-mask-nav'>
+            <button onClick={() => setOpenNav(false)}>
+                <AiOutlineClose className='close-button-nav' size={40} color='#BDBEC5'/>
+            </button>
+            <ul className='ul-nav'>
+              <li onClick={() => {
+                setOpenNav(false)
+                scroll.scrollToTop()
+              }}>Home</li>
+              <Link to='personal'>
+                <li onClick={() => setOpenNav(false)}>Personal Projects</li>
+              </Link>
+              <Link to='technologies'>
+                <li onClick={() => setOpenNav(false)}>Technologies Used</li>
+              </Link>
+              <li onClick={() => setOpenNav(false)}>Contact</li>
+            </ul>
+            <NavOpenFooter>
+              <ul className='ul'>
+                <li onClick={() => setOpenNav(false)}><a href="https://www.facebook.com/joshbenandiel/" target="_blank" rel="noreferrer"><FaFacebookF/></a></li>
+                <li onClick={() => setOpenNav(false)}><a href="https://www.linkedin.com/in/joshua-jacinto-b357541b2/" target='_blank' rel="noreferrer"><FaLinkedinIn/></a></li>
+                <li onClick={() => setOpenNav(false)}><a href="https://github.com/joshbenandiel" target='_blank' rel="noreferrer"><BsGithub/></a></li>
+                <li onClick={() => setOpenNav(false)}><a href="https://www.instagram.com/joshbenandiel/" target='_blank' rel="noreferrer"><BsInstagram/></a></li>
+                <li onClick={() => setOpenNav(false)}><a href="https://twitter.com/joshbenandiel" target='_blank' rel="noreferrer"><BsTwitter/></a></li>
+              </ul>
+            </NavOpenFooter>
+          </div>
+          <div className='orange-mask-nav'/>
+        </NavOpen>
+      )}
       <img className='background-logo'src={backgroundlogo} alt="background"/>
       <div className='layer-1'>
         <img className='shapes' src={twelve} data-speed={-11} alt='shapes'/>

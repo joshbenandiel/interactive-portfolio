@@ -15,6 +15,10 @@ export const OrangeMask = styled.div<{movement: string}>`
   transition: 0.5s ease;
   transition-delay: 0.3s;
 
+  @media (max-width: 380px){
+    display: none
+  }
+
   
 `
 export const LightBlueMask = styled.div<{movement: string}>`
@@ -27,6 +31,9 @@ export const LightBlueMask = styled.div<{movement: string}>`
   z-index: 13;
   transform: ${props => props.movement};
   transition: 0.5s ease;
+  @media (max-width: 380px){
+    display: none
+  }
 `
 
 
@@ -41,6 +48,7 @@ export const Container = styled.div`
   flex-direction: column;
   position: relative;
 
+
   .technologies-wrapper {
     margin-top: 100px;
     z-index: 3;
@@ -48,6 +56,8 @@ export const Container = styled.div`
     justify-content: center;
     flex-direction: column;
     align-items: center;
+
+    
    
     h3 {
       font-family: LibreBaskerville-Regular,Palatino Linotype,Times New Roman,serif;
@@ -73,6 +83,10 @@ export const Container = styled.div`
       justify-content: center;
       position: relative;
       overflow: hidden;
+
+      @media (max-width: 380px){
+        flex-direction: column;
+      }
       
       
       .technologies-box {
@@ -84,6 +98,29 @@ export const Container = styled.div`
         background-color: #fff;
         box-shadow: 0 20px 60px 0 rgb(0 0 0 / 15%);
         cursor: pointer;
+
+
+
+        @media (max-width: 380px){
+          width: 100%;
+
+          .technologies-number-phone {
+            position: absolute;
+            top: -47px;
+            right: -43px;
+            font-size: 15em;
+            font-weight: bold;
+            color: #fce0db;
+          }
+          .technologies-number-phone-left {
+            position: absolute;
+            top: -47px;
+            left: -43px;
+            font-size: 15em;
+            font-weight: bold;
+            color: #f9ebe9;
+          }
+        }
 
 
         &:hover img {
@@ -108,6 +145,10 @@ export const Container = styled.div`
             transform: translateY(20px);
             height: 110px;
             width: auto;
+
+            @media (max-width: 380px){
+              height: 90px;
+            }
             &:hover {
               transform: scale(1.2)
             }
@@ -138,6 +179,10 @@ export const Container = styled.div`
           transform: rotate(90deg);
           display: flex;
           transition: 0.5s ease;
+
+          @media (max-width: 380px){
+            display: none
+          }
           
         }
 
@@ -152,6 +197,9 @@ export const Container = styled.div`
           padding-right: 40px;
           transform: rotate(90deg);
           transition: 0.5s ease 0.3s;
+          @media (max-width: 380px){
+            display: none
+          }
           
         }
 
@@ -192,6 +240,10 @@ export const Container = styled.div`
           letter-spacing: 1px;
           font-family: League Spartan,Helvetica,Arial,sans-serif;
 
+          @media (max-width: 380px){
+            font-size: .625em;
+          }
+
           .technologies-label {
             text-transform: none;
             font-size: 1.5em;
@@ -222,6 +274,10 @@ export const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 380px){
+   width: 100%; 
+  }
 
   h3 {
     font-family: LibreBaskerville-Regular,Palatino Linotype,Times New Roman,serif;
@@ -341,7 +397,11 @@ export const BlueMask = styled.div<{location: string}>`
       background: linear-gradient(270deg,#235aa6,#101b3b);
       height: 480px;
       transform: translateX(${props => props.location});
-      transition: 0.5s
+      transition: 0.5s;
+
+      @media (max-width: 380px){
+        height: 480px;
+      }
     }
 `
 
@@ -359,6 +419,11 @@ export const CardMask = styled.div`
     opacity: 0.4;
     transition: 0.5s ease;
     transform: translateX(-1000px);
+
+    @media (max-width: 380px){
+      height: 300px;
+      width: 100%;
+    }
   }
 `
 
@@ -374,6 +439,12 @@ export const CardContainer = styled.div<IProps>`
   display: block;
   transform: translateX(${props => props.move});
 
+  @media (max-width: 380px){
+    height: 300px;
+    width: 90%;
+    transform: translateX(0)
+  }
+
 
   .card-number-wrapper {
     position: absolute;
@@ -381,6 +452,9 @@ export const CardContainer = styled.div<IProps>`
     right: -35px;
     transition: 0.5s;
     z-index: 10;
+    @media (max-width: 380px){
+      display: none;
+    }
   }
   .card-number-wrapper-left {
     position: absolute;
@@ -388,7 +462,9 @@ export const CardContainer = styled.div<IProps>`
     left: -35px;
     transition: 0.5s;
     z-index: 10;
-
+    @media (max-width: 380px){
+      display: none;
+    }
   }
 
   &:hover .blue-mask-hover {
@@ -423,6 +499,9 @@ export const CardContainer = styled.div<IProps>`
     z-index: 3;
     margin: 0;
     overflow: hidden;
+    @media (max-width: 380px){
+      display: none;
+    }
     
   }
 
@@ -435,6 +514,7 @@ export const CardContainer = styled.div<IProps>`
     overflow: hidden;
     z-index: 4;
     height: 100%;
+    
   }
 
   &:hover .card-number {
@@ -447,6 +527,10 @@ export const CardContainer = styled.div<IProps>`
     height: 480px;
     object-fit: cover;
     opacity: 0.4;
+
+    @media (max-width: 380px){
+      height: 300px;
+    }
   }
 
 
@@ -462,10 +546,18 @@ export const CardContainer = styled.div<IProps>`
     z-index: 4;
     transition: 0.5s;
     transition-delay: 0.3s;
+    @media (max-width: 380px){
+      left: 30px;
+      bottom: 20px;
+    }
     h1 {
       font-size: 3em;
       color: #fff;
       margin: 0;
+
+      @media (max-width: 380px){
+       font-size: 2em;
+      }
     }
 
     h5 {
@@ -474,6 +566,9 @@ export const CardContainer = styled.div<IProps>`
       font-size: 1.5em;
       margin: 3px 0px;
       color: #fff;
+    }
+    @media (max-width: 380px){
+      font-size: 1em;
     }
   }
 
@@ -484,10 +579,21 @@ export const CardContainer = styled.div<IProps>`
     z-index: 4;
     transition: 0.5s;
     transition-delay: 0.3s;
+  
+    @media (max-width: 380px){
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      right: 20px;
+      bottom: 20px;
+    }
     h1 {
       font-size: 3em;
       color: #fff;
       margin: 0;
+      @media (max-width: 380px){
+       font-size: 2em;
+      }
     }
 
     h5 {
@@ -496,6 +602,9 @@ export const CardContainer = styled.div<IProps>`
       font-size: 1.5em;
       margin: 3px 0px;
       color: #fff;
+      @media (max-width: 380px){
+       font-size: 1em;
+      }
     }
   }
 

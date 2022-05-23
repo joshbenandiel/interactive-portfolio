@@ -70,6 +70,9 @@ export const PreLoader = styled.div`
       margin: 0px;
       padding: 0px;
       
+      @media (max-width: 380px){
+        transform: translateY(-30px)
+      }
     }
 
     li {

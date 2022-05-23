@@ -55,7 +55,10 @@ export const Projects:FC<ProjectsProps> = ({children}) => {
             <div ref={ref} className='technologies-container'>
               <OrangeMask movement={isVisible ? 'translateY(-420px)' : 'translateY(0px)'}/>
               <LightBlueMask movement={isVisible ? 'translateY(-420px)' : 'translateY(0px)'}/>
+              
+               {/* ////1/////  */}
               <div className='technologies-box'>
+                <span className='technologies-number-phone'>01</span>
                 <div className='pink-mask'/>
                 <div className='technologies-title'>
                   Technologies
@@ -68,8 +71,10 @@ export const Projects:FC<ProjectsProps> = ({children}) => {
                   <img src={css} alt="html" />
                 </div>
               </div>
+               {/* ////2/////  */}
               <div className='technologies-box'>
-                <div className='pink-mask'/>
+              <span className='technologies-number-phone-left'>02</span>
+              <div className='pink-mask'/>
               <div className='technologies-title'>
                   Technologies
                   <div className='technologies-label'>MaterialUI,StyledComponents,Bootstrap</div>
@@ -82,7 +87,9 @@ export const Projects:FC<ProjectsProps> = ({children}) => {
                   <img className='three-images' src={bootstrap} alt='html'></img>
                 </div>
               </div>
+               {/* ////3/////  */}
               <div className='technologies-box'>
+              <span className='technologies-number-phone'>03</span>
               <div className='pink-mask'/>
                 <div className='technologies-title'>
                   Technologies
@@ -95,7 +102,9 @@ export const Projects:FC<ProjectsProps> = ({children}) => {
                   <img src={javascript} alt="html" />
                 </div>
               </div>
+              {/* ////4/////  */}
               <div className='technologies-box'>
+                <span className='technologies-number-phone-left'>04</span>
                 <div className='pink-mask'/>
                 <div className='technologies-title'>
                   Technologies

@@ -17,6 +17,7 @@ export const BackgroundContainer = styled.div`
     img {
       height: 250px;
       transition: 0.1s ease;
+      
     }
   }
   .layer-2 {
@@ -57,6 +58,11 @@ export const BackgroundContainer = styled.div`
     transform: translate(-50%,-50%);
     height: 600px;
     z-index: 1;
+
+    @media (max-width: 380px){
+      left: 65%;
+      height: 300px;
+    }
   }
 
   .navbar-hide {
