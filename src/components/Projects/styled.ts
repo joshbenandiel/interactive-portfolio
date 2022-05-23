@@ -333,15 +333,14 @@ export const CardContainer = styled.div<IProps>`
 
   .card-number-wrapper {
     position: absolute;
-    top: -60px;
+    top: -50px;
     right: -35px;
     transition: 0.5s;
     z-index: 10;
-
   }
   .card-number-wrapper-left {
     position: absolute;
-    top: -60px;
+    top: -50px;
     left: -35px;
     transition: 0.5s;
     z-index: 10;
@@ -353,20 +352,18 @@ export const CardContainer = styled.div<IProps>`
   }
 
   &:hover .card-number {
-    color: #fff;
-    transition: 0.5s;
+    color: #B0B2C3;
+    transition: 0.6s;
   }
 
   &:hover .card-number-wrapper  {
-    color: #fff;
     transition: 0.5s;
-    transform: translateY(-20px)
+    transform: translateY(-30px)
   }
 
   &:hover .card-number-wrapper-left  {
-    color: #fff;
     transition: 0.5s;
-    transform: translateY(-20px)
+    transform: translateY(-30px)
   }
 
   .card-number {
@@ -391,6 +388,13 @@ export const CardContainer = styled.div<IProps>`
     transition: 0.5s ease;
     overflow: hidden;
     z-index: 4;
+    height: 0%;
+    transition-delay: 0.5s;
+  }
+
+  &:hover .card-number::before{
+    color: #fff;
+    height: 110%;
   }
 
 
