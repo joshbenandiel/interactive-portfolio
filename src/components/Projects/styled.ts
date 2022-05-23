@@ -372,6 +372,18 @@ export const BlueMask = styled.div<{location: string}>`
     }
 `
 
+export const CardMask = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  height: 480px;
+  background-color: #1F4273;
+  opacity: 0.4;
+  width: 0%;
+  transition: 0.5s ease;
+`
+
 export const CardContainer = styled.div<IProps>`
   width: 90%;
   height: 480px;
@@ -399,6 +411,10 @@ export const CardContainer = styled.div<IProps>`
     opacity: 0;
     transition: 0.5s;
 
+  }
+
+  &:hover ${CardMask} {
+    width: 100%
   }
 
   &:hover .card-number-wrapper {
@@ -447,21 +463,6 @@ export const CardContainer = styled.div<IProps>`
     opacity: 0.4;
   }
 
-  .card-mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    height: 480px;
-    background-color: #1F4273;
-    opacity: 0.4;
-    animation: ${cardMaskBackwards} 0.5s ease forwards
-    
-  }
-
-  &:hover .card-mask {
-    animation: ${cardMask} 0.5s ease-in forwards
-  }
 
   &:hover span {
     transform: scale(1.05)
