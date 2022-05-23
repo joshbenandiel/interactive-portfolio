@@ -26,6 +26,8 @@ export const Background: FC<IProps> = ({children, theme}) => {
 
   
   const [render, setRender] = useState<boolean>(false)
+  const [movementX, setMovementX] = useState<number>(0)
+  const [movementY, setMovementY] = useState<number>(0)
 
 
   useEffect(() => {
@@ -40,10 +42,12 @@ export const Background: FC<IProps> = ({children, theme}) => {
       const speed = layer.getAttribute('data-speed')
       const x = (window.innerWidth - e.pageX*speed)/100
       const y = (window.innerWidth - e.pageY*speed)/100
-      layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+      setMovementX(x)
+      setMovementY(y)
+      layer.style.transform = `translateX(${movementX}px) translateY(${movementY}px)`
     })
   }
-  document.addEventListener('click', parallax)
+  document.addEventListener('mousemove', parallax)
   
 
 
