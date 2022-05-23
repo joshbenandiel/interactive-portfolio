@@ -13,8 +13,8 @@ export const BackgroundContainer = styled.div`
     top: 50px;
     left: 0;
      
-    img {
-      height: 250px;
+    .shapes {
+      height: 50px;
     }
   }
   .layer-2 {
