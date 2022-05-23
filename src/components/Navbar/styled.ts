@@ -56,7 +56,7 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
       li span:before {
         content: "";
         position: absolute;
-        bottom: 16px;
+        bottom: 19px;
         right: 0;
         left: auto;
         width: 100%;
@@ -70,7 +70,7 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
       li span:after {
         content: "";
         position: absolute;
-        bottom: 16px;
+        bottom: 19px;
         left: 0;
         width: 100%;
         transform: translateX(-150px);

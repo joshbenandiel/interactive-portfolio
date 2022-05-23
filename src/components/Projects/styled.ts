@@ -1,7 +1,41 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 
 
+const zoom = keyframes`
+from {
+  transform: scale(0)
+}
+to {
+  transform:  scale(1.2)
+}
+`
 
+export const OrangeMask = styled.div<{movement: string}>`
+  height: 100%;
+  width: 100%;
+  background-color: #f06449;
+  background: linear-gradient(270deg,#f06449,#ef3636);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 12;
+  transform: ${props => props.movement};
+  transition: 0.5s ease;
+  transition-delay: 0.3s;
+
+  
+`
+export const LightBlueMask = styled.div<{movement: string}>`
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(270deg,#235aa6,#101b3b);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 13;
+  transform: ${props => props.movement};
+  transition: 0.5s ease;
+`
 
 
 export const Container = styled.div`
@@ -22,6 +56,7 @@ export const Container = styled.div`
     justify-content: center;
     flex-direction: column;
     align-items: center;
+   
     h3 {
       font-family: LibreBaskerville-Regular,Palatino Linotype,Times New Roman,serif;
       text-transform: uppercase;
@@ -37,12 +72,16 @@ export const Container = styled.div`
       font-size: 2.5em;
       margin-bottom: 0;
     }
+    
 
     .technologies-container {
       margin-top: 100px;
       width: 100%;
       display: flex;
       justify-content: center;
+      position: relative;
+      overflow: hidden;
+      
       
       .technologies-box {
         height: 418px;
@@ -53,6 +92,11 @@ export const Container = styled.div`
         background-color: #fff;
         box-shadow: 0 20px 60px 0 rgb(0 0 0 / 15%);
         cursor: pointer;
+
+
+        &:hover img {
+          animation: ${zoom} 0.5s ease;
+        }
         
         .images-wrapper-technologies {
           position: absolute;
