@@ -56,8 +56,8 @@ export const NavOpen = styled.span<{open: string, scale: string, show: string}>`
     left: 0;
     height: 100vh;
     width: 100%;
-    z-index: 100;
-
+    z-index: ${props => props.show};
+    
 
     .orange-mask-nav {
       position: absolute;

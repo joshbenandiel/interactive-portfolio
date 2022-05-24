@@ -10,7 +10,7 @@ export const Container = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  z-index: 5;
+  z-index: 1000;
   box-shadow: 0 20px 80px 0 rgb(0 0 0 / 55%);
 
   @media (max-width: 380px){
