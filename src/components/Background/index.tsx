@@ -62,7 +62,7 @@ export const Background: FC<IProps> = ({children, theme, openNav, setOpenNav, se
     <BackgroundContainer theme={theme}>
       <>
       <NavOpen 
-        show={openNav ? 'block' : 'none'}
+        show={openNav ? '200' : '1'}
         scale={openNav ? '1.2' : '0'} 
         open={openNav ? 'translateX(0px)' : 'translateX(-400px)'}>
         <div className='blue-mask-nav'>

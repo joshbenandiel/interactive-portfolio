@@ -403,8 +403,9 @@ export const BlueMask = styled.div<{location: string}>`
     overflow: hidden;
 
     @media (max-width: 380px){
-      height: 480px;
+      display: none
     }
+
 
     div {
       background: linear-gradient(270deg,#235aa6,#101b3b);
