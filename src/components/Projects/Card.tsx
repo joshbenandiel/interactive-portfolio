@@ -32,10 +32,11 @@ export const Card: React.FC<IProps> = ({
       }
     },{rootMargin: "-200px",}
   );
+  
   useEffect(() => {
     setRender(prev => !prev)
     observer.observe(ref.current)
-  }, [render])
+  }, [])
 
 
   const translate = {

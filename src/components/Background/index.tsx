@@ -38,7 +38,7 @@ export const Background: FC<IProps> = ({children, theme, openNav, setOpenNav, se
 
   useEffect(() => {
     setRender(prev => !prev)
-  }, [render])
+  }, [])
   
 
   
@@ -54,10 +54,6 @@ export const Background: FC<IProps> = ({children, theme, openNav, setOpenNav, se
     })
   },[pos1])
 
-  // const parallax = (e: any) => {
-  //   
-  // }
-  // document.addEventListener('click', parallax)
   
 
 
@@ -65,13 +61,13 @@ export const Background: FC<IProps> = ({children, theme, openNav, setOpenNav, se
   return (
     <BackgroundContainer theme={theme}>
       <>
-      {openNav && (
-        <NavOpen 
-          movement={openNav ? '-40px' : '10px'}
-          opacity={openNav ? '1' : '0'}
-          scale={openNav ? '1.2' : '0'} 
-          open={openNav ? '0px' : '-400px'}>
-          <div className='blue-mask-nav'>
+      <NavOpen 
+        show={openNav ? 'block' : 'none'}
+        scale={openNav ? '1.2' : '0'} 
+        open={openNav ? 'translateX(0px)' : 'translateX(-400px)'}>
+        <div className='blue-mask-nav'>
+          {openNav && (
+            <>
             <button onClick={() => setOpenNav(false)}>
                 <AiOutlineClose className='close-button-nav' size={40} color='#BDBEC5'/>
             </button>
@@ -100,10 +96,11 @@ export const Background: FC<IProps> = ({children, theme, openNav, setOpenNav, se
                 <li onClick={() => setOpenNav(false)}><a href="https://twitter.com/joshbenandiel" target='_blank' rel="noreferrer"><BsTwitter/></a></li>
               </ul>
             </NavOpenFooter>
-          </div>
-          <div className='orange-mask-nav'/>
-        </NavOpen>
-      )}
+            </>
+          )}
+        </div>
+        <div className='orange-mask-nav'/>
+      </NavOpen>
       <img className='background-logo'src={backgroundlogo} alt="background"/>
       <div className='layer-1'>
         <img className='shapes' src={twelve} data-speed={-11} alt='shapes'/>

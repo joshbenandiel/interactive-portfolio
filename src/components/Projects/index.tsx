@@ -33,7 +33,7 @@ export const Projects:FC<ProjectsProps> = ({children}) => {
       },{rootMargin: "-200px",}
     );
     observer.observe(ref.current)
-  }, [render])
+  }, [])
 
 
   return (

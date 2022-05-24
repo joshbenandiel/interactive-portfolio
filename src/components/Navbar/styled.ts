@@ -5,7 +5,7 @@ export const Hamburger = styled.button<{toggle: string}>`
 
   position: absolute;
   top: 13px;
-  right: 100px;
+  right: 10px;
   height: 50px;
   width: 60px;
   background-color: transparent;
@@ -48,8 +48,16 @@ export const Hamburger = styled.button<{toggle: string}>`
 `
 
 
-export const NavOpen = styled.div<{open: any, scale: string, movement: string,opacity: string}>`
-    position: relative;
+export const NavOpen = styled.span<{open: string, scale: string, show: string}>`
+
+@media (max-width: 380px){
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 100;
+
 
     .orange-mask-nav {
       position: absolute;
@@ -57,24 +65,26 @@ export const NavOpen = styled.div<{open: any, scale: string, movement: string,op
       left: 0;
       height: 100vh;
       width: 100%;
-      z-index: 100;
+      z-index: 200;
       background-color: #f06449;
       background: linear-gradient(270deg,#f06449,#ef3636);
-      transform: translateX(${props => props.open});
-      transition: 0.5s ease;
+      transition: 0.5s;
+      transform: ${props => props.open};
     }
 
- 
+
     .blue-mask-nav {
       position: absolute;
       top: 0;
       left: 0;
       height: 100vh;
       width: 100%;
-      z-index: 101;
+      z-index: 201;
       background: linear-gradient(270deg,#235aa6,#101b3b);
-      transform: translateX(${props => props.open});
-      transition: 0.8s ease; 
+      transform:  ${props => props.open};
+      transition: 0.8s; 
+
+      
 
       button {
         position: absolute;
@@ -102,7 +112,6 @@ export const NavOpen = styled.div<{open: any, scale: string, movement: string,op
         justify-content: center;
         width: 100%;
         gap: 30px;
-        opacity: ${props => props.opacity};
         transition: 0.5s ease;
 
         li {
@@ -112,11 +121,11 @@ export const NavOpen = styled.div<{open: any, scale: string, movement: string,op
           font-size: 1.6875em;
           font-family: League Spartan,Helvetica,Arial,sans-serif;
           padding-left: 50px;
-          transform: translateY(${props => props.movement});
           transition: 0.5s;
         }
       }
     }
+  }
 `
 export const NavOpenFooter = styled.div`
   position: absolute;
@@ -149,14 +158,13 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
   width: 1080px;
   height: 10vh;
   margin: 0 auto;
-  display: flex;
   justify-content: space-between;
   transform: ${props => props.move};
   transition: 0.35s ease;
   display: ${props => props.toggle};
 
   @media (max-width: 375px){
-    width: 375px;
+    width: 290px;
   }
 
     div {
