@@ -12,6 +12,11 @@ import emart from '../components/Projects/images/emart.png'
 import netflix from '../components/Projects/images/netflix.png'
 import landing from '../components/Projects/images/landing-page.png'
 import { Contact } from "../components/Contact/index";
+import {
+  Routes,
+  Route
+} from "react-router-dom";
+import { LandingPage } from "../components/LandingPage";
 
 
 const themeProvider = {
@@ -57,65 +62,76 @@ const App: React.FC = () => {
 
 
   return (
-    <ContainerWrapper>
-    {loading ? (
-      <PreLoader>
-        <div>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-      </PreLoader>
-    )
-    : (
     <>
-      <Background 
-        setOpenContact={setOpenContact}
-        setOpenNav={setOpenNav}
-        openNav={openNav} 
-        theme={changeTheme ? themeProvider.light :  themeProvider.dark}>
-        {openContact && <Contact 
-          openContact={openContact}
-          setOpenContact={setOpenContact}/>}
-        <div className={`navbar-hide${openContact ? '-false' : ' '}`}>
-          <Navbar 
-            openNav={openNav}
+    <Routes>
+      {/* Home Page */}
+      <Route path='/' element={
+        <>
+        <ContainerWrapper>
+        {loading ? (
+          <PreLoader>
+            <div>
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </PreLoader>
+        )
+        : (
+        <>
+          <Background 
+            setOpenContact={setOpenContact}
             setOpenNav={setOpenNav}
-            textColor={changeTheme ? textColor.light :  textColor.dark}
-            textColorHover = {changeTheme ? textColorHover.light : textColorHover.dark}
-            changeTheme={changeTheme}
-            setChangeTheme={setChangeTheme}
-            setOpenContact={setOpenContact}/>
-        </div>
-        <Main 
-          textColorMain={changeTheme ? textColorMain.light : textColorMain.dark}
-          textColor={changeTheme ? textColor.light :  textColor.dark}
-          textColorHover = {changeTheme ? textColorHover.light : textColorHover.dark}
-          openContact={openContact} 
-          setOpenContact={setOpenContact}/>
-        </Background>
-        <Projects>
-          {cardData.map((card) => (
-            <Card 
-              key={card.id}
-              id={card.id}
-              link={card.link}
-              img={card.img}
-              header={card.header}
-              paragraph={card.paragraph}
-              number={card.number}
-              move={card.move}
-            />
-          ))}
-        </Projects>
-        <Footer/>
-      </>
-    
-    )} 
-    </ContainerWrapper>
-  );
+            openNav={openNav} 
+            theme={changeTheme ? themeProvider.light :  themeProvider.dark}>
+            {openContact && <Contact 
+              openContact={openContact}
+              setOpenContact={setOpenContact}/>}
+            <div className={`navbar-hide${openContact ? '-false' : ' '}`}>
+              <Navbar 
+                openNav={openNav}
+                setOpenNav={setOpenNav}
+                textColor={changeTheme ? textColor.light :  textColor.dark}
+                textColorHover = {changeTheme ? textColorHover.light : textColorHover.dark}
+                changeTheme={changeTheme}
+                setChangeTheme={setChangeTheme}
+                setOpenContact={setOpenContact}/>
+            </div>
+            <Main 
+              textColorMain={changeTheme ? textColorMain.light : textColorMain.dark}
+              textColor={changeTheme ? textColor.light :  textColor.dark}
+              textColorHover = {changeTheme ? textColorHover.light : textColorHover.dark}
+              openContact={openContact} 
+              setOpenContact={setOpenContact}/>
+            </Background>
+            <Projects>
+              {cardData.map((card) => (
+                <Card 
+                  key={card.id}
+                  id={card.id}
+                  link={card.link}
+                  img={card.img}
+                  header={card.header}
+                  paragraph={card.paragraph}
+                  number={card.number}
+                  move={card.move}
+                />
+              ))}
+            </Projects>
+            <Footer/>
+          </>
+        
+        )} 
+        </ContainerWrapper>
+        </>
+      }/>
+      {/* Portfolio Page */}
+      <Route path='landing-page' element={<LandingPage/>}/>
+    </Routes>
+    </>
+  )
 }
 
 

@@ -1,7 +1,7 @@
 import styled, {keyframes} from 'styled-components'
 
 
-const linear = keyframes`
+export const linear = keyframes`
   0% {
      width: 0;
   }
@@ -11,7 +11,7 @@ const linear = keyframes`
 
 `;
 
-const linearLoad = keyframes`
+export const linearLoad = keyframes`
   0% {
     left: 0;
     width: 0;
