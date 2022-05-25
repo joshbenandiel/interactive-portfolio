@@ -636,8 +636,8 @@ export const ButtonContainer = styled.div`
 
 export const ContainerSection = styled.div`
   position: absolute;
-  top: 80px;
-  left: 28%;
+  left: 50%;
+  transform: translate(-50%);
   height: 100%;
   width: 900px;
   z-index: 20;

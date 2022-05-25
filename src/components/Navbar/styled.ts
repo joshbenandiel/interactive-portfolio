@@ -152,14 +152,14 @@ export const NavOpenFooter = styled.div`
 export const NavWrapper = styled.nav<{move: string, textColor: string, textColorHover: string, toggle: string}>`
   position: fixed;
   top: 0;
-  left: 23%;
+  left: 50%;
   z-index: 100;
   color: ${props => props.textColor};
   width: 1080px;
   height: 10vh;
   margin: 0 auto;
   justify-content: space-between;
-  transform: ${props => props.move};
+  transform: ${props => props.move} translateX(-50%);
   transition: 0.35s ease;
   display: ${props => props.toggle};
 
