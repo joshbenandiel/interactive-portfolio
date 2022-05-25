@@ -23,6 +23,12 @@ const NavTranslate = keyframes`
 //----------RELATIVE----------------//
 export const Relative = styled.div`
     position: relative;
+
+    .fixed-position {
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+    }
 `
 
 //----------LOADING----------------//
@@ -606,14 +612,15 @@ to {
 }
 `
 export const ButtonContainer = styled.div`
+
   position: fixed;
   top:0;
   left: 48%;
-  z-index: 10;
-  animation: ${ButtonFrame} 0.5s ease forwards;
- 
-
+  z-index: 30;
+  
   button {
+   
+    animation: ${ButtonFrame} 0.5s ease forwards;
     background-color: #f06449;
     background: linear-gradient(270deg,#f06449,#ef3636);
     border: none;

@@ -14,7 +14,8 @@ import landing from '../components/Projects/images/landing-page.png'
 import { Contact } from "../components/Contact/index";
 import {
   Routes,
-  Route
+  Route,
+  useLocation
 } from "react-router-dom";
 import { LandingPage } from "../components/LandingPage";
 
@@ -48,14 +49,14 @@ const App: React.FC = () => {
   const [openNav, setOpenNav] = useState<boolean>(false)
 
 
-
+  let location = useLocation();
   useEffect(() => {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
     },2000)
     
-  },[])
+  },[location])
 
   
 
@@ -137,8 +138,8 @@ const App: React.FC = () => {
 
 
 const cardData = [
-  {id: 1, img: landing, header: 'Landing Page', paragraph:'Personal Portfolio', number:'01', move: '30px', link: 'https://joshbenandiel.vercel.app/', button: 'Case Study'},
-  {id: 2,img: facebook, header: 'Facebook Clone', paragraph:'Clone Facebook UI', number:'02', move: '30px', link: 'https://facebookclone-five.vercel.app/', button: 'Case Study'},
+  {id: 1, img: landing, header: 'Landing Page', paragraph:'Personal Portfolio', number:'01', move: '30px', link: 'landing-page', button: 'Case Study'},
+  {id: 2,img: facebook, header: 'Facebook Clone', paragraph:'Clone Facebook UI', number:'02', move: '30px', link: 'facebook-clone', button: 'Case Study'},
   {id: 3,img: netflix, header: 'Netflix API', paragraph:'Sign In, Sign Up with API Calls', number:'03', move: '-30px', link: 'https://netflixapi.netlify.app/', button: 'Visit Page'},
   {id: 4,img: ecommerce, header: 'Ecommerce', paragraph:'Without API Calls', number:'04', move: '30px', link: 'https://ecommerce-gilt-theta.vercel.app/', button: 'Visit Page'},
   {id: 5,img: emart, header: 'Ecommerce API', paragraph:'With API Calls', number:'05', move: '-30px', link: 'https://emart-omega.vercel.app/', button: 'Visit Page'},

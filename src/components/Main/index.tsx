@@ -22,12 +22,17 @@ export const Main: React.FC<IProps> = ({
 
   const [pause, setPause] = useState<boolean>(true)
 
+
+
+
   useEffect(() => {
     setPause(false)
     setTimeout(() => {
       setPause(true)
     },1000)
   },[])
+
+
   const texts: ScrambleTexts = [
     'Front End Developer'
   ]

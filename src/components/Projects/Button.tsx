@@ -1,5 +1,6 @@
 import { FC } from "react"
 import { ButtonContainer } from "./styled"
+import { Link } from 'react-router-dom'
 
 interface IProps {
   link: string
@@ -9,12 +10,23 @@ interface IProps {
 export const Button: FC<IProps> = ({link, button}) => {
   return (
     <ButtonContainer>
-      <a href={link} target='_blank' rel="noreferrer">
+      {button === 'Case Study' ? (
+        <Link to={link}>
         <button>
           <span className='button-text'>{button}</span>
         </button>
         <span className='arrow-right'>&#10230;</span>
-      </a>
+        </Link>
+      ) : (
+        <>
+        <a href={link} target='_blank' rel="noreferrer">
+          <button>
+            <span className='button-text'>{button}</span>
+          </button>
+          <span className='arrow-right'>&#10230;</span>
+        </a>
+        </>
+      )}
     </ButtonContainer>
   )
 }

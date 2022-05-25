@@ -163,6 +163,9 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
   transition: 0.35s ease;
   display: ${props => props.toggle};
 
+  @media (max-width: 1500px){
+    width: 70%;
+  }
   @media (max-width: 375px){
     width: 290px;
   }

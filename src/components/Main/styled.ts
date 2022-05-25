@@ -184,6 +184,16 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
     right: -300px;
     transition: 0.5s;
 
+    @media (max-width: 1700px){
+      right: -243px
+    }
+    @media (max-width: 1500px){
+      right: -220px
+    }
+    @media (max-width: 1024px){
+      right: -150px;
+    }
+
     li {
       list-style: none;
       font-size: 4rem;

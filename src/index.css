@@ -3,8 +3,6 @@ body {
   font-family: League Spartan,Helvetica,Arial,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  will-change: transform, box-shadow, z-index;
-  scroll-behavior: smooth;
 }
 
 
