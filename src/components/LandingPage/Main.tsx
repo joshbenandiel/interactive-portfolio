@@ -1,10 +1,17 @@
 import { Background, BackgroundText } from './styled'
-import image from './images/landingbackground.png'
+import image from './images/background.webp'
 import TextScramble, { ScrambleTexts } from '@twistezo/react-text-scramble'
 import { useEffect, useState } from 'react'
 import Aos from 'aos'
 
-export const Main = () => {
+
+interface IProps {
+  openWorks: boolean;
+  setOpenWorks: (data: boolean) => void
+}
+
+
+export const Main:React.FC<IProps> = ({openWorks, setOpenWorks}) => {
   const [pause, setPause] = useState<boolean>(true)
 
   useEffect(() => {
@@ -17,6 +24,8 @@ export const Main = () => {
   useEffect(() => {
     Aos.init();
   },[])
+
+
 
   const front: ScrambleTexts = [
     'FRONT-END DEVELOPER'

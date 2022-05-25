@@ -9,7 +9,8 @@ interface IProps {
   number: string,
   move: string,
   id: number,
-  link: string
+  link: string,
+  button: string
 }
 
 export const Card: React.FC<IProps> = ({
@@ -18,6 +19,7 @@ export const Card: React.FC<IProps> = ({
   paragraph,
   number, 
   link,
+  button,
   move, 
   id}) => {
 
@@ -58,7 +60,7 @@ export const Card: React.FC<IProps> = ({
       <span className={`card-text-wrapper${parseInt(number) % 2 === 0 ? `-right`: ``}`}>
         <h1>{header}</h1>
         <h5>{paragraph}</h5>
-        <Button link={link}/>
+        <Button link={link} button={button}/>
       </span>
       <div className={`card-number-wrapper${parseInt(number) % 2 === 0 ? `-left`: ``}`}>
         <h1 data-text={number} className='card-number'>{number}</h1>

@@ -21,20 +21,20 @@ export const Components = () => {
         <h3 data-aos="fade-up">UI & COMPONENTS</h3>
         <h2 data-aos="fade-up">Design</h2>
         <img className='components-design' data-aos="fade-up" src={image} alt='landing'></img>
-        <ColorContainer data-aos="fade-up">
-          <div className='color-circle ebony'>
+        <ColorContainer>
+          <div data-aos="fade-up" className='color-circle ebony'>
             <p>$ebony</p>
           </div>
-          <div className='color-circle mine'>
+          <div data-aos="fade-up" className='color-circle mine'>
             <p>$mine-shaft</p>
           </div>
-          <div className='color-circle gallery'>
+          <div data-aos="fade-up" className='color-circle gallery'>
             <p>$mine-gallery</p>
           </div>
-          <div className='color-circle white'>
+          <div data-aos="fade-up" className='color-circle white'>
             <p>$mine-white</p>
           </div>
-          <div className='color-circle denim'>
+          <div data-aos="fade-up" className='color-circle denim'>
             <p>$mine-denim</p>
           </div>
         </ColorContainer>

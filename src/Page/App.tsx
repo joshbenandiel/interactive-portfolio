@@ -109,6 +109,7 @@ const App: React.FC = () => {
             <Projects>
               {cardData.map((card) => (
                 <Card 
+                  button={card.button}
                   key={card.id}
                   id={card.id}
                   link={card.link}
@@ -136,11 +137,11 @@ const App: React.FC = () => {
 
 
 const cardData = [
-  {id: 1, img: landing, header: 'Landing Page', paragraph:'Personal Portfolio', number:'01', move: '30px', link: 'https://joshbenandiel.vercel.app/'},
-  {id: 2,img: netflix, header: 'Netflix API', paragraph:'Sign In, Sign Up with API Calls', number:'02', move: '-30px', link: 'https://netflixapi.netlify.app/'},
-  {id: 3,img: facebook, header: 'Facebook Clone', paragraph:'Clone Facebook UI', number:'03', move: '30px', link: 'https://facebookclone-five.vercel.app/'},
-  {id: 4,img: ecommerce, header: 'Ecommerce', paragraph:'Without API Calls', number:'04', move: '30px', link: 'https://ecommerce-gilt-theta.vercel.app/'},
-  {id: 5,img: emart, header: 'Ecommerce API', paragraph:'With API Calls', number:'05', move: '-30px', link: 'https://emart-omega.vercel.app/'},
+  {id: 1, img: landing, header: 'Landing Page', paragraph:'Personal Portfolio', number:'01', move: '30px', link: 'https://joshbenandiel.vercel.app/', button: 'Case Study'},
+  {id: 2,img: facebook, header: 'Facebook Clone', paragraph:'Clone Facebook UI', number:'02', move: '30px', link: 'https://facebookclone-five.vercel.app/', button: 'Case Study'},
+  {id: 3,img: netflix, header: 'Netflix API', paragraph:'Sign In, Sign Up with API Calls', number:'03', move: '-30px', link: 'https://netflixapi.netlify.app/', button: 'Visit Page'},
+  {id: 4,img: ecommerce, header: 'Ecommerce', paragraph:'Without API Calls', number:'04', move: '30px', link: 'https://ecommerce-gilt-theta.vercel.app/', button: 'Visit Page'},
+  {id: 5,img: emart, header: 'Ecommerce API', paragraph:'With API Calls', number:'05', move: '-30px', link: 'https://emart-omega.vercel.app/', button: 'Visit Page'},
 ]
 
 export default App;
