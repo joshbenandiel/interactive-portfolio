@@ -13,6 +13,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { NavOpen, NavOpenFooter } from '../Navbar/styled'
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa'
 import { BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
 export interface WorkType {
   image: string
@@ -87,9 +88,9 @@ export const LandingPage: React.FC<IProps> = ({worksData}) => {
                 <AiOutlineClose className='close-button-nav' size={40} color='#BDBEC5'/>
             </button>
             <ul className='ul-nav'>
-              <li onClick={() => {
-                setOpenNav(false)
-              }}>Home</li>
+              <Link className='nav-link' to='/'>
+                <li>Home</li>
+              </Link>
               <li onClick={() => {
                 setOpenNav(false)
                 setOpenWorks(true)
