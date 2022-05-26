@@ -604,6 +604,7 @@ export const NextPage = styled.div<{first: string, second: string}>`
       line-height: 1.0611408323;
       font-weight: bold;
       text-decoration: underline;
+      text-underline-offset: 7px;
       text-decoration-color: ${props => props.second};
     }
   }
@@ -762,6 +763,11 @@ export const CardContainer = styled.div`
     overflow: hidden;
     animation: ${DetailsFrame} 0.5s cubic-bezier(.694,.048,.335,1); 
 
+ 
+    .works-link {
+      text-decoration: none;
+    }
+
     h1 {
       color: #1c1d25;
       font-size: 3.75em;
@@ -845,6 +851,7 @@ export const CardContainerRight = styled.div`
     position: relative;
     animation: ${PictureFrameRight} 0.5s cubic-bezier(.694,.048,.335,1) 0.2s; 
 
+    
     &:after {
         position: absolute;
         left: 0;
@@ -888,7 +895,11 @@ export const CardContainerRight = styled.div`
     padding: 0 30px;
     position: relative;
     overflow: hidden;
-    animation: ${DetailsFrameRight} 0.5s cubic-bezier(.694,.048,.335,1); 
+    animation: ${DetailsFrameRight} 0.5s cubic-bezier(.694,.048,.335,1);
+    
+    .works-link {
+      text-decoration: none;
+    }
 
     h1 {
       color: #1c1d25;

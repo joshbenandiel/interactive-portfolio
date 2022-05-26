@@ -4,9 +4,10 @@ import facebook from './images/facebookwork.png'
 import netflix from './images/netflixwork.jpg'
 import apple from './images/apple.jpeg'
 import shops from './images/shops.jpg'
+import { Link } from 'react-router-dom'
 
 
-export const Works = () => {
+export const Works: React.FC<any> = ({setOpenWorks}) => {
   return (
     <ContainerSection>
       <CardContainer>
@@ -19,7 +20,9 @@ export const Works = () => {
           <h3>Personal Portfolio</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <span>Landing Page</span>
-          <button>Case Study</button>
+          <Link className='works-link' to='/landing-page'>
+            <button onClick={() => setOpenWorks(false)}>Case Study</button>
+          </Link>
         </div>
       </CardContainer>
       <CardContainerRight>
@@ -28,7 +31,9 @@ export const Works = () => {
           <h3>Clone Facebook Home Page</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <span>Facebook</span>
-          <button>Case Study</button>
+          <Link className='works-link' to='/facebook-clone'>
+            <button onClick={() => setOpenWorks(false)}>Case Study</button>
+          </Link>
         </div>
         <div className='picture-container'>
           <img src={facebook} alt="landing" />
@@ -45,7 +50,9 @@ export const Works = () => {
           <h3>Login/Register with API Calls</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <span>Netflix</span>
-          <button>Case Study</button>
+          <Link className='works-link' to='/netflix'>
+            <button onClick={() => setOpenWorks(false)}>Case Study</button>
+          </Link>
         </div>
       </CardContainer>
       <CardContainerRight>
@@ -54,7 +61,9 @@ export const Works = () => {
           <h3>Apple Store Shopping without API Calls</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <span>Ecommerce</span>
-          <button>Case Study</button>
+          <Link className='works-link' to='/ecommerce'>
+            <button onClick={() => setOpenWorks(false)}>Case Study</button>
+          </Link>
         </div>
         <div className='picture-container'>
           <img src={apple} alt="landing" />
@@ -71,7 +80,9 @@ export const Works = () => {
           <h3>Shopping Store with API Calls</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <span>Ecommerce</span>
-          <button>Case Study</button>
+          <Link className='works-link' to='/ecommercev2'>
+            <button onClick={() => setOpenWorks(false)}>Case Study</button>
+          </Link>
         </div>
       </CardContainer>
     </ContainerSection>

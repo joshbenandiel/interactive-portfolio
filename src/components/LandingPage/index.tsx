@@ -66,7 +66,7 @@ export const LandingPage: React.FC<IProps> = ({worksData}) => {
       <ButtonContainer>
         <button className='' onClick={() => setOpenWorks(false)}><MdClose size={30}/>Close</button>
       </ButtonContainer>
-      <Works/>
+      <Works setOpenWorks={setOpenWorks}/>
       </>
     )}
     <Relative>
