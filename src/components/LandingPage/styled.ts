@@ -23,7 +23,11 @@ const NavTranslate = keyframes`
 //----------RELATIVE----------------//
 export const Relative = styled.div`
     position: relative;
-
+    
+    @media (max-width: 425px) {
+      width: 425px;
+      overflow: hidden;
+    }
     .fixed-position {
       height: 100vh;
       width: 100%;
@@ -772,8 +776,12 @@ export const ButtonContainer = styled.div`
 
   position: fixed;
   top:0;
-  left: 48%;
+  left: 50%;
   z-index: 30;
+
+  @media (max-width: 425px){
+    transform: translateX(-50%)
+  }
   
   button {
    
@@ -799,6 +807,10 @@ export const ContainerSection = styled.div`
   width: 900px;
   z-index: 20;
   margin-top: 80px;
+
+  @media (max-width: 425px){
+    width: 425px
+  }
 `
 const PictureFrame = keyframes`
   from {
@@ -860,12 +872,24 @@ export const CardContainer = styled.div`
   display: flex;
   box-shadow: 0 20px 80px 0 rgb(0 0 0 / 55%);
 
+  @media (max-width: 425px){
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .picture-container {
     width: 40%;
     height: 100%;
     background-color: transparent; 
     position: relative;
-    animation: ${PictureFrame} 0.5s cubic-bezier(.694,.048,.335,1) 0.2s; 
+    animation: ${PictureFrame} 0.5s cubic-bezier(.694,.048,.335,1) 0.2s;
+    
+    @media (max-width: 425px){
+      display:none;
+      
+    }
 
     &:after {
         position: absolute;
@@ -924,6 +948,10 @@ export const CardContainer = styled.div`
       font-weight: 900;
       font-family: League Spartan,Helvetica,Arial,sans-serif;
       line-height: 1.2;
+
+      @media (max-width: 425px){
+        font-size: 2em;
+      }
     }
     h3{
       font-family: LibreBaskerville-Regular,Palatino Linotype,Times New Roman,serif;
@@ -964,6 +992,7 @@ export const CardContainer = styled.div`
       cursor: pointer;
       position: relative;
       overflow: hidden;
+      z-index: 100;
 
       &::after {
         content: '';
@@ -993,12 +1022,25 @@ export const CardContainerRight = styled.div`
   box-shadow: 0 20px 80px 0 rgb(0 0 0 / 55%);
   margin: 50px 0px;
 
+  @media (max-width: 425px){
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .picture-container {
     width: 40%;
     height: 100%;
     background-color: transparent; 
     position: relative;
     animation: ${PictureFrameRight} 0.5s cubic-bezier(.694,.048,.335,1) 0.2s; 
+
+    
+    @media (max-width: 425px){
+      display:none;
+      
+    }
 
     
     &:after {
@@ -1057,6 +1099,10 @@ export const CardContainerRight = styled.div`
       font-weight: 900;
       font-family: League Spartan,Helvetica,Arial,sans-serif;
       line-height: 1.2;
+
+      @media (max-width: 425px){
+        font-size: 2em;
+      }
     }
     h3{
       font-family: LibreBaskerville-Regular,Palatino Linotype,Times New Roman,serif;
@@ -1128,12 +1174,22 @@ export const ContactContainer = styled.div`
   transform: translate(-50%,-50%);
   z-index: 1000;
   box-shadow: 0 20px 80px 0 rgb(0 0 0 / 55%);
+
+  @media (max-width: 425px){
+    top: 269px;
+    width: 100%;
+  }
 `
 
 export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   z-index: 10;
+
+  @media (max-width: 425px){
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 `
 const AboutFrames = keyframes`
 from {
@@ -1165,6 +1221,10 @@ export const About = styled.div`
   transition: 0.5s ease;
   animation: ${AboutFrames} 0.5s ease;
 
+  @media (max-width: 425px){
+    order: 2;
+  }
+
   .about-text {
     font-size: 200px;
     font-weight: bold;
@@ -1182,6 +1242,7 @@ export const About = styled.div`
     
     @media (max-width: 425px) {
       padding: 40px;
+      padding-top: 100px;
     }
 
     h1 {
@@ -1265,6 +1326,10 @@ export const ContactMe = styled.div`
   flex-direction: column;
   align-items: center;
   animation: ${ContactFrames} 0.5s ease;
+
+  @media (max-width: 425px){
+    order: 1;
+  }
 
   section {
     color: #DADADA;
@@ -1419,11 +1484,11 @@ export const ContactMe = styled.div`
           height: 100%;
           background: linear-gradient(270deg,#235aa6,#101b3b);
           width: 100%;
-          transform: translateX(-200px);
+          transform: translateX(-230px);
           transition: 0.5s ease;
         }
         &:hover::after {
-          transform: translateX(200px)
+          transform: translateX(230px)
         }
       }
     }
