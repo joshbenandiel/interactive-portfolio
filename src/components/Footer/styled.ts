@@ -28,7 +28,7 @@ export const Container = styled.div`
   align-items: center;
   color: #F3F3F3;
   gap: 20px;
-
+  position: absolute;
  
  
   div {

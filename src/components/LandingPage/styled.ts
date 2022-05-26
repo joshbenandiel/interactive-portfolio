@@ -137,12 +137,21 @@ export const NavWrapper = styled.div`
     img {
       height: 55px;
       cursor: pointer;
+
+      @media (max-width: 425px){
+        height: 50px;
+        transform: translateX(20px)
+      }
     }
     ul {
       display: flex;
       list-style: none;
       gap: 30px;
       font-size: 1.1em;
+
+      @media (max-width: 425px){
+        display: none;
+      }
       
       .home-link {
         color: #B0B2C3;
@@ -211,6 +220,50 @@ export const NavWrapper = styled.div`
       }
     }
 `
+
+export const Hamburger = styled.div`
+  position: absolute;
+  top: 13px;
+  right: 30px;
+  height: 50px;
+  width: 60px;
+  background-color: transparent;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  visibility: hidden;
+
+  span:nth-child(1) {
+    height: 4px;
+    width: 100%;
+    background-color: #BDBEC5;
+    display: block;
+    border-radius: 12px;
+  }
+  span:nth-child(2) {
+    height: 4px;
+    width: 75%;
+    background-color: #BDBEC5;
+    display: block;
+    border-radius: 12px;
+  }
+  span:nth-child(3) {
+    height: 4px;
+    width: 50%;
+    background-color: #BDBEC5;
+    display: block;
+    border-radius: 12px;
+  }
+  @media (max-width: 425px){
+    visibility: visible;
+  }
+`
 //----------MAIN----------------//
 export const Background = styled.div`
   height: 90vh;
@@ -266,6 +319,10 @@ export const BackgroundText = styled.div`
       position: relative;
       overflow: hidden;
       margin-bottom: 30px;
+
+      @media (max-width: 425px){
+        font-size: 3em;
+      }
       
       &:after {
         content: '';
@@ -311,6 +368,17 @@ export const BackgroundText = styled.div`
     justify-content: space-between;
     list-style: none;
     width: 66em;
+
+    @media (max-width: 425px){
+      flex-direction: column;
+      bottom: -20em;
+      left: -40px;
+      gap: 20px;
+      justify-content: center;
+      width: 100%;
+      align-items: center;
+      margin: 0;
+    }
     li {
       font-size: 1em;
       font-weight: bold;
@@ -345,11 +413,19 @@ export const Project = styled.div<{color: string}>`
       position: absolute;
       top: 50px;
       z-index: 10;
+
+      @media (max-width: 425px){
+        width: 23em;
+      }
     }
     h2 {
       font-size: 4rem;
       color: #fff;
       margin: 5px 0px;
+
+      @media (max-width: 425px){
+        font-size: 3em;
+      }
     }
 
     p {
@@ -357,6 +433,10 @@ export const Project = styled.div<{color: string}>`
       color: #fff;
       font-style: italic;
       text-align: center;
+
+      @media (max-width: 425px){
+        font-size: 1.2em;
+      }
       
     }
     span {
@@ -368,7 +448,13 @@ export const Project = styled.div<{color: string}>`
       color: #f3f3f3;
       z-index: 5; 
       opacity: 0.1;
-
+      overflow: hidden;
+      
+      @media (max-width: 425px){
+        left: 50px;
+        font-size: 10rem;
+        width: 300%;
+      }
 
     }
 `
@@ -427,6 +513,10 @@ export const ComponentsWrapper = styled.div`
     align-items: center;
     padding-bottom: 100px;
 
+    @media (max-width: 425px){
+      width: 425px;
+    }
+
     h3 {
       font-size: 14px;
       letter-spacing: 2px;
@@ -450,12 +540,20 @@ export const ComponentsWrapper = styled.div`
       border: 1px solid #e8e8e9;
       z-index: -1;
 
+      @media (max-width: 425px){
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%)
+      }
+
+
       span {
         display: block;
         height: 100%;
         width: 50%;
         border-right: 1px solid #e8e8e9;
       }
+
     }
     .components-design {
       height: 350px;
@@ -463,6 +561,13 @@ export const ComponentsWrapper = styled.div`
       box-shadow: 6px 7px 9px 0px rgba(99,93,93,0.75);
       -webkit-box-shadow: 6px 7px 9px 0px rgba(99,93,93,0.75);
       -moz-box-shadow: 6px 7px 9px 0px rgba(99,93,93,0.75);
+
+
+      @media (max-width: 425px){
+        height: 300px;
+        width: 350px;
+        object-fit: cover;
+      }
     }
 `
 
@@ -472,6 +577,17 @@ export const ColorContainer = styled.div<{one: string, two: string, three: strin
   height: 20vh;
   gap: 70px;
   margin-top: 100px;
+
+  @media (max-width: 425px){
+    flex-direction: column;
+    gap: 0;
+    height: auto;
+    width: 100%;
+    gap: 70px;
+    margin-top: 70px;
+    align-items: center;
+    margin-bottom: 50px;
+  }
 
 
   .color-circle {
@@ -490,6 +606,10 @@ export const ColorContainer = styled.div<{one: string, two: string, three: strin
       position: absolute;
       bottom: -41px;
       left: 30%;
+
+      @media (max-width: 425px){
+        left: 32%;
+      }
     }
   }
 
@@ -515,8 +635,19 @@ export const FontContainer = styled.div`
   display: flex;
   margin-left: -50px;
 
+  @media (max-width: 425px){
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   img {
     height: 400px;
+
+    @media (max-width: 425px){
+      height: 350px;
+      transform: translateX(50px)
+    }
   }
 `
 
@@ -527,6 +658,8 @@ export const NextPage = styled.div<{first: string, second: string}>`
   cursor: pointer;
   position: relative;
   overflow: hidden;
+
+ 
 
 
   .next-link {
@@ -584,11 +717,22 @@ export const NextPage = styled.div<{first: string, second: string}>`
     left: 25%;
     z-index: 5;
 
+    @media (max-width: 425px){
+      width: 425px;
+      left: 0;
+      padding-left: 20px;
+    }
+
     .arrow-right-next {
       position: absolute;
       top: 70px;
       right: 100px;
       transition: 0.5s;
+
+      @media (max-width: 425px){
+        top: 52px;
+        right: 60px;
+      }
     }
    
     p {
@@ -606,6 +750,11 @@ export const NextPage = styled.div<{first: string, second: string}>`
       text-decoration: underline;
       text-underline-offset: 7px;
       text-decoration-color: ${props => props.second};
+
+      
+      @media (max-width: 425px){
+        font-size: 2em;
+      }
     }
   }
 `
