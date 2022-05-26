@@ -23,9 +23,11 @@ const NavTranslate = keyframes`
 //----------RELATIVE----------------//
 export const Relative = styled.div`
     position: relative;
+    height: 100%;
     
     @media (max-width: 425px) {
       width: 425px;
+      height: 100%;
       overflow: hidden;
     }
     .fixed-position {
@@ -146,6 +148,9 @@ export const NavWrapper = styled.div`
         height: 50px;
         transform: translateX(20px)
       }
+      @media (max-width: 375px){
+        height: 40px;
+      }
     }
     ul {
       display: flex;
@@ -243,6 +248,10 @@ export const Hamburger = styled.div`
   outline: none;
   visibility: hidden;
 
+  @media (max-width: 375px){
+    top: 5px;
+  }
+
   span:nth-child(1) {
     height: 4px;
     width: 100%;
@@ -275,6 +284,10 @@ export const Background = styled.div`
   background-position: 50%;
   position: relative;
 
+ @media (max-width: 375px) {
+   height: 100vh;
+ }
+
   .background-wrapper {
     position: absolute;
     left: 0;
@@ -291,6 +304,10 @@ export const Background = styled.div`
     height: 90vh;
     width: 100%;
     object-fit: cover;
+
+    @media (max-width: 375px) {
+      height: 100vh;
+    }
   }
 `
 
@@ -316,6 +333,10 @@ export const BackgroundText = styled.div`
     justify-content: center;
     align-items: center;
     transform: translateY(50px);
+
+    @media (max-width: 375px){
+      transform: translateY(0);
+    }
     h1 {
       color: #fff;
       font-size: 4em;
@@ -373,6 +394,7 @@ export const BackgroundText = styled.div`
     list-style: none;
     width: 66em;
 
+    
     @media (max-width: 425px){
       flex-direction: column;
       bottom: -20em;
@@ -382,6 +404,9 @@ export const BackgroundText = styled.div`
       width: 100%;
       align-items: center;
       margin: 0;
+    }
+    @media (max-width: 380px){
+      bottom: -14em;
     }
     li {
       font-size: 1em;
@@ -420,6 +445,9 @@ export const Project = styled.div<{color: string}>`
 
       @media (max-width: 425px){
         width: 23em;
+      }
+      @media (max-width: 375px){
+        top: 0;
       }
     }
     h2 {
@@ -1237,8 +1265,8 @@ export const About = styled.div`
   }
 
   section {
-    padding: 80px;
-    transform: translateY(-80px);
+    padding: 0 70px;
+    transform: translateY(-30px);
     
     @media (max-width: 425px) {
       padding: 40px;
@@ -1270,7 +1298,7 @@ export const About = styled.div`
     display: flex;
     justify-content: center;
     gap: 5%;
-    transform: translateY(-150px);
+    transform: translateY(0);
 
     @media (max-width: 425px) {
       transform: translateY(-120px);
