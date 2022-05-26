@@ -61,7 +61,7 @@ export const Main:React.FC<IProps> = ({openWorks, setOpenWorks, worksData}) => {
             <h1>{worksData.title}</h1>
             <h3>{worksData.desc}</h3>
           </div>
-          <ul data-aos="fade-up" className='footer'>
+          <ul className='footer'>
             <li><TextScramble className='text-label' paused={pause} texts={role}/><span><TextScramble className='text-label' paused={pause} texts={front}/></span></li>
             <li><TextScramble className='text-label' paused={pause} texts={context}/><span><TextScramble className='text-label' paused={pause} texts={web}/></span></li>
             <li><TextScramble className='text-label' paused={pause} texts={period}/><span><TextScramble className='text-label' paused={pause} texts={year}/></span></li>

@@ -336,7 +336,6 @@ export const BackgroundText = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateY(0);
 
     @media (max-width: 375px){
       transform: translateY(0);
@@ -393,7 +392,7 @@ export const BackgroundText = styled.div`
     position: absolute;
     bottom: 0px;
     left: 50%;
-    transform: translateX(-50%) !important;
+    transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
     list-style: none;
@@ -402,17 +401,17 @@ export const BackgroundText = styled.div`
     
     @media (max-width: 425px){
       flex-direction: column;
-      bottom: -20em;
-      left: -40px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
       gap: 20px;
       justify-content: center;
       width: 100%;
       align-items: center;
       margin: 0;
+      padding-bottom: 20px;
     }
-    @media (max-width: 380px){
-      bottom: -14em;
-    }
+
     li {
       font-size: 1em;
       font-weight: bold;
