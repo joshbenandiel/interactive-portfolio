@@ -326,13 +326,17 @@ export const BackgroundText = styled.div`
 
   .background-text-wrapper {
     position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .title-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateY(50px);
+    transform: translateY(0);
 
     @media (max-width: 375px){
       transform: translateY(0);
@@ -387,8 +391,9 @@ export const BackgroundText = styled.div`
   ul {
     color: #fff;
     position: absolute;
-    bottom: -350px;
-    left: -334px;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%) !important;
     display: flex;
     justify-content: space-between;
     list-style: none;
