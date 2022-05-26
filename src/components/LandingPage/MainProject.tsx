@@ -21,10 +21,12 @@ export const MainProject: React.FC<IProps> = ({worksData}) => {
       </div>
       <span>{worksData.title}</span>
       <VisitPage>
-        <button data-aos="fade-up" data-aos-delay="50">
-          Visit Website
-          <BsArrowRight className='project-right-arrow' size={30}/>
-        </button>
+        <a href={worksData.visitLink} target="_blank" rel="noopener noreferrer">
+          <button data-aos="fade-up" data-aos-delay="50">
+            Visit Website
+            <BsArrowRight className='project-right-arrow' size={30}/>
+          </button>
+        </a>
       </VisitPage>
     </Project>
   )

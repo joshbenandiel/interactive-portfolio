@@ -10,6 +10,13 @@ import redux from './images/redux.png'
 import styled from './images/styled.png'
 import typescript from './images/typescript.png'
 import { Element } from 'react-scroll'
+import one from './shapes/1.0-removebg-preview.png'
+import two from './shapes/2.0-removebg-preview.png'
+import three from './shapes/3.0-removebg-preview.png'
+import four from './shapes/4.0-removebg-preview.png'
+import five from './shapes/5.0-removebg-preview.png'
+import six from './shapes/6.0-removebg-preview.png'
+
 
 interface ProjectsProps {
   children: React.ReactNode
@@ -39,6 +46,20 @@ export const Projects:FC<ProjectsProps> = ({children}) => {
   return (
     <Container>
       <Wrapper>
+        <div className='shapes-left-content'>
+          <img src={one} alt="one" />
+          <img src={two} alt="two" />
+          <img src={three} alt="three" />
+          <img src={four} alt="four" />
+          <img src={five} alt="five" />
+        </div> 
+        <div className='shapes-right-content'>
+          <img src={four} alt="four" />
+          <img src={five} alt="five" />
+          <img src={six} alt="six" />
+          <img src={two} alt="two" />
+          <img src={three} alt="three" />
+        </div>         
         <Element name='personal'/>
         <h3>Personal Projects</h3>
         <h1>Latest Works</h1>

@@ -187,7 +187,8 @@ const landingData: WorkType  =
       first: '#0069a6',
       second: '#060c10'
     },
-    link: '/facebook-clone'
+    link: '/facebook-clone',
+    visitLink: 'https://joshbenandiel.vercel.app/'
   }
 
 
@@ -218,7 +219,8 @@ const facebookData: WorkType =
       first: '#292F43',
       second: '#00C8E7'
     },
-    link: '/netflix'
+    link: '/netflix',
+    visitLink: 'https://facebookclone-five.vercel.app/'
   }
 const netflixData: WorkType = 
 {
@@ -247,7 +249,8 @@ const netflixData: WorkType =
     first: '#ece6da',
     second: '#d16335'
   },
-  link: '/ecommerce'
+  link: '/ecommerce',
+  visitLink: 'https://netflixapi.vercel.app/'
 }
 
 const ecommerceData: WorkType = 
@@ -277,7 +280,8 @@ const ecommerceData: WorkType =
     first: '#71b45b',
     second: '#c62b2e'
   },
-  link: '/ecommercev2'
+  link: '/ecommercev2',
+  visitLink: 'https://ecommerce-gilt-theta.vercel.app/'
 }
 
 const ecommerceDataV2: WorkType = 
@@ -307,13 +311,14 @@ const ecommerceDataV2: WorkType =
     first: '#71b45b',
     second: '#c62b2e'
   },
-  link: '/landing-page'
+  link: '/landing-page',
+  visitLink: 'https://emart-omega.vercel.app/'
 }
 
 
 
 const cardData = [
-  {id: 1, img: landing, header: 'Landing Page', paragraph:'Personal Portfolio', number:'01', move: '30px', link: 'landing-page', button: 'Case Study'},
+  {id: 1, img: landing, header: 'Landing Page', paragraph:'Personal Portfolio', number:'01', move: '-30px', link: 'landing-page', button: 'Case Study'},
   {id: 2,img: facebook, header: 'Facebook Clone', paragraph:'Clone Facebook UI', number:'02', move: '30px', link: 'facebook-clone', button: 'Case Study'},
   {id: 3,img: netflix, header: 'Netflix API', paragraph:'Sign In, Sign Up with API Calls', number:'03', move: '-30px', link: 'netflix', button: 'Case Study'},
   {id: 4,img: ecommerce, header: 'Ecommerce', paragraph:'Without API Calls', number:'04', move: '30px', link: 'ecommerce', button: 'Case Study'},

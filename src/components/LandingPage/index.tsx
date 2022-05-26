@@ -36,7 +36,8 @@ export interface WorkType {
     first: string,
     second: string
   },
-  link: string
+  link: string,
+  visitLink: string
   
 }
 

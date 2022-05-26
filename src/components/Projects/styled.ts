@@ -284,6 +284,29 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
+
+  .shapes-left-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 130px;
+    margin-top: 300px;
+
+  }
+
+  .shapes-right-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: 250px;
+    gap: 130px;
+
+
+  }
   @media (max-width: 380px){
    width: 100%; 
   }
