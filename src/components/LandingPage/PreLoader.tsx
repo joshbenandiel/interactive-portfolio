@@ -1,9 +1,9 @@
 import { LoadingContainer } from "./styled"
 
 
-export const PreLoader = () => {
+export const PreLoader: React.FC<any> = ({worksData}) => {
   return (
-    <LoadingContainer>
+    <LoadingContainer firstColor={worksData.load.first} secondColor={worksData.load.second}>
       <div>
         <ul>
           <li></li>

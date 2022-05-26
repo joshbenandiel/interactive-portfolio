@@ -32,10 +32,10 @@ export const Relative = styled.div`
 `
 
 //----------LOADING----------------//
-export const LoadingContainer = styled.div`
+export const LoadingContainer = styled.div<{firstColor: string, secondColor: string}>`
   height: 100vh;
   width: 0%;
-  background-color: #0069a6;
+  background-color: ${props => props.firstColor};
   animation: ${linear} 0.8s ease both;
   display: flex;
   justify-content: center;
@@ -49,7 +49,7 @@ export const LoadingContainer = styled.div`
     left: 0;
     height: 100vh;
     width: 0%;
-    background-color: #060c10;
+    background-color: ${props => props.secondColor};
     animation: ${linear} 1s ease both;
     display: flex;
     justify-content: center;
@@ -325,10 +325,10 @@ export const BackgroundText = styled.div`
   }
 `
 //----------PROJECT----------------//
-export const Project = styled.div`
+export const Project = styled.div<{color: string}>`
   height: 40vh;
   width: 100%;
-  background-color: #060c10;
+  background-color: ${props => props.color};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -356,6 +356,7 @@ export const Project = styled.div`
       font-size: 1.2em;
       color: #fff;
       font-style: italic;
+      text-align: center;
       
     }
     span {
@@ -363,9 +364,11 @@ export const Project = styled.div`
       bottom: -35px;
       left: 200px;
       font-size: 10rem;
-      color: #fff;
+      fill: #fff;
+      color: #f3f3f3;
       z-index: 5; 
-      color: #1c1d25;
+      opacity: 0.1;
+
 
     }
 `
@@ -463,7 +466,7 @@ export const ComponentsWrapper = styled.div`
     }
 `
 
-export const ColorContainer = styled.div`
+export const ColorContainer = styled.div<{one: string, two: string, three: string, four: string, five: string}>`
   width: 110%;
   display: flex;
   height: 20vh;
@@ -491,19 +494,19 @@ export const ColorContainer = styled.div`
   }
 
   .color-circle.ebony {
-    background-color: #060c10;
+    background-color: ${props => props.one};
   }
   .color-circle.mine {
-    background-color: #333333;
+    background-color: ${props => props.two};
   }
   .color-circle.gallery {
-    background-color: #ededed;
+    background-color: ${props => props.three};
   }
   .color-circle.white {
-    background-color: #fff;
+    background-color: ${props => props.four};
   }
   .color-circle.denim {
-    background-color: #0069a6;
+    background-color: ${props => props.five};
   }
 `
 
@@ -517,7 +520,7 @@ export const FontContainer = styled.div`
   }
 `
 
-export const NextPage = styled.div`
+export const NextPage = styled.div<{first: string, second: string}>`
   height: 150px;
   width: 100%;
   background-color: #fff;
@@ -525,13 +528,17 @@ export const NextPage = styled.div`
   position: relative;
   overflow: hidden;
 
+
+  .next-link {
+   color: black;
+  }
   
   &:after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #00c8e7;
+    background-color: ${props => props.second};
     width: 100%;
     height: 100%;
     transition: 0.8s ease-in-out;
@@ -548,7 +555,7 @@ export const NextPage = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #060c10;
+    background-color:  ${props => props.first};
     width: 100%;
     height: 100%;
     transition: 0.5s ease-in-out;
@@ -597,7 +604,7 @@ export const NextPage = styled.div`
       line-height: 1.0611408323;
       font-weight: bold;
       text-decoration: underline;
-      text-decoration-color: #00c8e7;
+      text-decoration-color: ${props => props.second};
     }
   }
 `
@@ -641,6 +648,7 @@ export const ContainerSection = styled.div`
   height: 100%;
   width: 900px;
   z-index: 20;
+  margin-top: 80px;
 `
 const PictureFrame = keyframes`
   from {

@@ -10,23 +10,14 @@ interface IProps {
 export const Button: FC<IProps> = ({link, button}) => {
   return (
     <ButtonContainer>
-      {button === 'Case Study' ? (
-        <Link to={link}>
+      <>
+      <Link to={link}>
         <button>
           <span className='button-text'>{button}</span>
         </button>
         <span className='arrow-right'>&#10230;</span>
-        </Link>
-      ) : (
-        <>
-        <a href={link} target='_blank' rel="noreferrer">
-          <button>
-            <span className='button-text'>{button}</span>
-          </button>
-          <span className='arrow-right'>&#10230;</span>
-        </a>
-        </>
-      )}
+      </Link>
+      </>
     </ButtonContainer>
   )
 }

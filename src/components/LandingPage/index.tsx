@@ -10,8 +10,42 @@ import { Works } from './Works'
 import { Contact } from './Contact'
 import { MdClose } from 'react-icons/md'
 
+export interface WorkType {
+  image: string
+  title: string
+  desc: string
+  projectDesc: string
+  components: any
+  colors: [
+  {one: string, oneColor: string},
+  {two: string, twoColor: string},
+  {three: string, threeColor: string},
+  {four: string, fourColor: string},
+  {five: string, fiveColor: string}
+  ]
+  imageFont: {
+    first: string
+    second: string
+  }
+  next: string
+  nextColor: {
+    first: string,
+    second: string
+  }
+  load: {
+    first: string,
+    second: string
+  },
+  link: string
+  
+}
 
-export const LandingPage = () => {
+
+interface IProps {
+  worksData: WorkType
+}
+
+export const LandingPage: React.FC<IProps> = ({worksData}) => {
 
   const [loading, setLoading] = useState<boolean>(false)
   const [openWorks, setOpenWorks] = useState<boolean>(false)
@@ -24,7 +58,7 @@ export const LandingPage = () => {
     setTimeout(() => {
       setLoading(false)
     },2000)
-  },[])
+  },[worksData])
   return (
     <>
     {openWorks && (
@@ -38,7 +72,7 @@ export const LandingPage = () => {
     <Relative>
       <div className={openWorks ? `fixed-position` : ` `}>
       {loading ? 
-        <PreLoader/>
+        <PreLoader worksData={worksData}/>
       :(
         <>
           {openContact && <Contact setOpenContact={setOpenContact}/>}
@@ -49,9 +83,9 @@ export const LandingPage = () => {
               openContact={openContact}
               setOpenContact={setOpenContact}/>
           }
-          <Main openWorks={openWorks} setOpenWorks={setOpenWorks}/>
-          <MainProject/>
-          <Components/>
+          <Main worksData={worksData} openWorks={openWorks} setOpenWorks={setOpenWorks}/>
+          <MainProject worksData={worksData}/>
+          <Components worksData={worksData}/>
           <Footer/>
         </>
       )}
@@ -60,4 +94,7 @@ export const LandingPage = () => {
     </>
   )
 }
+
+
+
 

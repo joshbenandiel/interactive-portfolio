@@ -45,7 +45,7 @@ export const Works = () => {
           <h3>Login/Register with API Calls</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <span>Netflix</span>
-          <button>Visit Page</button>
+          <button>Case Study</button>
         </div>
       </CardContainer>
       <CardContainerRight>
@@ -54,7 +54,7 @@ export const Works = () => {
           <h3>Apple Store Shopping without API Calls</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <span>Ecommerce</span>
-          <button>Visit Page</button>
+          <button>Case Study</button>
         </div>
         <div className='picture-container'>
           <img src={apple} alt="landing" />
@@ -71,7 +71,7 @@ export const Works = () => {
           <h3>Shopping Store with API Calls</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <span>Ecommerce</span>
-          <button>Visit Page</button>
+          <button>Case Study</button>
         </div>
       </CardContainer>
     </ContainerSection>

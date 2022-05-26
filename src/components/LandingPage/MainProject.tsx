@@ -2,19 +2,24 @@ import { useEffect } from "react"
 import { Project, VisitPage } from "./styled"
 import AOS from 'aos'
 import {BsArrowRight} from 'react-icons/bs'
+import { WorkType } from "."
 
-export const MainProject = () => {
+interface IProps {
+  worksData: WorkType
+}
+
+export const MainProject: React.FC<IProps> = ({worksData}) => {
 
   useEffect(() => {
     AOS.init();
   },[])
   return (
-    <Project>
+    <Project color={worksData.colors[2].threeColor}>
       <div>
-        <h2>The Project</h2>
-        <p data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <h2>Introduction</h2>
+        <p data-aos="fade-up">{worksData.projectDesc}</p>
       </div>
-      <span>Landing Page</span>
+      <span>{worksData.title}</span>
       <VisitPage>
         <button data-aos="fade-up" data-aos-delay="50">
           Visit Website
