@@ -10,8 +10,8 @@ export const BackgroundContainer = styled.div`
   position: relative;
   overflow: hidden;
 
-  @media (max-width: 380px){
-    width: 380px;
+  @media (max-width: 425px){
+    width: 425px;
   }
 
 
@@ -64,7 +64,7 @@ export const BackgroundContainer = styled.div`
     height: 600px;
     z-index: 1;
 
-    @media (max-width: 380px){
+    @media (max-width: 425px){
       left: 65%;
       height: 300px;
     }

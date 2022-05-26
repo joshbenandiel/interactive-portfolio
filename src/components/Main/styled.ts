@@ -43,7 +43,7 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
   position: relative;
   z-index: 2;
 
-  @media (max-width: 380px){
+  @media (max-width: 425px){
     width: 80%;
   }
 
@@ -59,7 +59,7 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
       width: fit-content;
       position: relative;
 
-      @media (max-width: 380px){
+      @media (max-width: 425px){
         font-size: 2.5rem;
         width: 100%
       }

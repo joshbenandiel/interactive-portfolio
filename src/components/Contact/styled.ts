@@ -13,7 +13,7 @@ export const Container = styled.div`
   z-index: 1000;
   box-shadow: 0 20px 80px 0 rgb(0 0 0 / 55%);
 
-  @media (max-width: 380px){
+  @media (max-width: 425px){
     height: 100vh;
     width: 100%;
     overflow: auto;
@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   z-index: 10;
 
-  @media (max-width: 380px){
+  @media (max-width: 425px){
     display: grid;
     grid-template-columns: 1fr;
     grid-template-row: 1fr 1fr;
@@ -51,7 +51,7 @@ export const About = styled.div<AboutProps>`
   transform: ${props => props.position};
   transition: 0.5s ease;
   
-  @media (max-width: 380px){
+  @media (max-width: 425px){
     order: 2
   }
 
@@ -72,7 +72,7 @@ export const About = styled.div<AboutProps>`
     padding: 80px;
     transform: translateY(-80px);
     
-    @media (max-width: 380px) {
+    @media (max-width: 425px) {
       padding: 40px;
     }
 
@@ -103,7 +103,7 @@ export const About = styled.div<AboutProps>`
     gap: 5%;
     transform: translateY(-150px);
 
-    @media (max-width: 380px) {
+    @media (max-width: 425px) {
       transform: translateY(-120px);
       gap: 3%;
     }
@@ -158,7 +158,7 @@ export const ContactMe = styled.div<{contactPosition: string}>`
   align-items: center;
   transform: ${props => props.contactPosition};
   transition: 0.5s ease;
-  @media (max-width: 380px){
+  @media (max-width: 425px){
     order: 1
   }
     
@@ -297,7 +297,7 @@ export const ContactMe = styled.div<{contactPosition: string}>`
         position: relative;
         overflow: hidden;
         
-        @media (max-width: 380px) {
+        @media (max-width: 425px) {
           width: 75%;
         }
 
@@ -333,7 +333,7 @@ export const ContactMe = styled.div<{contactPosition: string}>`
       width: 40px;
       cursor: pointer;
 
-      @media (max-width: 380px){
+      @media (max-width: 425px){
         right: -40px;
         top: 0px;
       }

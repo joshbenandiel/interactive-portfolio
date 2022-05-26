@@ -64,7 +64,7 @@ export const Background: FC<IProps> = ({children, theme, openNav, setOpenNav, se
       <NavOpen 
         show={openNav ? '200' : '1'}
         scale={openNav ? '1.2' : '0'} 
-        open={openNav ? 'translateX(0px)' : 'translateX(-400px)'}>
+        open={openNav ? 'translateX(0px)' : 'translateX(-450px)'}>
         <div className='blue-mask-nav'>
           {openNav && (
             <>

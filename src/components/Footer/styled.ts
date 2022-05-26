@@ -36,7 +36,7 @@ export const Container = styled.div`
     img {
       height: 70px;
 
-      @media (max-width: 380px){
+      @media (max-width: 425px){
         transform: translateX(-5px)
       }
     }
@@ -45,7 +45,7 @@ export const Container = styled.div`
     display: flex;
     gap: 60px;
 
-    @media (max-width: 380px){
+    @media (max-width: 425px){
       gap: 10px;
       transform: translateX(-20px)
     }

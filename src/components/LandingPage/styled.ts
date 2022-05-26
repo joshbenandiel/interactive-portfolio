@@ -68,7 +68,7 @@ export const LoadingContainer = styled.div<{firstColor: string, secondColor: str
       margin: 0px;
       padding: 0px;
       
-      @media (max-width: 380px){
+      @media (max-width: 425px){
         transform: translateY(-30px)
       }
     }
@@ -1031,7 +1031,7 @@ export const About = styled.div`
     padding: 80px;
     transform: translateY(-80px);
     
-    @media (max-width: 380px) {
+    @media (max-width: 425px) {
       padding: 40px;
     }
 
@@ -1062,7 +1062,7 @@ export const About = styled.div`
     gap: 5%;
     transform: translateY(-150px);
 
-    @media (max-width: 380px) {
+    @media (max-width: 425px) {
       transform: translateY(-120px);
       gap: 3%;
     }
@@ -1251,7 +1251,7 @@ export const ContactMe = styled.div`
         position: relative;
         overflow: hidden;
         
-        @media (max-width: 380px) {
+        @media (max-width: 425px) {
           width: 75%;
         }
 
@@ -1287,7 +1287,7 @@ export const ContactMe = styled.div`
       width: 40px;
       cursor: pointer;
 
-      @media (max-width: 380px){
+      @media (max-width: 425px){
         right: -40px;
         top: 0px;
       }

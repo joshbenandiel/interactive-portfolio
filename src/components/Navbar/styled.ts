@@ -41,7 +41,7 @@ export const Hamburger = styled.button<{toggle: string}>`
     display: block;
     border-radius: 12px;
   }
-  @media (max-width: 380px){
+  @media (max-width: 425px){
     visibility: visible;
   }
 
@@ -50,7 +50,7 @@ export const Hamburger = styled.button<{toggle: string}>`
 
 export const NavOpen = styled.span<{open: string, scale: string, show: string}>`
 
-@media (max-width: 380px){
+@media (max-width: 425px){
     position: absolute;
     top: 0;
     left: 0;
@@ -166,8 +166,9 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
   @media (max-width: 1500px){
     width: 70%;
   }
-  @media (max-width: 375px){
+  @media (max-width: 425px){
     width: 290px;
+    left: 60%;
   }
 
     div {
@@ -179,7 +180,7 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
         height: 70px;
         transition: 1s ease;
 
-        @media (max-width: 380px){
+        @media (max-width: 425px){
           height: 50px;
           left: -70px;
         }
@@ -192,7 +193,7 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
       font-weight: bold;
       gap: 50px;
 
-      @media (max-width: 375px){
+      @media (max-width: 425px){
         display: none;
       }
     }

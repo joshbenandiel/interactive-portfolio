@@ -35,8 +35,8 @@ export const linearLoad = keyframes`
 `;
 
 export const ContainerWrapper = styled.div`
-  @media (max-width: 380px){
-    width: 380px;
+  @media (max-width: 425px){
+    width: 425px;
     overflow: hidden;
   }
 `
@@ -75,7 +75,7 @@ export const PreLoader = styled.div`
       margin: 0px;
       padding: 0px;
       
-      @media (max-width: 380px){
+      @media (max-width: 425px){
         transform: translateY(-30px)
       }
     }

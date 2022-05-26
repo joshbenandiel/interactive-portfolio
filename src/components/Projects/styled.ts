@@ -15,7 +15,7 @@ export const OrangeMask = styled.div<{movement: string}>`
   transition: 0.5s ease;
   transition-delay: 0.3s;
 
-  @media (max-width: 380px){
+  @media (max-width: 425px){
     display: none
   }
 
@@ -31,7 +31,7 @@ export const LightBlueMask = styled.div<{movement: string}>`
   z-index: 13;
   transform: ${props => props.movement};
   transition: 0.5s ease;
-  @media (max-width: 380px){
+  @media (max-width: 425px){
     display: none
   }
 `
@@ -84,7 +84,7 @@ export const Container = styled.div`
       position: relative;
       overflow: hidden;
 
-      @media (max-width: 380px){
+      @media (max-width: 425px){
         flex-direction: column;
       }
       
@@ -108,7 +108,7 @@ export const Container = styled.div`
         }
 
 
-        @media (max-width: 380px){
+        @media (max-width: 425px){
           width: 100%;
 
           .technologies-number-phone {
@@ -155,7 +155,7 @@ export const Container = styled.div`
             height: 110px;
             width: auto;
 
-            @media (max-width: 380px){
+            @media (max-width: 425px){
               height: 90px;
             }
             &:hover {
@@ -189,7 +189,7 @@ export const Container = styled.div`
           display: flex;
           transition: 0.5s ease;
 
-          @media (max-width: 380px){
+          @media (max-width: 425px){
             display: none
           }
           
@@ -206,7 +206,7 @@ export const Container = styled.div`
           padding-right: 40px;
           transform: rotate(90deg);
           transition: 0.5s ease 0.3s;
-          @media (max-width: 380px){
+          @media (max-width: 425px){
             display: none
           }
           
@@ -249,7 +249,7 @@ export const Container = styled.div`
           letter-spacing: 1px;
           font-family: League Spartan,Helvetica,Arial,sans-serif;
 
-          @media (max-width: 380px){
+          @media (max-width: 425px){
             font-size: .625em;
           }
 
@@ -307,7 +307,7 @@ export const Wrapper = styled.div`
 
 
   }
-  @media (max-width: 380px){
+  @media (max-width: 425px){
    width: 100%; 
   }
 
@@ -425,7 +425,7 @@ export const BlueMask = styled.div<{location: string}>`
     width: 100%;
     overflow: hidden;
 
-    @media (max-width: 380px){
+    @media (max-width: 425px){
       display: none
     }
 
@@ -436,7 +436,7 @@ export const BlueMask = styled.div<{location: string}>`
       transform: translateX(${props => props.location});
       transition: 0.5s;
 
-      @media (max-width: 380px){
+      @media (max-width: 425px){
         height: 300px;
       }
     }
@@ -457,7 +457,7 @@ export const CardMask = styled.div`
     transition: 0.5s ease;
     transform: translateX(-1000px);
 
-    @media (max-width: 380px){
+    @media (max-width: 425px){
       height: 300px;
       width: 100%;
     }
@@ -476,7 +476,7 @@ export const CardContainer = styled.div<IProps>`
   display: block;
   transform: translateX(${props => props.move});
 
-  @media (max-width: 380px){
+  @media (max-width: 425px){
     height: 300px;
     width: 90%;
     transform: translateX(0)
@@ -489,7 +489,7 @@ export const CardContainer = styled.div<IProps>`
     right: -35px;
     transition: 0.5s;
     z-index: 10;
-    @media (max-width: 380px){
+    @media (max-width: 425px){
       display: none;
     }
   }
@@ -499,7 +499,7 @@ export const CardContainer = styled.div<IProps>`
     left: -35px;
     transition: 0.5s;
     z-index: 10;
-    @media (max-width: 380px){
+    @media (max-width: 425px){
       display: none;
     }
   }
@@ -536,7 +536,7 @@ export const CardContainer = styled.div<IProps>`
     z-index: 3;
     margin: 0;
     overflow: hidden;
-    @media (max-width: 380px){
+    @media (max-width: 425px){
       display: none;
     }
     
@@ -565,7 +565,7 @@ export const CardContainer = styled.div<IProps>`
     object-fit: cover;
     opacity: 0.4;
 
-    @media (max-width: 380px){
+    @media (max-width: 425px){
       height: 300px;
     }
   }
@@ -583,7 +583,7 @@ export const CardContainer = styled.div<IProps>`
     z-index: 4;
     transition: 0.5s;
     transition-delay: 0.3s;
-    @media (max-width: 380px){
+    @media (max-width: 425px){
       left: 30px;
       bottom: 20px;
     }
@@ -592,7 +592,7 @@ export const CardContainer = styled.div<IProps>`
       color: #fff;
       margin: 0;
 
-      @media (max-width: 380px){
+      @media (max-width: 425px){
        font-size: 2em;
       }
     }
@@ -604,7 +604,7 @@ export const CardContainer = styled.div<IProps>`
       margin: 3px 0px;
       color: #fff;
     }
-    @media (max-width: 380px){
+    @media (max-width: 425px){
       font-size: 1em;
     }
   }
@@ -617,7 +617,7 @@ export const CardContainer = styled.div<IProps>`
     transition: 0.5s;
     transition-delay: 0.3s;
   
-    @media (max-width: 380px){
+    @media (max-width: 425px){
       display: flex;
       flex-direction: column;
       align-items: flex-end;
@@ -628,7 +628,7 @@ export const CardContainer = styled.div<IProps>`
       font-size: 3em;
       color: #fff;
       margin: 0;
-      @media (max-width: 380px){
+      @media (max-width: 425px){
        font-size: 2em;
       }
     }
@@ -639,7 +639,7 @@ export const CardContainer = styled.div<IProps>`
       font-size: 1.5em;
       margin: 3px 0px;
       color: #fff;
-      @media (max-width: 380px){
+      @media (max-width: 425px){
        font-size: 1em;
       }
     }
