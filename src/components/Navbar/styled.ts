@@ -160,13 +160,12 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
   z-index: 100;
   color: ${props => props.textColor};
   width: 1080px;
-  height: 10vh;
   margin: 0 auto;
   justify-content: space-between;
   transform: ${props => props.move} translateX(-50%);
   transition: 0.35s ease;
   display: ${props => props.toggle};
-
+  margin-top: 10px;
   @media (max-width: 1500px){
     width: 70%;
   }
@@ -179,7 +178,7 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
       cursor: pointer;
       img {
         position: absolute;
-        top: 15px;
+        top: 0;
         left: -50px;
         height: 70px;
         transition: 1s ease;
@@ -222,7 +221,7 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
       li span:before {
         content: "";
         position: absolute;
-        bottom: 19px;
+        bottom: 0px;
         right: 0;
         left: auto;
         width: 100%;
@@ -236,7 +235,7 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
       li span:after {
         content: "";
         position: absolute;
-        bottom: 19px;
+        bottom: 0px;
         left: 0;
         width: 100%;
         transform: translateX(-150px);
