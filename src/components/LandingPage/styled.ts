@@ -1208,7 +1208,7 @@ export const ContactContainer = styled.div`
   height: 60vh;
   width: 60%;
   position: absolute;
-  top: 50%;
+  top: 14%;
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: 1000;
