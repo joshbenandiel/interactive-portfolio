@@ -549,7 +549,7 @@ export const ComponentsWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     padding-bottom: 100px;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     @media (max-width: 425px){
       width: 425px;
