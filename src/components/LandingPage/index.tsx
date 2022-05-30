@@ -66,6 +66,10 @@ export const LandingPage: React.FC<IProps> = ({worksData}) => {
       setLoading(false)
     },2000)
   },[worksData])
+
+  if(openWorks){
+
+  }
   return (
     <>
     {openWorks && (
@@ -77,7 +81,7 @@ export const LandingPage: React.FC<IProps> = ({worksData}) => {
       </>
     )}
     {loading ? <PreLoader worksData={worksData}/> : 
-    <Relative>
+    <>
       <NavOpen 
         show={openNav ? '200' : '1'}
         scale={openNav ? '1.2' : '0'} 
@@ -132,7 +136,7 @@ export const LandingPage: React.FC<IProps> = ({worksData}) => {
         <Footer/>
       </>
       </div>
-    </Relative>
+    </>
     }
     </>
   )

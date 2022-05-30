@@ -1175,6 +1175,7 @@ export const CardContainerRight = styled.div`
       cursor: pointer;
       position: relative;
       overflow: hidden;
+      z-index: 100;
 
       &::after {
         content: '';
@@ -1201,7 +1202,7 @@ export const ContactContainer = styled.div`
   height: 60vh;
   width: 60%;
   position: absolute;
-  top: 14%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: 1000;
@@ -1211,6 +1212,12 @@ export const ContactContainer = styled.div`
     top: 269px;
     width: 100%;
   }
+
+  @media (max-width: 375px){
+    top: 252px;
+  }
+
+  
 `
 
 export const Wrapper = styled.div`
@@ -1255,6 +1262,10 @@ export const About = styled.div`
 
   @media (max-width: 425px){
     order: 2;
+  }
+
+  @media (max-width: 375px){
+    height: 90vh;
   }
 
   .about-text {
@@ -1309,6 +1320,11 @@ export const About = styled.div`
       gap: 3%;
     }
 
+    @media (max-width: 375px){
+      transform: translateY(-70px);
+    }
+
+
     .icon1:hover {
       color: #5ED3F3;
     }
@@ -1361,6 +1377,10 @@ export const ContactMe = styled.div`
 
   @media (max-width: 425px){
     order: 1;
+  }
+
+  @media (max-width: 375px){
+    height: 90vh;
   }
 
   section {
