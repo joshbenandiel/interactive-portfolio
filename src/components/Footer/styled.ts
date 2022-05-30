@@ -29,6 +29,10 @@ export const Container = styled.div`
   color: #F3F3F3;
   gap: 20px;
   position: absolute;
+
+  @media (max-width: 425px){
+    width: 425px
+  }
  
  
   div {
