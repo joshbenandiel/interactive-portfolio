@@ -76,6 +76,7 @@ export const LandingPage: React.FC<IProps> = ({worksData}) => {
       <Works setOpenWorks={setOpenWorks}/>
       </>
     )}
+    {loading ? <PreLoader worksData={worksData}/> : 
     <Relative>
       <NavOpen 
         show={openNav ? '200' : '1'}
@@ -115,27 +116,24 @@ export const LandingPage: React.FC<IProps> = ({worksData}) => {
         <div className='orange-mask-nav'/>
       </NavOpen>
       <div className={openWorks ? `fixed-position` : ` `}>
-      {loading ? 
-        <PreLoader worksData={worksData}/>
-      :(
-        <>
-          {openContact && <Contact setOpenContact={setOpenContact}/>}
-          {!openWorks && 
-            <Navbar 
-              setOpenNav={setOpenNav}
-              openWorks={openWorks} 
-              setOpenWorks={setOpenWorks} 
-              openContact={openContact}
-              setOpenContact={setOpenContact}/>
-          }
-          <Main worksData={worksData} openWorks={openWorks} setOpenWorks={setOpenWorks}/>
-          <MainProject worksData={worksData}/>
-          <Components worksData={worksData}/>
-          <Footer/>
-        </>
-      )}
+      <>
+        {openContact && <Contact setOpenContact={setOpenContact}/>}
+        {!openWorks && 
+          <Navbar 
+            setOpenNav={setOpenNav}
+            openWorks={openWorks} 
+            setOpenWorks={setOpenWorks} 
+            openContact={openContact}
+            setOpenContact={setOpenContact}/>
+        }
+        <Main worksData={worksData} openWorks={openWorks} setOpenWorks={setOpenWorks}/>
+        <MainProject worksData={worksData}/>
+        <Components worksData={worksData}/>
+        <Footer/>
+      </>
       </div>
     </Relative>
+    }
     </>
   )
 }

@@ -35,6 +35,7 @@ export const linearLoad = keyframes`
 `;
 
 export const ContainerWrapper = styled.div`
+height: auto;
   @media (max-width: 425px){
     width: 425px;
     overflow: hidden;

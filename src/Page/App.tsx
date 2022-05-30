@@ -67,6 +67,7 @@ const App: React.FC = () => {
 
   let location = useLocation();
   useEffect(() => {
+    window.scrollTo(0,0)
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
@@ -84,7 +85,6 @@ const App: React.FC = () => {
       {/* Home Page */}
       <Route path='/' element={
         <>
-        <ContainerWrapper>
         {loading ? (
           <PreLoader>
             <div>
@@ -142,7 +142,6 @@ const App: React.FC = () => {
           </>
         
         )} 
-        </ContainerWrapper>
         </>
       }/>
       {/* Portfolio Page */}
