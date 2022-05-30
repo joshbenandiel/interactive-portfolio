@@ -537,6 +537,7 @@ export const ComponentsContainer = styled.div`
   height: auto;
   width: 100%;
   background-color: transparent;
+  
 `
 
 export const ComponentsWrapper = styled.div`
@@ -548,9 +549,14 @@ export const ComponentsWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     padding-bottom: 100px;
+    overflow: hidden;
 
     @media (max-width: 425px){
       width: 425px;
+    }
+
+    @media (max-width: 375px){
+      width: 375px;
     }
 
     h3 {
