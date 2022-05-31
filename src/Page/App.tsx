@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ContainerWrapper, PreLoader } from "./styled"
+import { PreLoader } from "./styled"
 import { Navbar } from "../components/Navbar";
 import { Main } from "../components/Main";
 import { Card } from '../components/Projects/Card'
@@ -84,6 +84,7 @@ const App: React.FC = () => {
     <Routes>
       {/* Home Page */}
       <Route path='/' element={
+        
         <>
         {loading ? (
           <PreLoader>

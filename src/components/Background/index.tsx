@@ -59,48 +59,48 @@ export const Background: FC<IProps> = ({children, theme, openNav, setOpenNav, se
 
   
   return (
-    <BackgroundContainer theme={theme}>
-      <>
-      <NavOpen 
-        show={openNav ? '200' : '1'}
-        scale={openNav ? '1.2' : '0'} 
-        open={openNav ? 'translateX(0px)' : 'translateX(-450px)'}>
-        <div className='blue-mask-nav'>
-          {openNav && (
-            <>
-            <button onClick={() => setOpenNav(false)}>
-                <AiOutlineClose className='close-button-nav' size={40} color='#BDBEC5'/>
-            </button>
-            <ul className='ul-nav'>
-              <li onClick={() => {
-                setOpenNav(false)
-                scroll.scrollToTop()
-              }}>Home</li>
-              <Link to='personal'>
-                <li onClick={() => setOpenNav(false)}>Personal Projects</li>
-              </Link>
-              <Link to='technologies'>
-                <li onClick={() => setOpenNav(false)}>Technologies Used</li>
-              </Link>
-              <li onClick={() => {
-                setOpenNav(false)
-                setOpenContact(true)
-              }}>Contact</li>
+    <>
+    <NavOpen 
+      show={openNav ? '200' : '1'}
+      scale={openNav ? '1.2' : '0'} 
+      open={openNav ? 'translateX(0px)' : 'translateX(-450px)'}>
+      <div className='blue-mask-nav'>
+        {openNav && (
+          <>
+          <button onClick={() => setOpenNav(false)}>
+              <AiOutlineClose className='close-button-nav' size={40} color='#BDBEC5'/>
+          </button>
+          <ul className='ul-nav'>
+            <li onClick={() => {
+              setOpenNav(false)
+              scroll.scrollToTop()
+            }}>Home</li>
+            <Link to='personal'>
+              <li onClick={() => setOpenNav(false)}>Personal Projects</li>
+            </Link>
+            <Link to='technologies'>
+              <li onClick={() => setOpenNav(false)}>Technologies Used</li>
+            </Link>
+            <li onClick={() => {
+              setOpenNav(false)
+              setOpenContact(true)
+            }}>Contact</li>
+          </ul>
+          <NavOpenFooter>
+            <ul className='ul'>
+              <li onClick={() => setOpenNav(false)}><a href="https://www.facebook.com/joshbenandiel/" target="_blank" rel="noreferrer"><FaFacebookF/></a></li>
+              <li onClick={() => setOpenNav(false)}><a href="https://www.linkedin.com/in/joshua-jacinto-b357541b2/" target='_blank' rel="noreferrer"><FaLinkedinIn/></a></li>
+              <li onClick={() => setOpenNav(false)}><a href="https://github.com/joshbenandiel" target='_blank' rel="noreferrer"><BsGithub/></a></li>
+              <li onClick={() => setOpenNav(false)}><a href="https://www.instagram.com/joshbenandiel/" target='_blank' rel="noreferrer"><BsInstagram/></a></li>
+              <li onClick={() => setOpenNav(false)}><a href="https://twitter.com/joshbenandiel" target='_blank' rel="noreferrer"><BsTwitter/></a></li>
             </ul>
-            <NavOpenFooter>
-              <ul className='ul'>
-                <li onClick={() => setOpenNav(false)}><a href="https://www.facebook.com/joshbenandiel/" target="_blank" rel="noreferrer"><FaFacebookF/></a></li>
-                <li onClick={() => setOpenNav(false)}><a href="https://www.linkedin.com/in/joshua-jacinto-b357541b2/" target='_blank' rel="noreferrer"><FaLinkedinIn/></a></li>
-                <li onClick={() => setOpenNav(false)}><a href="https://github.com/joshbenandiel" target='_blank' rel="noreferrer"><BsGithub/></a></li>
-                <li onClick={() => setOpenNav(false)}><a href="https://www.instagram.com/joshbenandiel/" target='_blank' rel="noreferrer"><BsInstagram/></a></li>
-                <li onClick={() => setOpenNav(false)}><a href="https://twitter.com/joshbenandiel" target='_blank' rel="noreferrer"><BsTwitter/></a></li>
-              </ul>
-            </NavOpenFooter>
-            </>
-          )}
-        </div>
-        <div className='orange-mask-nav'/>
-      </NavOpen>
+          </NavOpenFooter>
+          </>
+        )}
+      </div>
+      <div className='orange-mask-nav'/>
+    </NavOpen>
+    <BackgroundContainer theme={theme}>
       <img className='background-logo'src={backgroundlogo} alt="background"/>
       <div className='layer-1'>
         <img className='shapes' src={twelve} data-speed={-11} alt='shapes'/>
@@ -123,8 +123,8 @@ export const Background: FC<IProps> = ({children, theme, openNav, setOpenNav, se
         <img className='shapes' src={three} data-speed={2} alt='shapes'/>
       </div>
       {children}
-      </>
     </BackgroundContainer>
+    </>
   )
 }
 

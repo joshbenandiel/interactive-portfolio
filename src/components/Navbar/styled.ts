@@ -45,6 +45,10 @@ export const Hamburger = styled.button<{toggle: string}>`
     visibility: visible;
   }
 
+  @media (max-width: 425px){
+    top: 0px;
+  }
+
 `
 
 
@@ -55,8 +59,9 @@ export const NavOpen = styled.span<{open: string, scale: string, show: string}>`
     top: 0;
     left: 0;
     height: 100vh;
-    width: 100%;
+    width: 425px;
     z-index: ${props => props.show};
+    overflow: hidden;
 
     .nav-link {
       text-decoration: none
