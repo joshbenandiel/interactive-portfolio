@@ -43,6 +43,10 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
   position: relative;
   z-index: 2;
 
+  @media (max-width: 1024px){
+    width: 90%
+  }
+
   @media (max-width: 425px){
     width: 80%;
   }
@@ -50,6 +54,7 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
   .name-wrapper {
     width: fit-content;
     position: relative;
+
 
     h1 {
       font-size: 4.5rem;
@@ -84,6 +89,7 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
     margin-top: 20px;
     position: relative;
 
+    
     .text-label {
       width: fit-content !important; 
     }
@@ -183,6 +189,8 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
     top: 30%;
     right: -300px;
     transition: 0.5s;
+   
+
 
     @media (max-width: 1700px){
       right: -243px
@@ -191,7 +199,12 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
       right: -220px
     }
     @media (max-width: 1024px){
-      right: -150px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%)
     }
 
     li {
@@ -199,6 +212,10 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
       font-size: 4rem;
       color: #B0B2C3;
       cursor: pointer;
+
+      @media (max-width: 1024px){
+        font-size: 2rem;
+      }
 
       a {
         color: ${props => props.textColor};
@@ -225,6 +242,8 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
   .contact-hide {
     transition: 0.5s ease 0.5s;
     opacity: 1;
+
+    
   }
 
   .contact-hide-false {

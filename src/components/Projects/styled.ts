@@ -104,6 +104,10 @@ export const Container = styled.div`
         box-shadow: 0 20px 60px 0 rgb(0 0 0 / 15%);
         cursor: pointer;
 
+        @media (max-width: 1024px){
+          height: 320px;
+        }
+
         .technologies-number-phone {
           display: none
         }
@@ -136,6 +140,32 @@ export const Container = styled.div`
           }
         }
 
+        
+        @media (max-width: 1024px){
+          width: 100%;
+
+          .technologies-number-phone {
+            position: absolute;
+            top: 50%;
+            right: -44%;
+            transform: translate(-50%,-50%);
+            font-size: 13em;
+            font-weight: bold;
+            color: #fce0db;
+            display: block;
+          }
+          .technologies-number-phone-left {
+            position: absolute;
+            top: 50%;
+            right: -44%;
+            transform: translate(-50%,-50%);
+            font-size: 13em;
+            font-weight: bold;
+            color: #f9ebe9;
+            display: block;
+          }
+        }
+
 
         &:hover img {
           transform: scale(1.1)
@@ -154,11 +184,22 @@ export const Container = styled.div`
           justify-content: center;
           gap: 20px;
 
+          @media (max-width: 1024px){
+            flex-direction: column;
+            width: 100px;
+            align-items: center;
+            justify-content: center;
+            transform: translate(67px, -66px)
+          }
+
           
           .three-images {
             transform: translateY(20px);
             height: 110px;
             width: auto;
+            @media (max-width: 1024px){
+              height: 50px;
+            }
 
             @media (max-width: 425px){
               height: 90px;
@@ -172,6 +213,11 @@ export const Container = styled.div`
             height: 150px;
             width: auto;
             transition: 0.5s ease;
+
+            
+            @media (max-width: 1024px){
+              height: 100px;
+            }
 
             &:hover {
               transform: scale(1.2)
@@ -194,6 +240,10 @@ export const Container = styled.div`
           display: flex;
           transition: 0.5s ease;
 
+          @media (max-width: 1024px){
+            display: none;
+          }
+
           @media (max-width: 425px){
             display: none
           }
@@ -211,6 +261,10 @@ export const Container = styled.div`
           padding-right: 40px;
           transform: rotate(90deg);
           transition: 0.5s ease 0.3s;
+          @media (max-width: 1024px){
+            display: none;
+          }
+
           @media (max-width: 425px){
             display: none
           }
@@ -262,6 +316,10 @@ export const Container = styled.div`
             text-transform: none;
             font-size: 1.5em;
             font-family: LibreBaskerville-Regular,Palatino Linotype,Times New Roman,serif;
+
+            @media (max-width: 1024px){
+              font-size: 1em;
+            }
           }
          
         }
@@ -274,6 +332,10 @@ export const Container = styled.div`
           height: 1px;
           background-color: #1c1d25;
           width: 7px;
+
+          @media (max-width: 1024px){
+            display: none;
+          }
         }
       }
     }
@@ -441,6 +503,11 @@ export const BlueMask = styled.div<{location: string}>`
       transform: translateX(${props => props.location});
       transition: 0.5s;
 
+      @media (max-width: 1024px){
+        width: 100%;
+        height: 400px;
+      }
+    
       @media (max-width: 425px){
         height: 300px;
       }
@@ -462,6 +529,11 @@ export const CardMask = styled.div`
     transition: 0.5s ease;
     transform: translateX(-1000px);
 
+    @media (max-width: 1024px){
+      width: 100%;
+      height: 400px;
+    }
+
     @media (max-width: 425px){
       height: 300px;
       width: 100%;
@@ -480,6 +552,12 @@ export const CardContainer = styled.div<IProps>`
   box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%);
   display: block;
   transform: translateX(${props => props.move});
+
+
+  @media (max-width: 1024px){
+    width: 70%;
+    height: 400px;
+  }
 
   @media (max-width: 425px){
     height: 300px;
@@ -569,6 +647,11 @@ export const CardContainer = styled.div<IProps>`
     height: 480px;
     object-fit: cover;
     opacity: 0.4;
+
+    @media (max-width: 1024px){
+      width: 100%;
+      height: 400px;
+    }
 
     @media (max-width: 425px){
       height: 300px;

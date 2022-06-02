@@ -98,7 +98,7 @@ export const Projects:FC<ProjectsProps> = ({children}) => {
               <div className='pink-mask'/>
               <div className='technologies-title'>
                   Technologies
-                  <div className='technologies-label'>MaterialUI,StyledComponents,Bootstrap</div>
+                  <div className='technologies-label'>Styled-C,Material-UI,Bootstrap</div>
               </div>
               <div className='technologies-number'/>
               <div className='number-label'>02</div>

@@ -30,6 +30,7 @@ export const Container = styled.div`
   gap: 20px;
   position: absolute;
 
+
   @media (max-width: 425px){
     width: 425px
   }
@@ -39,6 +40,8 @@ export const Container = styled.div`
     cursor: pointer;
     img {
       height: 70px;
+
+
 
       @media (max-width: 425px){
         transform: translateX(-5px)

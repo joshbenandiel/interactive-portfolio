@@ -174,6 +174,9 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
   @media (max-width: 1500px){
     width: 70%;
   }
+  @media (max-width: 1024px){
+    width: 90%;
+  }
   @media (max-width: 425px){
     width: 290px;
     left: 60%;
@@ -188,6 +191,11 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
         height: 70px;
         transition: 1s ease;
 
+        @media (max-width: 1024px){
+          left: 0px;
+          height: 60px;
+        }
+
         @media (max-width: 425px){
           height: 50px;
           left: -70px;
@@ -201,9 +209,13 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
       font-weight: bold;
       gap: 50px;
 
+      @media (max-width: 1024px){
+        gap: 30px;
+      }
       @media (max-width: 425px){
         display: none;
       }
+
     }
       li {
         list-style: none;

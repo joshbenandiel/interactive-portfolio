@@ -13,6 +13,11 @@ export const Container = styled.div`
   z-index: 1000;
   box-shadow: 0 20px 80px 0 rgb(0 0 0 / 55%);
 
+  @media (max-width: 1024px){
+    width: 90%;
+
+  }
+
   @media (max-width: 425px){
     height: 100vh;
     width: 100%;
@@ -296,6 +301,10 @@ export const ContactMe = styled.div<{contactPosition: string}>`
         font-family: LibreBaskerville-Regular,Palatino Linotype,Times New Roman,serif;
         position: relative;
         overflow: hidden;
+
+        @media (max-width: 1024px){
+          width: 75%;
+        }
         
         @media (max-width: 425px) {
           width: 75%;
@@ -306,6 +315,10 @@ export const ContactMe = styled.div<{contactPosition: string}>`
           top: 5px;
           left: 30px;
           z-index: 10;
+
+          @media (max-width: 1024px){
+            left: 50px;
+          }
         }
 
         &::after{
@@ -316,11 +329,11 @@ export const ContactMe = styled.div<{contactPosition: string}>`
           height: 100%;
           background: linear-gradient(270deg,#235aa6,#101b3b);
           width: 100%;
-          transform: translateX(-200px);
+          transform: translateX(-300px);
           transition: 0.5s ease;
         }
         &:hover::after {
-          transform: translateX(200px)
+          transform: translateX(300px)
         }
       }
     }
@@ -414,5 +427,6 @@ export const ContactMe = styled.div<{contactPosition: string}>`
     left: 40px;
     color: #4a4a4a;
     z-index: 100;
+    pointer-events: none;
   }
 `

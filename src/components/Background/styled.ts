@@ -19,6 +19,10 @@ export const BackgroundContainer = styled.div`
     position: absolute;
     top: 0;
     left: 50px;
+
+    @media (max-width: 1024px){
+      left: -76px;
+    }
     img {
       height: 250px;
       transition: 0.1s ease;
@@ -30,6 +34,10 @@ export const BackgroundContainer = styled.div`
     bottom: 0;
     left: -200px;
 
+    @media (max-width: 1024px){
+      left: 600px;
+    }
+
     img {
       height: 250px;
       transition: 0.1s ease;
@@ -40,6 +48,10 @@ export const BackgroundContainer = styled.div`
     position: absolute;
     top: 300px;
     right: -200px;
+
+    @media (max-width: 1024px){
+      left: 526px;
+    }
     img {
       height: 250px;
       transition: 0.1s ease;
@@ -49,7 +61,9 @@ export const BackgroundContainer = styled.div`
     position: absolute;
     bottom: 100px;
     right: 0;
-    
+    @media (max-width: 1024px){
+      bottom: 11px;
+    }
     img {
       height: 250px;
       transition: 0.1s ease;
@@ -63,6 +77,10 @@ export const BackgroundContainer = styled.div`
     transform: translate(-50%,-50%);
     height: 600px;
     z-index: 1;
+
+    @media (max-width: 1024px){
+      height: 400px;
+    }
 
     @media (max-width: 425px){
       left: 65%;

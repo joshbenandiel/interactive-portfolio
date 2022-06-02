@@ -24,6 +24,11 @@ const NavTranslate = keyframes`
 export const Relative = styled.div`
     position: relative;
     height: 100%;
+
+    @media (max-width: 1024px){
+      width: 1024px;
+      overflow: hidden;
+    }
     
     @media (max-width: 425px) {
       width: 425px;
@@ -122,6 +127,9 @@ export const NavbarContainer = styled.div`
   animation: ${NavTranslate} 0.5s ease forwards;
   z-index: 10;
 
+
+ 
+
 `
 export const ArrowLeft = styled.span`
   position: absolute;
@@ -134,16 +142,24 @@ export const ArrowLeft = styled.span`
 `
 export const NavWrapper = styled.div`
   width: 1100px;
-  margin: 0 auto;
   height: 8vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+
+  @media (max-width: 1024px){
+    width: 1024px;
+    overflow: hidden;
+  }
+
     img {
       height: 55px;
       cursor: pointer;
 
+      @media (max-width: 1024px){
+        margin-left: 20px;
+      }
       @media (max-width: 425px){
         height: 50px;
         transform: translateX(20px)
@@ -157,6 +173,10 @@ export const NavWrapper = styled.div`
       list-style: none;
       gap: 30px;
       font-size: 1.1em;
+
+      @media (max-width: 1024px){
+        margin-right: 50px;
+      }
 
       @media (max-width: 425px){
         display: none;
@@ -330,6 +350,8 @@ export const BackgroundText = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
+
+  
   }
   .title-text {
     display: flex;
@@ -397,6 +419,10 @@ export const BackgroundText = styled.div`
     justify-content: space-between;
     list-style: none;
     width: 66em;
+
+    @media (max-width: 1024px){
+     width: 50em;
+    }
 
     
     @media (max-width: 425px){
@@ -551,6 +577,10 @@ export const ComponentsWrapper = styled.div`
     padding-bottom: 100px;
     /* overflow: hidden; */
 
+    @media (max-width: 1024px){
+      width: 40em;
+    }
+
     @media (max-width: 425px){
       width: 425px;
     }
@@ -620,6 +650,10 @@ export const ColorContainer = styled.div<{one: string, two: string, three: strin
   gap: 70px;
   margin-top: 100px;
 
+  @media (max-width: 1024px){
+    width: 150%;
+  }
+
   @media (max-width: 425px){
     flex-direction: column;
     gap: 0;
@@ -640,6 +674,12 @@ export const ColorContainer = styled.div<{one: string, two: string, three: strin
     border-radius: 50%;
     transition: all .3s;
     position: relative;
+
+    @media (max-width: 1024px){
+      height: 140px;
+    }
+
+
     p {
       font-size: .8125em;
       font-family: Consolas,Monaco,Bitstream Vera Sans Mono,Courier,monospace;
@@ -677,6 +717,8 @@ export const FontContainer = styled.div`
   display: flex;
   margin-left: -50px;
 
+  
+
   @media (max-width: 425px){
     flex-direction: column;
     align-items: center;
@@ -685,6 +727,10 @@ export const FontContainer = styled.div`
 
   img {
     height: 400px;
+
+    @media (max-width: 1024px){
+    height: 300px;
+    }
 
     @media (max-width: 425px){
       height: 350px;
@@ -758,6 +804,10 @@ export const NextPage = styled.div<{first: string, second: string}>`
     position: absolute;
     left: 25%;
     z-index: 5;
+
+    @media (max-width: 1024px){
+      left: 4%;
+    }
 
     @media (max-width: 425px){
       width: 425px;
@@ -1214,6 +1264,10 @@ export const ContactContainer = styled.div`
   z-index: 1000;
   box-shadow: 0 20px 80px 0 rgb(0 0 0 / 55%);
 
+  @media (max-width: 1024px){
+    width: 90%;
+  }
+
   @media (max-width: 425px){
     top: 269px;
     width: 100%;
@@ -1522,6 +1576,10 @@ export const ContactMe = styled.div`
         font-family: LibreBaskerville-Regular,Palatino Linotype,Times New Roman,serif;
         position: relative;
         overflow: hidden;
+
+        @media (max-width: 1024px){
+          width: 75%;
+        }
         
         @media (max-width: 425px) {
           width: 75%;
@@ -1532,6 +1590,10 @@ export const ContactMe = styled.div`
           top: 5px;
           left: 30px;
           z-index: 10;
+
+          @media (max-width: 1024px){
+            left: 50px;
+          }
         }
 
         &::after{
@@ -1542,11 +1604,11 @@ export const ContactMe = styled.div`
           height: 100%;
           background: linear-gradient(270deg,#235aa6,#101b3b);
           width: 100%;
-          transform: translateX(-230px);
+          transform: translateX(-300px);
           transition: 0.5s ease;
         }
         &:hover::after {
-          transform: translateX(230px)
+          transform: translateX(300px)
         }
       }
     }
