@@ -146,6 +146,7 @@ export const NavWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
 
 
   @media (max-width: 1024px){
