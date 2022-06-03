@@ -116,6 +116,31 @@ export const Container = styled.div`
           display: none
         }
 
+/*                
+        @media (max-width: 1024px){
+          width: 100%;
+
+          .technologies-number-phone {
+            position: absolute;
+            top: 50%;
+            right: -44%;
+            transform: translate(-50%,-50%);
+            font-size: 13em;
+            font-weight: bold;
+            color: #fce0db;
+            display: block;
+          }
+          .technologies-number-phone-left {
+            position: absolute;
+            top: 50%;
+            right: -44%;
+            transform: translate(-50%,-50%);
+            font-size: 13em;
+            font-weight: bold;
+            color: #f9ebe9;
+            display: block;
+          }
+        } */
 
         @media (max-width: 425px){
           width: 100%;
@@ -140,31 +165,7 @@ export const Container = styled.div`
           }
         }
 
-        
-        @media (max-width: 1024px){
-          width: 100%;
-
-          .technologies-number-phone {
-            position: absolute;
-            top: 50%;
-            right: -44%;
-            transform: translate(-50%,-50%);
-            font-size: 13em;
-            font-weight: bold;
-            color: #fce0db;
-            display: block;
-          }
-          .technologies-number-phone-left {
-            position: absolute;
-            top: 50%;
-            right: -44%;
-            transform: translate(-50%,-50%);
-            font-size: 13em;
-            font-weight: bold;
-            color: #f9ebe9;
-            display: block;
-          }
-        }
+ 
 
 
         &:hover img {
@@ -192,6 +193,14 @@ export const Container = styled.div`
             transform: translate(67px, -66px)
           }
 
+            
+          @media (max-width: 425px){
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            flex-direction: row;
+          }
+
           
           .three-images {
             transform: translateY(20px);
@@ -217,6 +226,10 @@ export const Container = styled.div`
             
             @media (max-width: 1024px){
               height: 100px;
+            }
+
+            @media (max-width: 425px){
+              height: 150px;
             }
 
             &:hover {
@@ -309,7 +322,7 @@ export const Container = styled.div`
           font-family: League Spartan,Helvetica,Arial,sans-serif;
 
           @media (max-width: 425px){
-            font-size: .625em;
+            font-size: 1em;
           }
 
           .technologies-label {
@@ -320,6 +333,8 @@ export const Container = styled.div`
             @media (max-width: 1024px){
               font-size: 1em;
             }
+
+          
           }
          
         }

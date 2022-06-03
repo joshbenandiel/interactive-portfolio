@@ -206,6 +206,13 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
       top: 50%;
       transform: translateY(-50%)
     }
+    @media (max-width: 425px){
+      display: none
+    }
+
+    @media (max-width: 375px){
+      display: none
+    }
 
     li {
       list-style: none;
