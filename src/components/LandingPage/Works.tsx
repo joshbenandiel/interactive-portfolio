@@ -18,7 +18,7 @@ export const Works: React.FC<any> = ({setOpenWorks}) => {
         <div className='picture-details'>
           <h1>Landing Page</h1>
           <h3>Personal Portfolio</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> */}
           <span>Landing Page</span>
           <Link className='works-link' to='/landing-page'>
             <button onClick={() => setOpenWorks(false)}>Case Study</button>
@@ -29,7 +29,7 @@ export const Works: React.FC<any> = ({setOpenWorks}) => {
         <div className='picture-details'>
           <h1>Facebook UI</h1>
           <h3>Clone Facebook Home Page</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> */}
           <span>Facebook</span>
           <Link className='works-link' to='/facebook-clone'>
             <button onClick={() => setOpenWorks(false)}>Case Study</button>
@@ -46,45 +46,60 @@ export const Works: React.FC<any> = ({setOpenWorks}) => {
           <span>03</span>
         </div>
         <div className='picture-details'>
-          <h1>Netflix</h1>
-          <h3>Login/Register with API Calls</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <span>Netflix</span>
-          <Link className='works-link' to='/netflix'>
+          <h1>Chat App</h1>
+          <h3>ChatApp lets you connect with the world</h3>
+          {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> */}
+          <span>Chat App</span>
+          <Link className='works-link' to='/chatapp'>
             <button onClick={() => setOpenWorks(false)}>Case Study</button>
           </Link>
         </div>
       </CardContainer>
       <CardContainerRight>
         <div className='picture-details'>
-          <h1>Ecommerce</h1>
-          <h3>Apple Store Shopping without API Calls</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <span>Ecommerce</span>
-          <Link className='works-link' to='/ecommerce'>
+          <h1>Netflix</h1>
+          <h3>Login/Register with API Calls</h3>
+          {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> */}
+          <span>Netflix</span>
+          <Link className='works-link' to='/netflix'>
             <button onClick={() => setOpenWorks(false)}>Case Study</button>
           </Link>
         </div>
         <div className='picture-container'>
-          <img src={apple} alt="landing" />
+          <img src={netflix} alt="landing" />
           <span>04</span>
         </div>
       </CardContainerRight>
       <CardContainer>
         <div className='picture-container'>
-          <img src={shops} alt="landing" />
+          <img src={apple} alt="landing" />
           <span>05</span>
         </div>
         <div className='picture-details'>
+          <h1>Ecommerce</h1>
+          <h3>Apple Store Shopping without API Calls</h3>
+          {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> */}
+          <span>Ecommerce</span>
+          <Link className='works-link' to='/ecommerce'>
+            <button onClick={() => setOpenWorks(false)}>Case Study</button>
+          </Link>
+        </div>
+      </CardContainer>
+      <CardContainerRight>
+        <div className='picture-details'>
           <h1>Ecommerce 2</h1>
           <h3>Shopping Store with API Calls</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> */}
           <span>Ecommerce</span>
           <Link className='works-link' to='/ecommercev2'>
             <button onClick={() => setOpenWorks(false)}>Case Study</button>
           </Link>
         </div>
-      </CardContainer>
+        <div className='picture-container'>
+          <img src={shops} alt="landing" />
+          <span>06</span>
+        </div>
+      </CardContainerRight>
     </ContainerSection>
   )
 }

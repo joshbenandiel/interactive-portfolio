@@ -206,6 +206,10 @@ export const Container = styled.div`
             transform: translateY(20px);
             height: 110px;
             width: auto;
+
+            @media (max-width: 1424px){
+              height: 70px;
+            }
             @media (max-width: 1024px){
               height: 50px;
             }
@@ -222,6 +226,10 @@ export const Container = styled.div`
             height: 150px;
             width: auto;
             transition: 0.5s ease;
+
+            @media (max-width: 1424px){
+              height: 100px;
+            }
 
             
             @media (max-width: 1024px){
@@ -274,6 +282,10 @@ export const Container = styled.div`
           padding-right: 40px;
           transform: rotate(90deg);
           transition: 0.5s ease 0.3s;
+
+          @media (max-width: 1424px){
+           right: 4.5%;
+          }
           @media (max-width: 1024px){
             display: none;
           }
@@ -321,6 +333,8 @@ export const Container = styled.div`
           letter-spacing: 1px;
           font-family: League Spartan,Helvetica,Arial,sans-serif;
 
+        
+
           @media (max-width: 425px){
             font-size: 1em;
           }
@@ -330,6 +344,9 @@ export const Container = styled.div`
             font-size: 1.5em;
             font-family: LibreBaskerville-Regular,Palatino Linotype,Times New Roman,serif;
 
+            @media (max-width: 1424px){
+              font-size: 1.3em;
+            }
             @media (max-width: 1024px){
               font-size: 1em;
             }

@@ -34,6 +34,7 @@ import ecommerceMain from './images/ecommerceMain.webp'
 import ecommerceDesign from '../components/Projects/images/ecommerce.png'
 import ecommerce2 from '../components/Projects/images/emart.png'
 import emartDesign from './images/emart.jpeg'
+import chatDesign from './images/chatAppDesign.png'
 
 
 const themeProvider = {
@@ -149,6 +150,8 @@ const App: React.FC = () => {
       <Route path='landing-page' element={<LandingPage worksData={landingData}/>}/>
       {/* Facebook Page */}
       <Route path='facebook-clone' element={<LandingPage worksData={facebookData}/>}/>
+      {/* ChatApp Page */}
+      <Route path='chatapp' element={<LandingPage worksData={chatAppData}/>}/>
       {/* Netflix Page */}
       <Route path='netflix' element={<LandingPage worksData={netflixData}/>}/>
       {/* Ecommerce Page */}
@@ -210,7 +213,7 @@ const facebookData: WorkType =
       first: latoBold,
       second: lato
     },
-    next:'Netflix',
+    next:'Chat App',
     nextColor: {
       first: '#292f43',
       second: '#d16335'
@@ -222,6 +225,37 @@ const facebookData: WorkType =
     link: '/netflix',
     visitLink: 'https://facebookclone-five.vercel.app/'
   }
+
+const chatAppData: WorkType = 
+{
+  image: emartDesign,
+  title: 'Chat App',
+  desc: 'ChatApp lets you connect with the world',
+  projectDesc: 'This page is built using HTML, CSS, Typescript, Javascript, Tailwind-CSS, styled-components, ReactJs',
+  components: chatDesign,
+  colors: [
+    {one: 'gallery', oneColor: '#ededed'},
+    {two: 'mine-shaft', twoColor: '#333333'},
+    {three: 'ebony', threeColor: `#060c10`},
+    {four: 'white', fourColor: '#fff'},
+    {five: 'denim', fiveColor: '#0069a6'}
+  ],
+  imageFont: {
+    first: abrilFont,
+    second: gothamFont
+  },
+  next:'Netflix',
+  nextColor: {
+    first: '#060c10',
+    second: '#00c8e7'
+  },
+  load: {
+    first: '#0069a6',
+    second: '#060c10'
+  },
+  link: '/netflix',
+  visitLink: 'https://chat-app-eight-eosin.vercel.app/'
+}
 const netflixData: WorkType = 
 {
   image: netflixMain,
@@ -320,9 +354,10 @@ const ecommerceDataV2: WorkType =
 const cardData = [
   {id: 1, img: landing, header: 'Landing Page', paragraph:'Personal Portfolio', number:'01', move: '-30px', link: 'landing-page', button: 'Case Study'},
   {id: 2,img: facebook, header: 'Facebook Clone', paragraph:'Clone Facebook UI', number:'02', move: '30px', link: 'facebook-clone', button: 'Case Study'},
-  {id: 3,img: netflix, header: 'Netflix API', paragraph:'Sign In, Sign Up with API Calls', number:'03', move: '-30px', link: 'netflix', button: 'Case Study'},
-  {id: 4,img: ecommerce, header: 'Ecommerce', paragraph:'Without API Calls', number:'04', move: '30px', link: 'ecommerce', button: 'Case Study'},
-  {id: 5,img: emart, header: 'Ecommerce API', paragraph:'With API Calls', number:'05', move: '-30px', link: 'ecommercev2', button: 'Case Study'},
+  {id: 3,img: chatDesign, header: 'Chat App', paragraph:'Communicate with other people', number:'03', move: '-30px', link: 'chatapp', button: 'Case Study'},
+  {id: 4,img: netflix, header: 'Netflix API', paragraph:'Sign In, Sign Up with API Calls', number:'04', move: '30px', link: 'netflix', button: 'Case Study'},
+  {id: 5,img: ecommerce, header: 'Ecommerce', paragraph:'Without API Calls', number:'05', move: '-30px', link: 'ecommerce', button: 'Case Study'},
+  {id: 6,img: emart, header: 'Ecommerce API', paragraph:'With API Calls', number:'06', move: '30px', link: 'ecommercev2', button: 'Case Study'},
 ]
 
 export default App;
