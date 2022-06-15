@@ -256,7 +256,7 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
         right: 0;
         left: auto;
         width: 100%;
-        transform: translateX(150px);
+        transform: translateX(160px);
         height: 3px;
         z-index: 2;
         background-color: #235aa6;
@@ -269,7 +269,7 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
         bottom: 0px;
         left: 0;
         width: 100%;
-        transform: translateX(-150px);
+        transform: translateX(-160px);
         height: 3px;
         z-index: 2;
         background-color: #f25757;

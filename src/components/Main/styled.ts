@@ -26,8 +26,8 @@ export const ArrowDown = styled.span`
   font-size: 2rem;
   color: #fff;
   width: auto;
-  transform: translateX(-50%) rotate(91deg);
   left: 50%;
+  transform: translateX(-50%) rotate(91deg);
   transition: 0.5s;
   cursor: pointer;
 `
@@ -177,7 +177,7 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
       z-index: 2;
     }
     &:hover + .arrow-right {
-     transform: translateX(11px)
+     transform: translateX(11px) translateY(-50%);
     }
   }
 
