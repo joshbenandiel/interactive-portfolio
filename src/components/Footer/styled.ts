@@ -34,6 +34,10 @@ export const Container = styled.div`
   @media (max-width: 425px){
     width: 425px
   }
+  
+  @media (max-width: 375px){
+    width: 375px
+  }
  
  
   div {

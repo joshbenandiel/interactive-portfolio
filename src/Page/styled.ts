@@ -36,10 +36,14 @@ export const linearLoad = keyframes`
 
 export const ContainerWrapper = styled.div`
 height: auto;
-  @media (max-width: 425px){
-    width: 425px;
-    overflow: hidden;
-  }
+@media (max-width: 425px){
+  width: 425px;
+  overflow: hidden;
+}
+@media (max-width: 375px){
+  width: 375px;
+  overflow: hidden;
+}
 `
 export const PreLoader = styled.div`
   height: 100vh;

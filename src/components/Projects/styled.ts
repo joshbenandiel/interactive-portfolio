@@ -49,9 +49,13 @@ export const Container = styled.div`
   position: relative;
   overflow:hidden;
 
-  @media (max-width: 375px){
+  @media (max-width: 425px){
     width: 425px;
   }
+  @media (max-width: 375px){
+    width: 375px;
+  }
+
 
 
   .technologies-wrapper {
@@ -407,7 +411,10 @@ export const Wrapper = styled.div`
 
   }
   @media (max-width: 425px){
-   width: 100%; 
+   width: 425px; 
+  }
+  @media (max-width: 375px){
+   width: 375px; 
   }
 
   h3 {

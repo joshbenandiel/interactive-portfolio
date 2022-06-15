@@ -135,6 +135,10 @@ export const NavOpen = styled.span<{open: string, scale: string, show: string}>`
       }
     }
   }
+
+  @media (max-width: 375px){
+    width: 375px;
+  }
 `
 export const NavOpenFooter = styled.div`
   position: absolute;
@@ -182,6 +186,11 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
     left: 60%;
   }
 
+  @media (max-width: 375px){
+    left: 55%;
+    /* transform: translateX(-50%); */
+  }
+
     div {
       cursor: pointer;
       img {
@@ -199,6 +208,11 @@ export const NavWrapper = styled.nav<{move: string, textColor: string, textColor
         @media (max-width: 425px){
           height: 50px;
           left: -70px;
+        }
+
+        @media (max-width: 375px){
+          height: 50px;
+          left: -30px;
         }
       }
     }

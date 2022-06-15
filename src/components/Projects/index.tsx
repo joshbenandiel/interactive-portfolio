@@ -139,7 +139,7 @@ export const Projects:FC<ProjectsProps> = ({children}) => {
                 </div>
               </div>
             </div>
-          </div>
+      </div>
     </Container>
   )
 }

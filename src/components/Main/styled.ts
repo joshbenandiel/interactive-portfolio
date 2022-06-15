@@ -126,7 +126,7 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
     }
     .arrow-right {
       position: absolute;
-      top: 5px;
+      /* top: 5px; */
       right: 5px;
       font-size: 2rem;
       transition: 0.5s;
@@ -238,7 +238,7 @@ export const Container = styled.div<{textColor: string, textColorHover: string, 
     bottom: 35px;
     left: 50%;
     color: #fff;
-    transform: translate(-50%,-50%);
+    transform: translateX(-50%);
     cursor: pointer;
 
     &:hover + ${ArrowDown} {

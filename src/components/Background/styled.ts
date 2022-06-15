@@ -14,6 +14,10 @@ export const BackgroundContainer = styled.div`
     width: 425px;
   }
 
+  @media (max-width: 375px){
+    width: 375px;
+  }
+
 
   .layer-1 {
     position: absolute;

@@ -35,6 +35,12 @@ export const Relative = styled.div`
       height: 100%;
       overflow: hidden;
     }
+
+    @media (max-width: 375px) {
+      width: 375px;
+      height: 100%;
+      overflow: hidden;
+    }
     .fixed-position {
       height: 100vh;
       width: 100%;
@@ -429,11 +435,10 @@ export const BackgroundText = styled.div`
     @media (max-width: 425px){
       flex-direction: column;
       bottom: 0;
-      left: 50%;
+      left: 45%;
       transform: translateX(-50%);
       gap: 20px;
       justify-content: center;
-      width: 100%;
       align-items: center;
       margin: 0;
       padding-bottom: 20px;
@@ -463,6 +468,7 @@ export const Project = styled.div<{color: string}>`
   flex-direction: column;
   overflow: hidden;
   position: relative;
+  padding: 10px;
 
     div {
       width: 30em;
@@ -478,7 +484,7 @@ export const Project = styled.div<{color: string}>`
         width: 23em;
       }
       @media (max-width: 375px){
-        top: 0;
+        top: 10px;
       }
     }
     h2 {
@@ -487,7 +493,10 @@ export const Project = styled.div<{color: string}>`
       margin: 5px 0px;
 
       @media (max-width: 425px){
-        font-size: 3em;
+        font-size: 2em;
+      }
+      @media (max-width: 375px){
+        font-size: 2em;
       }
     }
 
@@ -499,6 +508,9 @@ export const Project = styled.div<{color: string}>`
 
       @media (max-width: 425px){
         font-size: 1.2em;
+      }
+      @media (max-width: 375px){
+        width: 90%;
       }
       
     }
@@ -639,6 +651,11 @@ export const ComponentsWrapper = styled.div`
       @media (max-width: 425px){
         height: 300px;
         width: 350px;
+        object-fit: cover;
+      }
+      @media (max-width: 375px){
+        height: 300px;
+        width: 320px;
         object-fit: cover;
       }
     }
@@ -825,6 +842,10 @@ export const NextPage = styled.div<{first: string, second: string}>`
       @media (max-width: 425px){
         top: 52px;
         right: 60px;
+      }
+      @media (max-width: 375px){
+        top: 52px;
+        right: 80px;
       }
     }
    
