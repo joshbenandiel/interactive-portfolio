@@ -466,7 +466,8 @@ export const ButtonContainer = styled.div`
   
   .arrow-right {
     position: absolute;
-    top: 4px;
+    top: 50%;
+    transform: translateY(-50%);
     left: 136px;
     font-size: 2rem;
     transition: 0.5s;
