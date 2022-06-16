@@ -222,7 +222,7 @@ const facebookData: WorkType =
       first: '#292F43',
       second: '#00C8E7'
     },
-    link: '/netflix',
+    link: '/chatapp',
     visitLink: 'https://facebookclone-five.vercel.app/'
   }
 
