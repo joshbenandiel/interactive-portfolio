@@ -22,13 +22,18 @@ export const BackgroundContainer = styled.div`
   .layer-1 {
     position: absolute;
     top: 0;
-    left: 50px;
+    left: 0px;
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 100px;
+    padding: 100px;
 
-    @media (max-width: 1024px){
-      left: -76px;
-    }
+
     img {
-      height: 250px;
+      height: 50px;
       transition: 0.1s ease;
       
     }
@@ -36,40 +41,49 @@ export const BackgroundContainer = styled.div`
   .layer-2 {
     position: absolute;
     bottom: 0;
-    left: -200px;
-
-    @media (max-width: 1024px){
-      left: 600px;
-    }
+    left: 00px;
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 200px;
+    padding: 100px;
 
     img {
-      height: 250px;
+      height: 50px;
       transition: 0.1s ease;
     }
   }
 
   .layer-3 {  
     position: absolute;
-    top: 300px;
-    right: -200px;
+    top: 0px;
+    right: 0px;
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 300px;
 
-    @media (max-width: 1024px){
-      left: 526px;
-    }
     img {
-      height: 250px;
+      height: 50px;
       transition: 0.1s ease;
     }
   }
   .layer-4 {
     position: absolute;
-    bottom: 100px;
-    right: 0;
-    @media (max-width: 1024px){
-      bottom: 11px;
-    }
+    bottom: 0px;
+    right: 0px;
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 300px;
     img {
-      height: 250px;
+      height: 50px;
       transition: 0.1s ease;
     }
   }

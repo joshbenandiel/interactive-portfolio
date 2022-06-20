@@ -13,6 +13,18 @@ import nine from './images/9-min.png'
 import ten from './images/10-min.png'
 import eleven from './images/11-min.png'
 import twelve from './images/12-min.png'
+import oneBg from './newimages/1.1-removebg-preview.png'
+import twoBg from './newimages/2.1-removebg-preview.png'
+import threeBg from './newimages/3.1-removebg-preview.png'
+import fourBg from './newimages/4.1-removebg-preview.png'
+import fiveBg from './newimages/5.1-removebg-preview.png'
+import sixBg from './newimages/6.1-removebg-preview.png'
+import sevenBg from './newimages/7.1-removebg-preview.png'
+import eightBg from './newimages/8.1-removebg-preview.png'
+import nineBg from './newimages/9.1-removebg-preview.png'
+import tenBg from './newimages/10.1-removebg-preview.png'
+import elevenBg from './newimages/11.1-removebg-preview.png'
+import twelveBg from './newimages/12.1-removebg-preview.png'
 import { useMouseMove } from 'react-use-mouse-move';
 import { NavOpen, NavOpenFooter } from "../Navbar/styled";
 import {AiOutlineClose} from 'react-icons/ai'
@@ -103,24 +115,24 @@ export const Background: FC<IProps> = ({children, theme, openNav, setOpenNav, se
     <BackgroundContainer theme={theme}>
       <img className='background-logo'src={backgroundlogo} alt="background"/>
       <div className='layer-1'>
-        <img className='shapes' src={twelve} data-speed={-11} alt='shapes'/>
-        <img className='shapes' src={ten} data-speed={10} alt='shapes'/>
-        <img className='shapes' src={eleven} data-speed={-6} alt='shapes'/>
+        <img className='shapes one' src={twelveBg} data-speed={-11} alt='shapes'/>
+        <img className='shapes two' src={tenBg} data-speed={10} alt='shapes'/>
+        <img className='shapes three' src={elevenBg} data-speed={-6} alt='shapes'/>
       </div>
       <div className='layer-2'>
-        <img className='shapes' src={six} data-speed={-3} alt='shapes'/>
-        <img className='shapes' src={five} data-speed={6} alt='shapes'/>
-        <img className='shapes' src={two} data-speed={4} alt='shapes'/>
+        <img className='shapes four' src={sixBg} data-speed={-3} alt='shapes'/>
+        <img className='shapes five' src={fiveBg} data-speed={6} alt='shapes'/>
+        <img className='shapes six' src={twoBg} data-speed={4} alt='shapes'/>
       </div>
       <div className='layer-3'>
-        <img className='shapes' src={nine} data-speed={-7} alt='shapes'/>
-        <img className='shapes' src={seven} data-speed={-4} alt='shapes'/>
-        <img className='shapes' src={eight} data-speed={9} alt='shapes'/>
+        <img className='shapes seven' src={nineBg} data-speed={-7} alt='shapes'/>
+        <img className='shapes eight' src={sevenBg} data-speed={-4} alt='shapes'/>
+        <img className='shapes nine' src={eightBg} data-speed={9} alt='shapes'/>
       </div>
       <div className='layer-4'>
-        <img className='shapes' src={four} data-speed={-8} alt='shapes'/> 
-        <img className='shapes' src={one} data-speed={-5} alt='shapes'/>
-        <img className='shapes' src={three} data-speed={2} alt='shapes'/>
+        <img className='shapes ten' src={fourBg} data-speed={-8} alt='shapes'/> 
+        <img className='shapes eleven' src={oneBg} data-speed={-5} alt='shapes'/>
+        <img className='shapes twelve' src={threeBg} data-speed={2} alt='shapes'/>
       </div>
       {children}
     </BackgroundContainer>
