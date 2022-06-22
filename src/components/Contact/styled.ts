@@ -288,7 +288,7 @@ export const ContactMe = styled.div<{contactPosition: string}>`
       }
 
       button {
-        width: 50%;
+        width: 170px;
         height: 40px;
         background-color: #f06449;
         background: linear-gradient(270deg,#f06449,#ef3636);
