@@ -302,23 +302,25 @@ export const ContactMe = styled.div<{contactPosition: string}>`
         position: relative;
         overflow: hidden;
 
-        @media (max-width: 1024px){
+        /* @media (max-width: 1024px){
           width: 75%;
         }
         
         @media (max-width: 425px) {
           width: 75%;
-        }
+        } */
 
         span {
           position: absolute;
-          top: 5px;
-          left: 30px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
           z-index: 10;
+          width: 100%;
 
-          @media (max-width: 1024px){
+          /* @media (max-width: 1024px){
             left: 50px;
-          }
+          } */
         }
 
         &::after{
