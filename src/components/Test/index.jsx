@@ -1,5 +1,5 @@
-import { useWeb3Modal } from '@web3modal/wagmi1/react';
-import { useWeb3ModalState } from '@web3modal/wagmi1/react';
+// import { useWeb3Modal } from '@web3modal/wagmi1/react';
+// import { useWeb3ModalState } from '@web3modal/wagmi1/react';
 import React, { useCallback, useEffect, useState } from 'react'
 
 export const Test = () => {
@@ -92,42 +92,42 @@ export const Test = () => {
     setBrowserName(sBrowser);
   }, []);
 
-  const { open: openFunc } = useWeb3Modal();
-  const { open } = useWeb3ModalState();
+  // const { open: openFunc } = useWeb3Modal();
+  // const { open } = useWeb3ModalState();
 
-  useEffect(() => {
-    // Workaround to only show MetaMask in WalletConnectModal
-    if (open) {
-      setTimeout(() => {
-        const modalElement = document.querySelector("w3m-modal");
-        const shadowRoot = modalElement?.shadowRoot;
-        const innerShadowRoot =
-          shadowRoot?.querySelector("w3m-router")?.shadowRoot;
-        const childrenOfInnerShadowRoot =
-          innerShadowRoot?.querySelector("w3m-connect-view")?.shadowRoot;
+  // useEffect(() => {
+  //   // Workaround to only show MetaMask in WalletConnectModal
+  //   if (open) {
+  //     setTimeout(() => {
+  //       const modalElement = document.querySelector("w3m-modal");
+  //       const shadowRoot = modalElement?.shadowRoot;
+  //       const innerShadowRoot =
+  //         shadowRoot?.querySelector("w3m-router")?.shadowRoot;
+  //       const childrenOfInnerShadowRoot =
+  //         innerShadowRoot?.querySelector("w3m-connect-view")?.shadowRoot;
 
-        const walletElements =
-          childrenOfInnerShadowRoot?.querySelectorAll(`wui-list-wallet`);
+  //       const walletElements =
+  //         childrenOfInnerShadowRoot?.querySelectorAll(`wui-list-wallet`);
 
-        walletElements?.forEach((element) => {
-          if (element instanceof HTMLElement) {
-            if (element.getAttribute("name") === "MetaMask") {
-              element.style.display = "";
-            } else {
-              element.style.display = "none";
-            }
-          }
-        });
-      }, 0);
-    }
-  }, [open]);
+  //       walletElements?.forEach((element) => {
+  //         if (element instanceof HTMLElement) {
+  //           if (element.getAttribute("name") === "MetaMask") {
+  //             element.style.display = "";
+  //           } else {
+  //             element.style.display = "none";
+  //           }
+  //         }
+  //       });
+  //     }, 0);
+  //   }
+  // }, [open]);
   
   return (
     <div style={{ backgroundColor: "red", height: "100vh", display: "flex", flexDirection: "column", color: "white"}}>
     <div style={{ flexGrow: "1"}}>
       <button onClick={handleConnect}>Connect</button>
       <button onClick={handleDisconnect}>Disconnect</button>
-      <button onClick={() => openFunc()}>OPEN WALLETCONNECT</button>
+      {/* <button onClick={() => openFunc()}>OPEN WALLETCONNECT</button> */}
       <div>Public Key: {publicKey}</div>
       <div>{navigator.userAgent}</div>
       <div>{navigator.userAgent.indexOf("Phantom")}</div>
