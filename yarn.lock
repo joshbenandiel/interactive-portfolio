@@ -3554,25 +3554,13 @@
     "@web3modal/ui" "4.0.0-544a28f1"
     lit "3.1.0"
 
-"@web3modal/siwe@3.5.7":
+"@web3modal/siwe@3.5.7", "@web3modal/siwe@3.6.0-544a28f1":
   version "3.5.7"
   resolved "https://registry.yarnpkg.com/@web3modal/siwe/-/siwe-3.5.7.tgz#2097a7268fee38ff3da4cd733178ef73385c4e7b"
   integrity sha512-dV0yhJYtKq4VxKSSlTxpFgVice0qhcTPfTxrD9Z8u8O5QYw4gv8S7g6dvtFCvTce4DlHSlqNM9MZqeViB6BHpg==
   dependencies:
     "@web3modal/core" "3.5.7"
     "@web3modal/scaffold-utils" "3.5.7"
-  optionalDependencies:
-    react ">=17"
-    react-dom ">=17"
-    vue ">=3"
-
-"@web3modal/siwe@3.6.0-544a28f1":
-  version "4.0.0-544a28f1"
-  resolved "https://registry.yarnpkg.com/@web3modal/siwe/-/siwe-4.0.0-544a28f1.tgz#4aa2cf0e5f6eca26dfab0e5dd1ae53d751d3d2c3"
-  integrity sha512-DzpxICg6v+pnPko5TGxDidfPJmuzDyGRZwEemWTPjIH5JRxpJtycZMvfeHUiYvbdQab0DQsinpVhQap6jsBPhw==
-  dependencies:
-    "@web3modal/core" "4.0.0-544a28f1"
-    "@web3modal/scaffold-utils" "4.0.0-544a28f1"
   optionalDependencies:
     react ">=17"
     react-dom ">=17"
