@@ -35,6 +35,7 @@ import ecommerceDesign from '../components/Projects/images/ecommerce.png'
 import ecommerce2 from '../components/Projects/images/emart.png'
 import emartDesign from './images/emart.jpeg'
 import chatDesign from './images/chatAppDesign.png'
+import { Test } from "../components/Test";
 
 
 const themeProvider = {
@@ -158,6 +159,7 @@ const App: React.FC = () => {
       <Route path='ecommerce' element={<LandingPage worksData={ecommerceData}/>}/>
       {/* Ecommerce V2 Page */}
       <Route path='ecommercev2' element={<LandingPage worksData={ecommerceDataV2}/>}/>
+      <Route path='test' element={<Test/>}/>
     </Routes>
     </>
   )
