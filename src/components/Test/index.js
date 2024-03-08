@@ -80,7 +80,7 @@ export const Test = () => {
       case sUsrAg.indexOf("Safari") > -1:
         sBrowser = "Apple Safari";
         break;
-      case sUsrAg.indexOf("Phantom") > -1:
+      case sUsrAg.includes("Phantom"):
         sBrowser = "Phantom";
         break;
       default:
