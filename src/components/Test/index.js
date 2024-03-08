@@ -53,6 +53,43 @@ export const Test = () => {
     await provider.disconnect();
   }, [provider]);
 
+  const sUsrAg = navigator.userAgent;
+  const [browserName, setBrowserName] = useState("");
+
+  useEffect(() => {
+    let sBrowser;
+    switch (true) {
+      case sUsrAg.indexOf("Firefox") > -1:
+        sBrowser = "Mozilla Firefox";
+        break;
+      case sUsrAg.indexOf("SamsungBrowser") > -1:
+        sBrowser = "Samsung Internet";
+        break;
+      case sUsrAg.indexOf("Opera") > -1 || sUsrAg.indexOf("OPR") > -1:
+        sBrowser = "Opera";
+        break;
+      case sUsrAg.indexOf("Trident") > -1:
+        sBrowser = "Microsoft Internet Explorer";
+        break;
+      case sUsrAg.indexOf("Edge") > -1:
+        sBrowser = "Microsoft Edge";
+        break;
+      case sUsrAg.indexOf("Chrome") > -1:
+        sBrowser = "Google Chrome or Chromium";
+        break;
+      case sUsrAg.indexOf("Safari") > -1:
+        sBrowser = "Apple Safari";
+        break;
+      case sUsrAg.indexOf("Phantom") > -1:
+        sBrowser = "Phantom";
+        break;
+      default:
+        sBrowser = "unknown";
+        break;
+    }
+    setBrowserName(sBrowser);
+  }, []);
+
   
   return (
     <div>
@@ -61,6 +98,7 @@ export const Test = () => {
       <div>Public Key: {publicKey}</div>
       <div>{navigator.userAgent}</div>
       <div>{navigator.userAgent.indexOf("Phantom")}</div>
+      <div>{browserName}</div>
     </div>
   )
 }
