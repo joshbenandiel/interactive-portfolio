@@ -40,7 +40,7 @@ export const Test = () => {
       return;
     }
     try {
-      await provider.connect({ onlyIfTrusted: true }).then(() => {
+      await provider.connect().then(() => {
         const encodedMessage = new TextEncoder().encode("hello");
         provider?.signMessage(encodedMessage, "utf8")
       });
@@ -53,12 +53,14 @@ export const Test = () => {
     await provider.disconnect();
   }, [provider]);
 
+  
   return (
     <div>
       <button onClick={handleConnect}>Connect</button>
       <button onClick={handleDisconnect}>Disconnect</button>
       <div>Public Key: {publicKey}</div>
       <div>{navigator.userAgent}</div>
+      <div>{navigator.userAgent.indexOf("Phantom")}</div>
     </div>
   )
 }
