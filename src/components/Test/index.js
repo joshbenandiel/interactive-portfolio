@@ -1,7 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 export const Test = () => {
   const [publicKey, setPublicKey] = useState("");
+  const messageListContainerRef = useRef(null);
+
   const getProvider = () => {
     if ("phantom" in window) {
       const provider = window.phantom?.solana;
@@ -90,6 +92,21 @@ export const Test = () => {
     setBrowserName(sBrowser);
   }, []);
 
+  useEffect(() => {
+    if (messageListContainerRef.current) {
+      messageListContainerRef.current.addEventListener('touchmove', (e) => {
+        if (!e.currentTarget) {
+          return;
+        }
+        if (e.currentTarget.scrollTop === 0) {
+          e.currentTarget.scrollTop = 1;
+        } else if (e.currentTarget.scrollHeight === e.currentTarget.scrollTop +
+                                                    e.currentTarget.offsetHeight) {
+          e.currentTarget.scrollTop -= 1;
+        }
+      });
+    }
+  }, [])
   
   return (
     <div style={{ backgroundColor: "red", height: "100vh", display: "flex", flexDirection: "column", width: "100vw", minHeight: "100%"}}>
@@ -101,7 +118,7 @@ export const Test = () => {
         <div>{navigator.userAgent.indexOf("Phantom")}</div>
         <div>{browserName}</div>
       </div>
-      <div>
+      <div ref={messageListContainerRef}>
         <div>Chatbox</div>
         <input placeholder='send message hehe'/>
       </div>
