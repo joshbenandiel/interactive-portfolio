@@ -110,10 +110,10 @@ export const Test = () => {
     }
   }, [])
   
-  const isInPhantomBrowser = browserName === "Phantom" && focused;
   const [focused, setFocused] = React.useState(false)
-const onFocus = () => setFocused(true)
-const onBlur = () => setFocused(false)
+  const onFocus = () => setFocused(true)
+  const onBlur = () => setFocused(false)
+  const isInPhantomBrowser = browserName === "Phantom" && focused;
 
   let inputStyle = {}
   if (isInPhantomBrowser) {
@@ -132,7 +132,7 @@ const onBlur = () => setFocused(false)
         <div>Public Key: {publicKey}</div>
         <div>{navigator.userAgent}</div>
         <div>{navigator.userAgent.indexOf("Phantom")}</div>
-        <div>{browserName}</div>
+        <div>{browserName} {focused}</div>
         <h2>{`soft keyboard is ${isKeyboardOpen ? "open" : "close"}`}</h2>
       </div>
       <div ref={messageListContainerRef}>
