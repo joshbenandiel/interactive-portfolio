@@ -124,6 +124,13 @@ export const Test = () => {
       transform: "translate(-50%, -50%"
     }
   }
+
+  function handleKeyUp(event) {
+    if (event.key === 'Escape') {
+      alert("test")
+    }
+  }
+
   return (
     <div style={{ backgroundColor: "red", height: "100vh", display: "flex", flexDirection: "column", width: "100vw", minHeight: "100%"}}>
       <div style={{ flexGrow: "1"}}>
@@ -137,10 +144,10 @@ export const Test = () => {
       </div>
       <div ref={messageListContainerRef}>
       <div>
-      <input defaultValue="click here for open keyboard" onFocus={onFocus} onBlur={onBlur} />
+      <input defaultValue="click here for open keyboard" onFocus={onFocus} onBlur={onBlur} onKeyUp={handleKeyUp}/>
     </div>
         <div>Chatbox</div>
-        <input placeholder='send message hehe' style={inputStyle} onFocus={onFocus} onBlur={onBlur}/>
+        <input placeholder='send message hehe' style={inputStyle} onFocus={onFocus} onBlur={onBlur} onKeyUp={handleKeyUp}/>
       </div>
     </div>
   )
