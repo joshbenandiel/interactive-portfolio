@@ -84,6 +84,69 @@ const App: React.FC = () => {
   return (
     <>
     <Routes>
+      {/* Home Page */}
+      <Route path='/' element={
+        
+        <>
+        {loading ? (
+          <PreLoader>
+            <div>
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </PreLoader>
+        )
+        : (
+        <>
+          <Background 
+            setOpenContact={setOpenContact}
+            setOpenNav={setOpenNav}
+            openNav={openNav} 
+            theme={changeTheme ? themeProvider.light :  themeProvider.dark}>
+            {openContact && <Contact 
+              openContact={openContact}
+              setOpenContact={setOpenContact}/>}
+            <div className={`navbar-hide${openContact ? '-false' : ' '}`}>
+              <Navbar 
+                openNav={openNav}
+                setOpenNav={setOpenNav}
+                textColor={changeTheme ? textColor.light :  textColor.dark}
+                textColorHover = {changeTheme ? textColorHover.light : textColorHover.dark}
+                changeTheme={changeTheme}
+                setChangeTheme={setChangeTheme}
+                setOpenContact={setOpenContact}/>
+            </div>
+            <Main 
+              textColorMain={changeTheme ? textColorMain.light : textColorMain.dark}
+              textColor={changeTheme ? textColor.light :  textColor.dark}
+              textColorHover = {changeTheme ? textColorHover.light : textColorHover.dark}
+              openContact={openContact} 
+              setOpenContact={setOpenContact}/>
+            </Background>
+            <Projects>
+              {cardData.map((card) => (
+                <Card 
+                  button={card.button}
+                  key={card.id}
+                  id={card.id}
+                  link={card.link}
+                  img={card.img}
+                  header={card.header}
+                  paragraph={card.paragraph}
+                  number={card.number}
+                  move={card.move}
+                />
+              ))}
+            </Projects>
+            <Footer/>
+          </>
+        
+        )} 
+        </>
+      }/>
       {/* Portfolio Page */}
       <Route path='landing-page' element={<LandingPage worksData={landingData}/>}/>
       {/* Facebook Page */}

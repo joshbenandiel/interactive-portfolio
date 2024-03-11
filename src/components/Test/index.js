@@ -92,7 +92,7 @@ export const Test = () => {
 
   
   return (
-    <div style={{ backgroundColor: "red", height: "100vh", display: "flex", flexDirection: "column", width: "100vw", minHeight: "100%", position: "relative"}}>
+    <div style={{ backgroundColor: "red", height: "100vh", display: "flex", flexDirection: "column", width: "100vw", minHeight: "100%"}}>
       <div style={{ flexGrow: "1"}}>
         <button onClick={handleConnect}>Connect</button>
         <button onClick={handleDisconnect}>Disconnect</button>
