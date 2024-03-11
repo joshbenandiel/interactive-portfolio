@@ -119,10 +119,10 @@ export const Test = () => {
         <div>{navigator.userAgent}</div>
         <div>{navigator.userAgent.indexOf("Phantom")}</div>
         <div>{browserName}</div>
+        <h2>{`soft keyboard is ${isKeyboardOpen ? "open" : "close"}`}</h2>
       </div>
       <div ref={messageListContainerRef}>
       <div>
-      <h2>{`soft keyboard is ${isKeyboardOpen ? "open" : "close"}`}</h2>
       <input defaultValue="click here for open keyboard" />
     </div>
         <div>Chatbox</div>
