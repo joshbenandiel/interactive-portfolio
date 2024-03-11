@@ -92,13 +92,19 @@ export const Test = () => {
 
   
   return (
-    <div>
-      <button onClick={handleConnect}>Connect</button>
-      <button onClick={handleDisconnect}>Disconnect</button>
-      <div>Public Key: {publicKey}</div>
-      <div>{navigator.userAgent}</div>
-      <div>{navigator.userAgent.indexOf("Phantom")}</div>
-      <div>{browserName}</div>
+    <div style={{ backgroundColor: "red", height: "100vh", display: "flex", flexDirection: "column", width: "100vw"}}>
+      <div style={{ flexGrow: "1"}}>
+        <button onClick={handleConnect}>Connect</button>
+        <button onClick={handleDisconnect}>Disconnect</button>
+        <div>Public Key: {publicKey}</div>
+        <div>{navigator.userAgent}</div>
+        <div>{navigator.userAgent.indexOf("Phantom")}</div>
+        <div>{browserName}</div>
+      </div>
+      <div>
+        <div>Chatbox</div>
+        <input placeholder='send message hehe'/>
+      </div>
     </div>
   )
 }
