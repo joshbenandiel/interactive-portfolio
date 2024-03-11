@@ -63,6 +63,9 @@ export const Test = () => {
   useEffect(() => {
     let sBrowser;
     switch (true) {
+      case sUsrAg.includes("Phantom"):
+        sBrowser = "Phantom";
+        break;
       case sUsrAg.indexOf("Firefox") > -1:
         sBrowser = "Mozilla Firefox";
         break;
@@ -83,9 +86,6 @@ export const Test = () => {
         break;
       case sUsrAg.indexOf("Safari") > -1:
         sBrowser = "Apple Safari";
-        break;
-      case sUsrAg.includes("Phantom"):
-        sBrowser = "Phantom";
         break;
       default:
         sBrowser = "unknown";
@@ -110,6 +110,17 @@ export const Test = () => {
     }
   }, [])
   
+  const isInPhantomBrowser = browserName === "Phantom";
+
+  let inputStyle = {}
+  if (isInPhantomBrowser) {
+    inputStyle = {
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%"
+    }
+  }
   return (
     <div style={{ backgroundColor: "red", height: "100vh", display: "flex", flexDirection: "column", width: "100vw", minHeight: "100%"}}>
       <div style={{ flexGrow: "1"}}>
@@ -126,7 +137,7 @@ export const Test = () => {
       <input defaultValue="click here for open keyboard" />
     </div>
         <div>Chatbox</div>
-        <input placeholder='send message hehe'/>
+        <input placeholder='send message hehe' style={inputStyle}/>
       </div>
     </div>
   )
