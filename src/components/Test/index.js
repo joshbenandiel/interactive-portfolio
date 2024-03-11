@@ -110,7 +110,10 @@ export const Test = () => {
     }
   }, [])
   
-  const isInPhantomBrowser = browserName === "Phantom";
+  const isInPhantomBrowser = browserName === "Phantom" && focused;
+  const [focused, setFocused] = React.useState(false)
+const onFocus = () => setFocused(true)
+const onBlur = () => setFocused(false)
 
   let inputStyle = {}
   if (isInPhantomBrowser) {
@@ -134,10 +137,10 @@ export const Test = () => {
       </div>
       <div ref={messageListContainerRef}>
       <div>
-      <input defaultValue="click here for open keyboard" />
+      <input defaultValue="click here for open keyboard" onFocus={onFocus} onBlur={onBlur} />
     </div>
         <div>Chatbox</div>
-        <input placeholder='send message hehe' style={inputStyle}/>
+        <input placeholder='send message hehe' style={inputStyle} onFocus={onFocus} onBlur={onBlur}/>
       </div>
     </div>
   )
