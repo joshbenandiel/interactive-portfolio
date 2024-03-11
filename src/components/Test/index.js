@@ -1,8 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
+import useDetectKeyboardOpen from "use-detect-keyboard-open";
 
 export const Test = () => {
   const [publicKey, setPublicKey] = useState("");
   const messageListContainerRef = useRef(null);
+  const isKeyboardOpen = useDetectKeyboardOpen()
 
   const getProvider = () => {
     if ("phantom" in window) {
@@ -119,6 +121,10 @@ export const Test = () => {
         <div>{browserName}</div>
       </div>
       <div ref={messageListContainerRef}>
+      <div>
+      <h2>{`soft keyboard is ${isKeyboardOpen ? "open" : "close"}`}</h2>
+      <input defaultValue="click here for open keyboard" />
+    </div>
         <div>Chatbox</div>
         <input placeholder='send message hehe'/>
       </div>
